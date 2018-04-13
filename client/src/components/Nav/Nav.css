@@ -1,5 +1,25 @@
 
+.nav-strip {
+    border-top: 3px double orangered;
+    margin-top: 5.5%;
+    position: relative;
+    z-index: -1;
+    background-image: url('./nav-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    box-shadow: 10px 10px 45px -9px orangered
+}
+
+.logo-div {
+    position: absolute;
+    z-index: 1;
+    margin-left: 1%;
+    top: 0;
+    left: 0
+}
+
 .festies-logo {
-    width: 250px;
-    height: 250px
+    width: 225x;
+    height: 225px
 }

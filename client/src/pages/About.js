@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import LoginButton from '../components/Login/LoginButton';
 import LoginWindow from '../components/Login/LoginWindow';
 
-
-
-
 class About extends Component {
 
     constructor(props) {

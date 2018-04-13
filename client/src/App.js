@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './components/Nav';
-
+import Logo from './components/Nav/logo.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/About';
 import ApiDevelopment from './pages/ApiDevelopment';
@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+            <Logo />
             <Nav />
               <Switch>
                 <Route exact path="/" component={About} />
