@@ -1,0 +1,30 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.one {
+    background-image: url("./section-1.jpg");
+    min-height: 500px;
+}
+
+.two {
+    background-image: url("./section-2.jpg");
+    min-height: 350px;
+}
+
+.three {
+    background-image: url("./section-3.jpg");
+    min-height: 350px
+}
+
+.content {
+    height: 100px;
+    background-color: white
+}
+
+.nav {
+    height: 0px
+}
