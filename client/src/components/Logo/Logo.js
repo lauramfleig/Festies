@@ -1,9 +1,10 @@
 import React from 'react';
-import festiesLogo from './festies-transparent.png';
-import './Nav.css';
+import festiesLogo from './festies-logo-1.png';
+import './Logo.css';
+
 
 const Logo = () => {
-    return (    
+    return (
         <div className="logo-div">
             <img className="festies-logo" alt="logo" src={festiesLogo} />
         </div>
