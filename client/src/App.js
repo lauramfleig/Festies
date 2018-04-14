@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/About/About.js';
 import ApiDevelopment from './pages/ApiDevelopment';
+import 'normalize.css'; 
 
 
 

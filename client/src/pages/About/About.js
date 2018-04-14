@@ -30,22 +30,28 @@ class About extends Component {
                 )
 
         return (
-            <div class="entire-container">
+            <div className="entire-container">
 
                 <div>
                     <div className="nav">
                         <Logo />
                     </div>
                     <div className="parallax one">
+                        <h1 className="slogan">Find Your</h1>
+                        <h1 className="slogan-2">Party People</h1>
                     </div>
-                    <div className="content"></div>
-                    <div className="parallax two"></div>
-                    <div className="content"></div>
+                    <div className="content top"></div>
+                    <div className="parallax two">
+                        <div className="info-div">
+                        blah blah
+                        </div>
+                    </div>
+                    <div className="content bottom"></div>
                     <div className="parallax three"></div>
                 </div>
         
                 <div>
-                    <LoginButton handleClick={() => this.renderLogin} />
+                    <LoginButton handleClick={() => this.renderLogin()} />
 
                     { modal }
             {/* <Banner />

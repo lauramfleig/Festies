@@ -12,19 +12,56 @@
 
 .two {
     background-image: url("./section-2.jpg");
-    min-height: 350px;
+    min-height: 500px;
 }
 
 .three {
     background-image: url("./section-3.jpg");
-    min-height: 350px
+    min-height: 500px
 }
 
 .content {
-    height: 100px;
     background-color: white
 }
 
+
+.bottom {
+    height: 10px
+}
+
 .nav {
-    height: 0px
+    height: 0px;
+    margin: 0
+}
+
+.slogan {
+    margin: 0;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 50px;
+    position: relative;
+    top: 230px;
+    left: 16%;
+    width: 25%
+}
+
+.slogan-2 {
+    position: relative;
+    top: 140px;
+    left: 63%;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 50px;
+    width: 25%
+}
+
+.info-div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: orangered;
+    width: 250px;
+    height: 250px
 }
