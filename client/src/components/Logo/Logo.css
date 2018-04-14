@@ -1,5 +1,3 @@
 .festies-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+    flex: 1
 }

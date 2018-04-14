@@ -32,22 +32,27 @@ class About extends Component {
         return (
             <div className="entire-container">
 
-                <div>
-                    <div className="nav">
-                        <Logo />
-                    </div>
+                <div className="parallax-container">
+
                     <div className="parallax one">
                         <h1 className="slogan">Find Your</h1>
+                            <Logo />
                         <h1 className="slogan-2">Party People</h1>
                     </div>
-                    <div className="content top"></div>
+
+                    <div className="divider top"></div>
+
                     <div className="parallax two">
-                        <div className="info-div">
-                        blah blah
+                        <div className="info-div two">
+                            blah blah
                         </div>
                     </div>
-                    <div className="content bottom"></div>
-                    <div className="parallax three"></div>
+
+                    <div className="divider bottom"></div>
+
+                    <div className="parallax three">
+                        <div className="info-div three"></div>
+                    </div>
                 </div>
         
                 <div>
