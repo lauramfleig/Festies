@@ -1,4 +1,5 @@
 import React from "react";
+import './Registration.css';
 
 class UserName extends React.Component {
     constructor(props) {
@@ -22,15 +23,17 @@ class UserName extends React.Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
+        <div className="formDiv UserNameForm">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Name:
+              <br></br>
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
             <br></br>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <br></br>
-          <input type="submit" value="Submit" />
-        </form>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       );
     }
   }

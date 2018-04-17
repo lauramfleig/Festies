@@ -1,4 +1,5 @@
 import React from "react";
+import './Registration.css';
 
 class ImageUrl extends React.Component {
     constructor(props) {
@@ -28,16 +29,18 @@ class ImageUrl extends React.Component {
     render() {
 
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Add your pic url here:
+        <div className="formDiv">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Add your pic url here:
+              <br></br>
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
             <br></br>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <br></br>
-          <input type="submit" value="Submit" />
-          <button onClick={this.handlePrevious} value="Previous">Previous</button>
-        </form>
+            <input type="submit" value="Submit" />
+            <button onClick={this.handlePrevious} value="Previous">Previous</button>
+          </form>
+        </div>
       );
     }
   }

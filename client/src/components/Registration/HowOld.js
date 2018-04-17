@@ -1,4 +1,5 @@
 import React from "react";
+import './Registration.css';
 
 class HowOld extends React.Component {
     constructor(props) {
@@ -27,16 +28,18 @@ class HowOld extends React.Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            How old are you?
+        <div className="formDiv">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              How old are you?
+              <br></br>
+              <input type="number" value={this.state.value} onChange={this.handleChange} />
+            </label>
             <br></br>
-            <input type="number" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <br></br>
-          <input type="submit" value="Submit" />
-          <button onClick={this.handlePrevious} value="Previous">Previous</button>
-        </form>
+            <input type="submit" value="Submit" />
+            <button onClick={this.handlePrevious} value="Previous">Previous</button>
+          </form>
+        </div>
       );
     }
   }

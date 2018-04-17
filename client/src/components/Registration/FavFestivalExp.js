@@ -1,4 +1,5 @@
 import React from "react";
+import './Registration.css';
 
 class FavFestivalExp extends React.Component {
     constructor(props) {
@@ -30,16 +31,18 @@ class FavFestivalExp extends React.Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            What was your favorite festival experience?
+        <div className="formDiv">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              What was your favorite festival experience?
+              <br></br>
+              <textarea value={this.state.value} onChange={this.handleChange} />
+            </label>
             <br></br>
-            <textarea value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <br></br>
-          <input type="submit" value="Submit" />
-          <button onClick={this.handlePrevious} value="Previous">Previous</button>
-        </form>
+            <input type="submit" value="Submit" />
+            <button onClick={this.handlePrevious} value="Previous">Previous</button>
+          </form>
+        </div>
       );
     }
   }
