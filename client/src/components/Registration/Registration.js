@@ -7,6 +7,7 @@ import GenderForm from "./GenderForm";
 import AboutDescription from "./AboutDescription";
 import FavFestivalExp from "./FavFestivalExp";
 import SurveyComplete from "./SurveyComplete";
+import './Registration.css';
 
 
 class Registration extends React.Component {
@@ -149,6 +150,7 @@ class Registration extends React.Component {
 					surveyCompleteSubmit={this.surveyCompleteSubmit}
 				/>
 		}
+		
 	}
 }
 

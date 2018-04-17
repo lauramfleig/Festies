@@ -30,6 +30,10 @@ class SurveyComplete extends React.Component {
       this.setState({value: event.target.value});
     }
 
+    handleSubmit (event) {
+      event.preventDefault(); 
+    }
+
     updateUserName = (newName) => {
       let tempValue = this.state.value;
       tempValue.user_screen_name = newName;
@@ -84,10 +88,7 @@ class SurveyComplete extends React.Component {
       });
     }
 
-    handleSubmit (event) {
-      event.preventDefault(); 
-    }
-
+    
     handleFinalSubmit = (event) => {
       let tempValue = this.state.value;
       tempValue.surveyAnswers = event.target.value;
@@ -95,16 +96,24 @@ class SurveyComplete extends React.Component {
       this.postToTheDB();
     }
 
-
+    getUserDataFromDB = () => {
+      axios.get('/api/get_user')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+    }
 
     postToTheDB = (finalSubmit) => {
-        axios.post('/api/new_user', finalSubmit)
-		.then(function(response) {
-			console.log(response);
-		})
-		.catch(function(error) {
-			console.log(error);
-		});
+      axios.post('/api/new_user', finalSubmit)
+		  .then(function(response) {
+			  console.log(response);
+		  })
+		  .catch(function(error) {
+			  console.log(error);
+		  });
     }
   
     render() {
