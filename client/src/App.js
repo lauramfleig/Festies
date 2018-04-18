@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/About';
 import ApiDevelopment from './pages/ApiDevelopment';
+// import FestivalSurvey from './components/FestivalSurvey/FestivalSurvey';
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={About} />
                 <Route path="/api-dev" component={ApiDevelopment} /> 
+                
               </Switch>
 
             
