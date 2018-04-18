@@ -1,0 +1,193 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative
+}
+
+.parallax.one {
+    background-image: url("./section-1.jpg");
+    min-height: 600px;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.parallax.two {
+    background-image: url("./section-2.jpg");
+    min-height: 500px;
+    z-index: 6;
+}
+
+.parallax.three {
+    background-image: url("./section-3.jpg");
+    min-height: 500px;
+    z-index: 8
+}
+
+.divider {
+    background-color: white;
+    position: relative;
+    height: 10px
+}
+
+.divider.top {
+    z-index: 10
+}
+
+.divider.bottom {
+    z-index: 7
+}
+
+.nav {
+    height: 0px;
+    margin: 0
+}
+
+.slogan {
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 60px;
+    flex: 1;
+    text-align: right;
+    margin-right: 1%
+}
+
+.slogan-2 {
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 60px;
+    flex: 1;
+    text-align: left;
+    margin-left: 1%
+}
+
+.info-grid-container {
+    display: grid;
+    z-index: 7;
+    position: fixed;
+    top: 35%;
+    width: 95%;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.info-div {
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;  */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    height: 300px;
+}
+
+.info-div.one {
+    /* z-index: 7;
+    position: fixed; */
+    opacity: 0.8;
+    background-image: url('./half-pic.jpg');
+    background-size: cover;
+    background-position: center;
+    outline: solid 9px #2181ff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+    /* top: 25%;
+    left: 50%;
+    transform: translateX(-50%) */
+}
+
+.info-div.one:hover {
+    background-image: url('./half-pic-blue.jpg')
+}
+
+.info-div.three:hover {
+    background-image: url('./half-pic.jpg')
+}
+
+.info-div.two {
+    /* z-index: 7;
+     position: fixed; */
+    background-color: rgb(240, 248, 255, 0.4);
+    grid-column: 2 / span 3;
+    outline: solid 9px rgba(244, 165, 59, 0.8);
+    /* top: 25%;
+     left: 20%;
+     transform: translateX(-20%) */
+}
+
+.info-div.three {
+    /* z-index: 7;
+    position: fixed; */
+    opacity: 0.8;
+    background-image: url('./half-pic-2.jpg');
+    background-size: cover;
+    background-position: center;
+    grid-column: 5;
+    display: flex;
+    outline: solid 9px #2181ff;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+    /* top: 25%;
+    left: 75%;
+    transform: translateX(-75%) */
+}
+
+.info-div.four {
+    background-color: blue;
+    position: absolute
+}
+
+.parallax-two-content {
+    z-index: 8;
+    position: fixed;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 40px;
+}
+
+.parallax-two-content.header {
+    top: 15%;
+}
+
+.parallax-two-content.footer {
+    top: 67%;
+    left: 55%
+}
+
+.build-btn {
+    width: 200px
+}
+
+.build-btn:hover {
+    width: 225px
+}
+
+.three-dots {
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 80px;
+    letter-spacing: 20px
+}
+
+.parallax-three-header {
+    margin: 0;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 80px;
+    text-align: center;
+    padding: 50px;
+}

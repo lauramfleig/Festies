@@ -61,12 +61,22 @@ const UserSchema = new Schema({
 UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
 
     console.log(cityObject + '*************************');
-    const songKickQuery = `http://api.songkick.com/api/3.0/search/locations.json?query=${cityObject}&apikey=${apiKey}`;
+    const songKickQuery = `http://api.songkick.com/api/3.0/search/locations.json?query=${cityObject}&type=Festival&apikey=${apiKey}`;
 
     axios.get(songKickQuery)
     .then(function(response){
+        const cityID = response.data.resultsPage.results.location[0].metroArea.id;
+        console.log(response.data.resultsPage.results.location[0].metroArea.id + ' >************* CITY ID *****************<');
         
-        callback(response);
+        const festivalQuery = `http://api.songkick.com/api/3.0/events.json?location=sk:${cityID}&type=Festival&apikey=${apiKey}`;
+        
+        axios.get(festivalQuery)
+        .then(function(response){
+            callback(response);
+        })
+        .catch(function(error){
+            console.log(error);
+        });
     }) 
     .catch(function(error){
         console.log(error);
