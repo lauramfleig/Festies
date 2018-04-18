@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import UserName from "./UserName";
 import ImageUrl from "./ImageUrl";
 import HowOld from "./HowOld.js";
@@ -107,51 +106,59 @@ class Registration extends React.Component {
 		console.log('survey answers: ' + allData);
 	}
 
-	render() {
-		switch (this.state.step) {
-			case 1:
-				return <UserName
-					CreateUserScreenName={this.CreateUserScreenName}
-					nextStep={this.nextStep}/>
-			case 2:
-				return <ImageUrl 
-					CreateUserUrl={this.CreateUserUrl}
-					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
-			case 3:
-				return <HowOld
-					AddYourAge={this.AddYourAge}
-					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
-			case 4:
-				return <GenderForm
-					AddGender={this.AddGender}
-					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
-			case 5:
-				return <AboutDescription
-					AddAboutDescription={this.AddAboutDescription}
-					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
-			case 6:
-				return <FavFestivalExp
-					AddFavFestivalExp={this.AddFavFestivalExp}
-					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
-			case 7:
-				return <SurveyComplete 
-					surveyAnswers={this.state.surveyAnswers}
-					CreateUserScreenName={this.CreateUserScreenName}
-					CreateUserUrl={this.CreateUserUrl}
-					AddYourAge={this.AddYourAge}
-					AddGender={this.AddGender}
-					AddAboutDescription={this.AddAboutDescription}
-					AddFavFestivalExp={this.AddFavFestivalExp}
-					surveyCompleteSubmit={this.surveyCompleteSubmit}
-				/>
+	renderForm = () =>{ switch (this.state.step) {
+		case 1:
+			return <UserName
+				CreateUserScreenName={this.CreateUserScreenName}
+				nextStep={this.nextStep}/>
+		case 2:
+			return <ImageUrl 
+				CreateUserUrl={this.CreateUserUrl}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 3:
+			return <HowOld
+				AddYourAge={this.AddYourAge}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 4:
+			return <GenderForm
+				AddGender={this.AddGender}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 5:
+			return <AboutDescription
+				AddAboutDescription={this.AddAboutDescription}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 6:
+			return <FavFestivalExp
+				AddFavFestivalExp={this.AddFavFestivalExp}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 7:
+			return <SurveyComplete 
+				surveyAnswers={this.state.surveyAnswers}
+				CreateUserScreenName={this.CreateUserScreenName}
+				CreateUserUrl={this.CreateUserUrl}
+				AddYourAge={this.AddYourAge}
+				AddGender={this.AddGender}
+				AddAboutDescription={this.AddAboutDescription}
+				AddFavFestivalExp={this.AddFavFestivalExp}
+				surveyCompleteSubmit={this.surveyCompleteSubmit}
+			/>
 		}
-		
 	}
+
+	render() {
+
+		return(
+			<div className="mainContainer">
+				<div className="FormDiv">
+					{this.renderForm()}
+				</div>
+			</div>
+	)}	
 }
 
 export default Registration;

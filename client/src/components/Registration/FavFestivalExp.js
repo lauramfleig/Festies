@@ -40,7 +40,10 @@ class FavFestivalExp extends React.Component {
             </label>
             <br></br>
             <input type="submit" value="Submit" />
-            <button onClick={this.handlePrevious} value="Previous">Previous</button>
+            {(this.props.previousStep)?
+              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              :
+              null}
           </form>
         </div>
       );
