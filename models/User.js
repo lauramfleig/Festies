@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const ObjectId = require('mongodb');
 const apiKey = require('../keys').songkick_api_key;
 const axios = require('axios');
+/* const bcrypt = require('bcrypt-nodejs'); */
 
 // ------------------------- DB MONGOOSE SCHEMA
 
@@ -18,9 +19,15 @@ const UserSchema = new Schema({
         unique: true
     },
 
-    user_name: {
-        type:String,
-        required:true,
+    username: {
+        type: String,
+        unique: true,
+        required: true
+    },
+
+    password: {
+        type: String,
+        required: true
     },
 
     age: {
@@ -56,6 +63,38 @@ const UserSchema = new Schema({
 
 // ---------------------------- METHODS ON THE SCHEMA
 
+// ------------- PASSPORT AUTH
+
+/* UserSchema.pre('save', function (next) {
+    var user = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, null, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
+
+UserSchema.methods.comparePassword = function (passw, cb) {
+    bcrypt.compare(passw, this.password, function (err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+}; */
+
+
 // ------------ SONGKICK API CALLS
 
 UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
@@ -72,7 +111,14 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
         
         axios.get(festivalQuery)
         .then(function(response){
-            callback(response);
+
+            const festivalResults = response.data.resultsPage.results.event;
+            console.log(festivalResults);
+            console.log(festivalResults[0].performance);
+
+            let filteredFestiesArray = festivalResults.filter(festival => festival.performance.length > 5);
+
+            callback(filteredFestiesArray);
         })
         .catch(function(error){
             console.log(error);

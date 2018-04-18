@@ -17,6 +17,10 @@ class ApiDevelopment extends Component {
         search: 'sample data' + Date.now()
     };
 
+    /* componentDidMount() {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+        
+    } */
 apiCall = (e) => {
     e.preventDefault();
 
@@ -80,40 +84,44 @@ dbEntry = e => {
 }
 
     render() {
-        return (
-            <div>
-            
-                <form>
-                    <label htmlFor="user_screen_name">Screen Name: </label>
-                        <input type="text" id="user_screen_name" name="user_screen_name" onChange={this.handelInputChange} value={this.state.user_screen_name}/>
+        /* if (localStorage.getItem('jwtToken')){ */
+            return (
+                <div>
+                
+                    <form>
+                        <label htmlFor="user_screen_name">Screen Name: </label>
+                            <input type="text" id="user_screen_name" name="user_screen_name" onChange={this.handelInputChange} value={this.state.user_screen_name}/>
 
-                    <label htmlFor="user_name">Name: </label>
-                        <input type="text" id="user_name" name="user_name" onChange={this.handelInputChange} value={this.state.user_name} />
+                        <label htmlFor="user_name">Name: </label>
+                            <input type="text" id="user_name" name="user_name" onChange={this.handelInputChange} value={this.state.user_name} />
 
-                    <label htmlFor="age">Age: </label>
-                        <input type="text" id="age" name="age" onChange={this.handelInputChange} value={this.state.age} />
+                        <label htmlFor="age">Age: </label>
+                            <input type="text" id="age" name="age" onChange={this.handelInputChange} value={this.state.age} />
 
-                    <label htmlFor="gender">Gender: </label>
-                        <input type="text" id="gender" name="gender" onChange={this.handelInputChange} value={this.state.gender} />
+                        <label htmlFor="gender">Gender: </label>
+                            <input type="text" id="gender" name="gender" onChange={this.handelInputChange} value={this.state.gender} />
 
-                    <label htmlFor="email">Email: </label>
-                        <input type="text" id="email" name="email" onChange={this.handelInputChange} value={this.state.email}/>
+                        <label htmlFor="email">Email: </label>
+                            <input type="text" id="email" name="email" onChange={this.handelInputChange} value={this.state.email}/>
 
-                    <label htmlFor="about">About You: </label>
-                        <textarea type="text" id="about" name="about" onChange={this.handelInputChange} value={this.state.about}/>
+                        <label htmlFor="about">About You: </label>
+                            <textarea type="text" id="about" name="about" onChange={this.handelInputChange} value={this.state.about}/>
 
-                    <label htmlFor="about">Favorite Festival Experience: </label>
-                        <textarea type="text" id="about_festie" name="about_festie" onChange={this.handelInputChange} value={this.state.about_festie} />
+                        <label htmlFor="about">Favorite Festival Experience: </label>
+                            <textarea type="text" id="about_festie" name="about_festie" onChange={this.handelInputChange} value={this.state.about_festie} />
 
-                    <button type="submit" onClick={this.dbEntry}>submit</button>
+                        <button type="submit" onClick={this.dbEntry}>submit</button>
 
 
-                    <input type="text" id="call" name="search" onChange={this.handelInputChange} value={this.state.search} />
-                    <button onClick={this.apiCall}>Test Api Call</button>
-                </form>
-            </div>
-        );
-    }
+                        <input type="text" id="call" name="search" onChange={this.handelInputChange} value={this.state.search} />
+                        <button onClick={this.apiCall}>Test Api Call</button>
+                    </form>
+                </div>
+            );
+        } /* else {
+            return (<Redirect to={"/"} />);
+        } */
+    /* } */
 }
 
 export default ApiDevelopment;
