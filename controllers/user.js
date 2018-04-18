@@ -7,7 +7,7 @@ const userModel = require('../models').User;
 exports.searchCity = function(req, res) {
     userModel.schema.statics.festiesSearchByCity(req.params.citySearch, function(response){
 
-        console.log(response.data.resultsPage.results);
+        console.log(response);
         res.send(response.data.resultsPage.results);
         
     });
