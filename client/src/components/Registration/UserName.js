@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './Registration.css';
 
 class UserName extends React.Component {
@@ -23,15 +23,15 @@ class UserName extends React.Component {
   
     render() {
       return (
-        <div className="formDiv UserNameForm">
+        <div className="UserNameForm">
           <form onSubmit={this.handleSubmit}>
-            <label>
+            <label className="labelForm">
               Name:
               <br></br>
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.value} onChange={this.handleChange} className="inputBox" />
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="submitButton" />
           </form>
         </div>
       );
