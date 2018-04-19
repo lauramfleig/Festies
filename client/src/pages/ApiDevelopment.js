@@ -7,24 +7,31 @@ import axios from 'axios';
 class ApiDevelopment extends Component {
 
     state = {
-        user_screen_name: 'sample data' + Date.now(),
-        user_name: 'sample data' + Date.now(),
-        age: 'sample data' + Date.now(),
-        gender: 'sample data' + Date.now(),
-        email: 'sample data' + Date.now(),
-        about: 'sample data' + Date.now(),
-        festie_about: 'sample data' + Date.now(),
-        search: 'sample data' + Date.now()
+        user_screen_name: '',
+        username:'' ,
+        password: '',
+        age:'' ,
+        gender:'' ,
+        email:'' ,
+        about:'' ,
+        festie_about:'' ,
+        search: ''
     };
-
+    
     /* componentDidMount() {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         
     } */
-apiCall = (e) => {
-    e.preventDefault();
+    handelInputChange = e => {
+        const { name, value } = e.target;
+        this.setState({[name]: value});
+    }
 
-    
+    // festival search by city function for songKick api call
+
+    apiCall = (e) => {
+    e.preventDefault();
+ 
    axios.get(`/api/city/${this.state.search}`)
     .then((response) => {
         console.log(response);
@@ -36,28 +43,33 @@ apiCall = (e) => {
         console.log(error);
     }); 
 
-    /* const songkickQuery = `http://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${this.state.search}`; */
+}    
 
-    /* axios.get(songkickQuery)
-        .then(function (response) {
-            console.log(response);
+
+// ---------------------- signUpWindow code vvv function for db input
+dbRegister = e => {
+    e.preventDefault();
+
+    const { email, password } = this.state;
+
+    axios.post('/register', { email, password })
+        .then((result) => {
+            console.log(result);
+            this.props.history.push("user-registration");
         })
         .catch(function (error) {
             console.log(error);
-        }); */
-}    
-
-handelInputChange = e => {
-    const { name, value } = e.target;
-    this.setState({[name]: value});
+        });
 }
+
+// ---------------------- user registration function for final form entry to db vvv
 
 dbEntry = e => {
     e.preventDefault();
     
     axios.post('/api/new_user', {
         user_screen_name: this.state.user_name,
-        user_name: this.state.user_name,
+        username: this.state.username,
         age: this.state.age,
         gender: this.state.gender,
         email: this.state.email,
@@ -84,10 +96,11 @@ dbEntry = e => {
 }
 
     render() {
+        const { email, password } = this.state;
         /* if (localStorage.getItem('jwtToken')){ */
             return (
                 <div>
-                
+                    {/* // ---------------------- user registration form vvv */}
                     <form>
                         <label htmlFor="user_screen_name">Screen Name: </label>
                             <input type="text" id="user_screen_name" name="user_screen_name" onChange={this.handelInputChange} value={this.state.user_screen_name}/>
@@ -112,9 +125,20 @@ dbEntry = e => {
 
                         <button type="submit" onClick={this.dbEntry}>submit</button>
 
+                        {/* // ---------------------- festival search by city code vvv */}
 
                         <input type="text" id="call" name="search" onChange={this.handelInputChange} value={this.state.search} />
                         <button onClick={this.apiCall}>Test Api Call</button>
+
+                        {/* // ---------------------- signUpWindow code vvv */}
+
+                        <h2>Register</h2>
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" placeholder="Email address" name="email" value={email} onChange={this.handelInputChange} required />
+                        <label for="inputPassword">Password</label>
+                        <input type="password" placeholder="Password" name="password" value={password} onChange={this.handelInputChange} required />
+                        <button type="submit" onClick={this.dbRegister}>Register</button>
+
                     </form>
                 </div>
             );

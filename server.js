@@ -12,7 +12,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const apiRoutes = require('./routes').apiRoutes;
-/* const authRoutes = require('./routes').authRoutes; */
+const authRoutes = require('./routes').authRoutes;
 
 
 // configuration ===============================================================
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(apiRoutes);
-/* app.use(authRoutes); */
+app.use(authRoutes);
 
 
 
