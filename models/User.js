@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 const ObjectId = require('mongodb');
 const apiKey = require('../keys').songkick_api_key;
 const axios = require('axios');
-/* const bcrypt = require('bcrypt-nodejs'); */
+const bcrypt = require('bcrypt-nodejs');
 
 // ------------------------- DB MONGOOSE SCHEMA
 
@@ -15,14 +15,12 @@ const UserSchema = new Schema({
 
     user_screen_name: {
         type: String,
-        required: true,
         unique: true
     },
 
     username: {
         type: String,
         unique: true,
-        required: true
     },
 
     password: {
@@ -46,7 +44,7 @@ const UserSchema = new Schema({
 
     about_description: {
         type: String,
-        required: true
+        
     },
 
     favorite_festival_experience: {
@@ -56,7 +54,7 @@ const UserSchema = new Schema({
     festivals_attending: [{
         type: Schema.Types.ObjectId,
         ref: "User_Festival",
-        required: true
+        
     }]
     
 });
@@ -65,7 +63,7 @@ const UserSchema = new Schema({
 
 // ------------- PASSPORT AUTH
 
-/* UserSchema.pre('save', function (next) {
+UserSchema.pre('save', function (next) {
     var user = this;
     if (this.isModified('password') || this.isNew) {
         bcrypt.genSalt(10, function (err, salt) {
@@ -92,7 +90,7 @@ UserSchema.methods.comparePassword = function (passw, cb) {
         }
         cb(null, isMatch);
     });
-}; */
+};
 
 
 // ------------ SONGKICK API CALLS

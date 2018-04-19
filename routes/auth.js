@@ -1,4 +1,6 @@
-/* const mongoose = require('mongoose');
+
+
+const mongoose = require('mongoose');
 const passport = require('passport');
 const settings = require('../config/settings');
 require('../config/passport')(passport);
@@ -8,16 +10,19 @@ const router = express.Router();
 const User = require("../models/User");
 
 router.post('/register', function (req, res) {
-    if (!req.body.username || !req.body.password) {
+    if (!req.body.email || !req.body.password) {
         res.json({ success: false, msg: 'Please pass username and password.' });
     } else {
         let newUser = new User({
-            username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         });
+        console.log(newUser);
         // save the user
         newUser.save(function (err) {
+            
             if (err) {
+                console.log(err);
                 return res.json({ success: false, msg: 'Username already exists.' });
             }
             res.json({ success: true, msg: 'Successful created new user.' });
@@ -27,7 +32,7 @@ router.post('/register', function (req, res) {
 
 router.post('/login', function (req, res) {
     User.findOne({
-        username: req.body.username
+        email: req.body.email
     }, function (err, user) {
         if (err) throw err;
 
@@ -49,4 +54,4 @@ router.post('/login', function (req, res) {
     });
 });
 
-module.exports = router; */
+module.exports = router;
