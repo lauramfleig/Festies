@@ -40,7 +40,7 @@ router.post('/login', function (req, res) {
             res.status(401).send({ success: false, msg: 'Authentication failed. User not found.' });
         } else {
             // check if password matches
-            user.comparePassword(req.body.password, function (err, isMatch) {
+            User.comparePassword(req.body.password, function (err, isMatch) {
                 if (isMatch && !err) {
                     // if user is found and password is right create a token
                     let token = jwt.sign(user.toJSON(), settings.secret);

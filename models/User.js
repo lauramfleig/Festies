@@ -135,7 +135,17 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
 
 UserSchema.statics.newUserEntry = function (newUserObject, callback) {
 
-    User.create({ ...newUserObject })
+    const userEmail = newUserObject.userEmail;
+    const newUserData = {
+        user_screen_name: newUserObject.user_screen_name,
+        username: newUserObject.username,
+        age: newUserObject.age,
+        gender: newUserObject.gender,
+        about_description: newUserObject.about_description,
+        favorite_festival_description: newUserObject.favorite_festival_description,
+    };
+
+    User.where({email: userEmail}).update({ ...newUserData })
     .then(function(response) {
         callback(response);
     }).catch(err => console.log(err));
