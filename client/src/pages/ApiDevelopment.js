@@ -51,16 +51,34 @@ dbRegister = e => {
     e.preventDefault();
 
     const { email, password } = this.state;
+    sessionStorage.setItem("user_email", email);
 
     axios.post('/register', { email, password })
         .then((result) => {
             console.log(result);
-            this.props.history.push("user-registration");
+            this.props.history.push("/user-registration");
         })
         .catch(function (error) {
             console.log(error);
         });
 }
+
+    // ---------------------- login code vvv function for db input
+    dbLoginUser = e => {
+        e.preventDefault();
+
+        const { email, password } = this.state;
+
+        axios.post('/login', { email, password })
+            .then((result) => {
+                console.log(result);
+                console.log('SUCCESS');
+                /* this.props.history.push("/user-profile"); */
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
 // ---------------------- user registration function for final form entry to db vvv
 
@@ -72,12 +90,13 @@ dbEntry = e => {
         username: this.state.username,
         age: this.state.age,
         gender: this.state.gender,
-        email: this.state.email,
         about_description: this.state.about,
-        favorite_festival_description: this.state.about_festie
+        favorite_festival_description: this.state.about_festie,
+        sessionEmail: sessionStorage.getItem("user_email")
     })
         .then(function (response) {
             console.log(response);
+            this.props.history.push("/");
         })
         .catch(function (error) {
             console.log(error);
@@ -138,6 +157,15 @@ dbEntry = e => {
                         <label for="inputPassword">Password</label>
                         <input type="password" placeholder="Password" name="password" value={password} onChange={this.handelInputChange} required />
                         <button type="submit" onClick={this.dbRegister}>Register</button>
+
+                        {/* // ---------------------- login code vvv */}
+
+                        <h2>Login</h2>
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" placeholder="Email address" name="email" value={email} onChange={this.handelInputChange} required />
+                        <label for="inputPassword">Password</label>
+                        <input type="password" placeholder="Password" name="password" value={password} onChange={this.handelInputChange} required />
+                        <button type="submit" onClick={this.dbLoginUser}>Login</button>
 
                     </form>
                 </div>
