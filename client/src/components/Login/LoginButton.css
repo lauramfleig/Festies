@@ -1,0 +1,18 @@
+
+
+.login-btn {
+    width: 140px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-family: 'Merienda',
+    cursive;
+    color: white;
+    background-color: #ffa07c;
+    border: 3px double white;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #cc8063
+}

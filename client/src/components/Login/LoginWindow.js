@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './LoginWindow.css';
+
 
 class LoginWindow extends Component {
     // Setting the component's initial state
@@ -29,30 +31,43 @@ class LoginWindow extends Component {
 
         this.setState({
            email: "",
-           passowrd: ""
+           password: ""
         });
     };
 
     render() {
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
-            <div>
+            <div className="form-div">
                 <form className="login-form">
-                    <input
-                        value={this.state.email}
-                        name="email"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Email"
-                    />
-                    <input
-                        value={this.state.password}
-                        name="password"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Password"
-                    />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+                <div className="login-form-holder">
+                    <h1 className="email-text">Email</h1>
+                        <input
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Email"
+                        />
+
+                    <br />
+
+                        <h1 className="email-text">Password</h1>
+                        <input
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Password"
+                        />
+
+                    <br />
+                    <br />
+
+                        <div className="submit-btn-div">
+                            <button className="submit-btn" onClick={this.handleFormSubmit}>Submit</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         );

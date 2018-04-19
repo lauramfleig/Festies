@@ -4,7 +4,7 @@ import LoginWindow from '../../components/Login/LoginWindow';
 import './About.css'
 import Logo from '../../components/Logo/Logo.js';
 import StepButtons from '../../components/Step-Buttons/Step-Buttons.js';
-import loginImg from './login-background.png'
+import loginImg from './Pictures/login-background.png'
 
 class About extends Component {
 
@@ -68,8 +68,10 @@ class About extends Component {
 
                     <div className="parallax three">
                         <h1 className="parallax-three-header">Find Your Festies!</h1>
-                        <LoginButton handleClick={() => this.renderLogin()} />
-                        { modal }
+                        <div className="login-container">
+                            <LoginButton handleClick={() => this.renderLogin()} />
+                            {modal}
+                        </div>
                     </div>
                 </div>
         
