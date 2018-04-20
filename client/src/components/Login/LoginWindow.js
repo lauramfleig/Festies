@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+
 import './LoginWindow.css';
 import Register from '../Register/Register.js'
+
+
+import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 class LoginWindow extends Component {
     // Setting the component's initial state
     state = {
         email: "",
-        password: ""
+        password: "",
+        message: ""
     };
 
     handleInputChange = event => {
@@ -28,7 +35,22 @@ class LoginWindow extends Component {
         let email = this.state.email
         let password = this.state.password
 
-        console.log('Email: ' + email + 'Password: ' + password)
+        console.log('Email: ' + email + 'Password: ' + password);
+
+        // Call to Festies API to Login via passort
+
+        /* axios.post('/api/auth/login', { email, password })
+            .then((result) => {
+                localStorage.setItem('jwtToken', result.data.token);
+                this.setState({ message: '' });
+                this.props.history.push('/');
+            })
+            .catch((error) => {
+                if (error.response.status === 401) {
+                    this.setState({ message: 'Login failed. Username or password not match' });
+                }
+            }); */
+        
 
         this.setState({
            email: "",

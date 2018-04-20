@@ -1,13 +1,29 @@
 
 
-.formDiv {
+/* .formDiv {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    padding: 15%;
+    background-color: white;
+    opacity: 0.6; 
+    margin: 1%;
   }
 
-.UserNameForm {
-    background-color: white;
-    opacity: 0.6;
+.labelForm {
+    margin: 1%;
 }
+
+.inputBox {
+
+}
+
+.submitButton {
+
+}
+
+.userNameForm {
+
+} */
