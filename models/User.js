@@ -15,12 +15,16 @@ const UserSchema = new Schema({
 
     user_screen_name: {
         type: String,
-        unique: true
+        
     },
 
     username: {
         type: String,
-        unique: true,
+        
+    },
+
+    imageURL: {
+        type: String,
     },
 
     password: {
@@ -130,15 +134,22 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
 
 // ------------- GET
 
+UserSchema.statics.userData = function(userEmail, callback) {
 
+    User.find({ email: userEmail.email })
+    .then(function (response) {
+        callback(response);
+    }).catch(err => console.log(err));
+}
 // ------------- POST
 
 UserSchema.statics.newUserEntry = function (newUserObject, callback) {
 
-    const userEmail = newUserObject.userEmail;
+    const userEmail = newUserObject.sesionEmail;
     const newUserData = {
         user_screen_name: newUserObject.user_screen_name,
         username: newUserObject.username,
+        imageURL: newUserObject.imageURL,
         age: newUserObject.age,
         gender: newUserObject.gender,
         about_description: newUserObject.about_description,

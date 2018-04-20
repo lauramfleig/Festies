@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import './SignUpWindow.css'
+import { withRouter } from 'react-router-dom'
+import './SignUpWindow.css';
+import axios from 'axios';
 
 class SignUpWindow extends Component {
     // Setting the component's initial state
+    
     state = {
         email: "",
         password: ""
@@ -26,7 +29,17 @@ class SignUpWindow extends Component {
         let email = this.state.email
         let password = this.state.password
 
-        console.log('Email: ' + email + 'Password: ' + password)
+        console.log('Email: ' + email + 'Password: ' + password);
+        sessionStorage.setItem("user_email", email);
+        axios.post('/register', { email, password })
+            .then((result) => {
+                console.log(result);
+                this.props.history.push("/user-registration");
+                
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         this.setState({
             email: "",
@@ -74,4 +87,4 @@ class SignUpWindow extends Component {
     }
 }
 
-export default SignUpWindow;
+export default withRouter(SignUpWindow);
