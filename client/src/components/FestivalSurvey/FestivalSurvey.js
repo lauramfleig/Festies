@@ -2,7 +2,7 @@ import React from "react";
 import City from "./City";
 import Festival from "./Festival";
 import LineUp from "./LineUp";
-// import  "./Survey.css";
+import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
 // import Results from "./Results";
 

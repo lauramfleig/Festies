@@ -3,8 +3,6 @@ import axios from "axios";
 import FestivalSurvey from "./FestivalSurvey";
 import City from "./City";
 import Festival from "./Festival";
-// import FestivalMenu from "./FestivalMenu";
-
 
 class SurveyComplete extends React.Component {
     constructor(props) {
