@@ -1,7 +1,6 @@
-.form-div {
+.register-form-div {
     position: absolute;
-    position: absolute;
-    background-color: rgba(33, 129, 255, 0.8);
+    background-color: blue;
     outline: solid 3px #e86b48;
     width: 500px;
     display: flex;
@@ -21,13 +20,11 @@
     transform: translateX(-50%);
 }
 
-
 .email-text {
     width: 200px;
     margin-left: 50%;
     transform: translateX(-50%);
-    font-family: 'Merienda',
-    cursive;
+    font-family: 'Merienda', cursive;
     color: white;
     text-shadow: 4px 4px 2px black;
     text-align: center
@@ -40,10 +37,8 @@ input {
     font-size: 20px;
     border: 3px double #e86b48;
     text-align: center;
-    font-family: 'Josefin Sans',
-    sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: rgb(33, 129, 255)
-
 }
 
 .submit-btn {

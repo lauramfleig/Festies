@@ -30,7 +30,7 @@ body {
 
 .parallax.three {
     background-image: url("./Pictures/section-3.jpg");
-    min-height: 650px;
+    min-height: 750px;
     z-index: 8;
 }
 
@@ -196,6 +196,7 @@ body {
     font-size: 80px;
     text-align: center;
     padding-top: 50px;
+    margin-bottom: 30px
 }
 
 .login-container {
