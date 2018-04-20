@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .parallax {
     background-attachment: fixed;
     background-position: center;
@@ -7,9 +11,10 @@
 }
 
 .parallax.one {
-    background-image: url("./section-1.jpg");
+    background-image: url("./Pictures/section-1.jpg");
     min-height: 600px;
     height: 100%;
+    width: 100%;
     z-index: 10;
     display: flex;
     justify-content: center;
@@ -17,15 +22,16 @@
 }
 
 .parallax.two {
-    background-image: url("./section-2.jpg");
+    background-image: url("./Pictures/section-2.jpg");
     min-height: 500px;
     z-index: 6;
+    max-width: 100%;
 }
 
 .parallax.three {
-    background-image: url("./section-3.jpg");
-    min-height: 500px;
-    z-index: 8
+    background-image: url("./Pictures/section-3.jpg");
+    min-height: 750px;
+    z-index: 8;
 }
 
 .divider {
@@ -94,7 +100,7 @@
     /* z-index: 7;
     position: fixed; */
     opacity: 0.8;
-    background-image: url('./half-pic.jpg');
+    background-image: url('./Pictures/half-pic.jpg');
     background-size: cover;
     background-position: center;
     outline: solid 9px #2181ff;
@@ -107,11 +113,11 @@
 }
 
 .info-div.one:hover {
-    background-image: url('./half-pic-blue.jpg')
+    background-image: url('./Pictures/half-pic-blue.jpg')
 }
 
 .info-div.three:hover {
-    background-image: url('./half-pic.jpg')
+    background-image: url('./Pictures/half-pic.jpg')
 }
 
 .info-div.two {
@@ -129,7 +135,7 @@
     /* z-index: 7;
     position: fixed; */
     opacity: 0.8;
-    background-image: url('./half-pic-2.jpg');
+    background-image: url('./Pictures/half-pic-2.jpg');
     background-size: cover;
     background-position: center;
     grid-column: 5;
@@ -189,5 +195,18 @@
     text-shadow: 4px 4px 2px black;
     font-size: 80px;
     text-align: center;
-    padding: 50px;
+    padding-top: 50px;
+    margin-bottom: 30px
+}
+
+.login-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 400px;
+    background-image: url('./Pictures/login-background.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
 }

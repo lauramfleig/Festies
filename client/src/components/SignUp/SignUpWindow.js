@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
+import './SignUpWindow.css'
 
-import './LoginWindow.css';
-import Register from '../Register/Register.js'
-
-
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-
-
-class LoginWindow extends Component {
+class SignUpWindow extends Component {
     // Setting the component's initial state
     state = {
         email: "",
-        password: "",
-        message: ""
+        password: ""
     };
 
     handleInputChange = event => {
@@ -31,40 +22,25 @@ class LoginWindow extends Component {
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-       
+
         let email = this.state.email
         let password = this.state.password
 
-        console.log('Email: ' + email + 'Password: ' + password);
-
-        // Call to Festies API to Login via passort
-
-        /* axios.post('/api/auth/login', { email, password })
-            .then((result) => {
-                localStorage.setItem('jwtToken', result.data.token);
-                this.setState({ message: '' });
-                this.props.history.push('/');
-            })
-            .catch((error) => {
-                if (error.response.status === 401) {
-                    this.setState({ message: 'Login failed. Username or password not match' });
-                }
-            }); */
-        
+        console.log('Email: ' + email + 'Password: ' + password)
 
         this.setState({
-           email: "",
-           password: ""
+            email: "",
+            password: ""
         });
     };
 
     render() {
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
-            <div className="form-div">
+            <div className="register-form-div">
                 <form className="login-form">
-                <div className="login-form-holder">
-                    <h1 className="email-text">Email</h1>
+                    <div className="login-form-holder">
+                        <h1 className="email-text">Email</h1>
                         <input
                             value={this.state.email}
                             name="email"
@@ -73,7 +49,7 @@ class LoginWindow extends Component {
                             placeholder="Email"
                         />
 
-                    <br />
+                        <br />
 
                         <h1 className="email-text">Password</h1>
                         <input
@@ -84,18 +60,12 @@ class LoginWindow extends Component {
                             placeholder="Password"
                         />
 
-                    <br />
-                    <br />
+                        <br />
+                        <br />
 
                         <div className="submit-btn-div">
                             <button className="submit-btn" onClick={this.handleFormSubmit}>Submit</button>
                         </div>
-
-                        <div className="register-btn-div">
-                            <button className="register-btn" onClick={this.props.renderSignUp}>SignUp</button>
-                        </div>
-
-
 
                     </div>
                 </form>
@@ -104,4 +74,4 @@ class LoginWindow extends Component {
     }
 }
 
-export default LoginWindow;
+export default SignUpWindow;
