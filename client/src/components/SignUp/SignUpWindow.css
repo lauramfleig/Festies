@@ -1,6 +1,6 @@
 .register-form-div {
     position: absolute;
-    background-color: blue;
+    background-color: #ffa07c;
     outline: solid 3px #e86b48;
     width: 500px;
     display: flex;
@@ -60,7 +60,7 @@ input {
 .login-form-holder {
     background-color: rgba(232, 107, 72, 0.7);
     box-sizing: border-box;
-    outline: 1px solid white;
+    outline: 1px solid rgb(33, 129, 255);
     margin-bottom: 20px;
     margin-left: 50%;
     transform: translateX(-50%);

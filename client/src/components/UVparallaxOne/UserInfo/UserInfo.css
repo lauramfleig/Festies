@@ -1,0 +1,40 @@
+.user-info-div {
+    width: 50%;
+    background-color: white;
+    margin: 15px
+}
+
+.UIheader {
+    position: absolute;
+    margin-top: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+}
+
+.first-p-content {
+    display: inline-flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 70px;
+    height: 50%;
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+}
+
+.find-festivals-div {
+    background-image: url('./login-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 355px;
+    width: 350px;
+    height: 350px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center
+}

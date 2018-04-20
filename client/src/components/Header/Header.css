@@ -1,0 +1,14 @@
+.header-holder {
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between
+}
+
+.logo-for-header {
+    width: 200px;
+    height: 200px;
+    margin-left: 20px
+
+}
