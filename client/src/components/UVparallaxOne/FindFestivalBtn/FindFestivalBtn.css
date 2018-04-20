@@ -1,0 +1,21 @@
+.festival-btn {
+    width: 140px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-family: 'Merienda', cursive;
+    color: white;
+    background-color: #ffa07c;
+    border: 3px double white;
+    font-weight: bold;
+
+}
+
+.festival-btn:hover {
+    background-color: #cc8063
+}
+
+.festival-btn-container {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

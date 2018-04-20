@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 class LoginWindow extends Component {
     // Setting the component's initial state
     state = {
@@ -90,8 +91,10 @@ class LoginWindow extends Component {
                             <button className="submit-btn" onClick={this.handleFormSubmit}>Submit</button>
                         </div>
 
+                        <h1 className="signup-text">Need An Account?</h1>
+
                         <div className="register-btn-div">
-                            <button className="register-btn" onClick={this.props.renderSignUp}>SignUp</button>
+                            <button className="register-btn" onClick={this.props.renderSignUp}>Sign Up!</button>
                         </div>
 
 
