@@ -1,4 +1,5 @@
 import React from "react";
+import UserRealName from "./UserRealName";
 import UserName from "./UserName";
 import ImageUrl from "./ImageUrl";
 import HowOld from "./HowOld.js";
@@ -16,12 +17,14 @@ class Registration extends React.Component {
 	  this.state = {
 		step: 1,
 		surveyAnswers: {
+			username: '',
 			user_screen_name: '',
 			imageURL: '',
 			age: '',
 			gender: '',
 			about_description: '',
-			favorite_festival_experience: ''
+			favorite_festival_experience: '',
+			sesionEmail: sessionStorage.getItem('user_email')
 		},
 	  };
   
@@ -41,6 +44,15 @@ class Registration extends React.Component {
 		this.setState({
 			step: this.state.step -1,
 		});
+	}
+
+	CreateUserName = (username) => {
+		let tempSurveyAnswers = this.state.surveyAnswers;
+		tempSurveyAnswers.username = username;
+		this.setState({
+			surveyAnswers: tempSurveyAnswers
+		});
+		console.log('username: ' + username);
 	}
 
 	CreateUserScreenName = (screenName) => {
@@ -108,35 +120,40 @@ class Registration extends React.Component {
 
 	renderForm = () =>{ switch (this.state.step) {
 		case 1:
-			return <UserName
-				CreateUserScreenName={this.CreateUserScreenName}
+			return <UserRealName
+				CreateUserName={this.CreateUserName}
 				nextStep={this.nextStep}/>
 		case 2:
+			return <UserName
+				CreateUserScreenName={this.CreateUserScreenName}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 3:
 			return <ImageUrl 
 				CreateUserUrl={this.CreateUserUrl}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 3:
+		case 4:
 			return <HowOld
 				AddYourAge={this.AddYourAge}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 4:
+		case 5:
 			return <GenderForm
 				AddGender={this.AddGender}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 5:
+		case 6:
 			return <AboutDescription
 				AddAboutDescription={this.AddAboutDescription}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 6:
+		case 7:
 			return <FavFestivalExp
 				AddFavFestivalExp={this.AddFavFestivalExp}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 7:
+		case 8:
 			return <SurveyComplete 
 				surveyAnswers={this.state.surveyAnswers}
 				CreateUserScreenName={this.CreateUserScreenName}
