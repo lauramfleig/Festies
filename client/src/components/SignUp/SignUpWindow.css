@@ -1,0 +1,68 @@
+.register-form-div {
+    position: absolute;
+    background-color: blue;
+    outline: solid 3px #e86b48;
+    width: 500px;
+    display: flex;
+    margin-top: 15px
+}
+
+.login-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto
+}
+
+.submit-btn-div {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.email-text {
+    width: 200px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    text-align: center
+}
+
+input {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    font-size: 20px;
+    border: 3px double #e86b48;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(33, 129, 255)
+}
+
+.submit-btn {
+    width: 140px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-family: 'Merienda', cursive;
+    color: white;
+    background-color: #e86b48;
+    border: 3px double white;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-form-holder {
+    background-color: rgba(232, 107, 72, 0.7);
+    box-sizing: border-box;
+    outline: 1px solid white;
+    margin-bottom: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 225%;
+}

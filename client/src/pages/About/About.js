@@ -4,7 +4,8 @@ import LoginWindow from '../../components/Login/LoginWindow';
 import './About.css'
 import Logo from '../../components/Logo/Logo.js';
 import StepButtons from '../../components/Step-Buttons/Step-Buttons.js';
-import loginImg from './login-background.png'
+import SignUpWindow from '../../components/SignUp/SignUpWindow.js'
+
 
 class About extends Component {
 
@@ -12,6 +13,7 @@ class About extends Component {
         super(props);
 
         this.state = {
+            showSignUp: false,
             showLogin: false
         }
     }
@@ -22,14 +24,25 @@ class About extends Component {
         });
     }
 
+    renderSignUp = () => {
+        this.setState ({
+            showLogin: false,
+            showSignUp: true
+        })
+    }
+
 // turnary
 // var eval = (condition) ? ifTrue : ifFalse
     render() {
-        const modal = this.state.showLogin ? (
-                    <LoginWindow />
+        const LoginModal = this.state.showLogin ? (
+                    <LoginWindow renderSignUp={this.renderSignUp}/>
+
                 ) : (
                  null
                 )
+        const SignUpModal = this.state.showSignUp 
+            ? <SignUpWindow />
+            : null
 
         return (
             <div className="entire-container">
@@ -68,8 +81,11 @@ class About extends Component {
 
                     <div className="parallax three">
                         <h1 className="parallax-three-header">Find Your Festies!</h1>
-                        <LoginButton handleClick={() => this.renderLogin()} />
-                        { modal }
+                        <div className="login-container">
+                            <LoginButton handleClick={() => this.renderLogin()} />
+                            {LoginModal}
+                            {SignUpModal}
+                        </div>
                     </div>
                 </div>
         
