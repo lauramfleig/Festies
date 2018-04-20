@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Registration from "./Registration";
+import UserRealName from "./UserRealName";
 import UserName from "./UserName";
 import ImageUrl from "./ImageUrl";
 import HowOld from "./HowOld";
@@ -14,6 +14,7 @@ class SurveyComplete extends React.Component {
       // let formObject = {}
       this.state = {
         value: this.props.surveyAnswers,
+        renderUserRealName: false,
         renderUserField: false,
         renderUserImageField: false,
         renderUserAgeField: false,
@@ -34,6 +35,15 @@ class SurveyComplete extends React.Component {
       event.preventDefault(); 
     }
 
+    updateUserRealName = (newRealName) => {
+      let tempValue = this.state.value;
+      tempValue.username = newRealName;
+      this.setState({
+        value: tempValue,
+        renderUserRealName: false
+      });
+    }
+
     updateUserName = (newName) => {
       let tempValue = this.state.value;
       tempValue.user_screen_name = newName;
@@ -48,7 +58,7 @@ class SurveyComplete extends React.Component {
       tempValue.imageURL = url;
       this.setState({
         value: tempValue,
-        renderUserImageField: false
+        renderUserImageField: false,
       });
     }
 
@@ -96,30 +106,42 @@ class SurveyComplete extends React.Component {
       this.postToTheDB();
     }
 
-    getUserDataFromDB = () => {
-      axios.get('/api/get_user')
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-    }
-
-    postToTheDB = (finalSubmit) => {
+    postToTheDB = () => {
+      let finalSubmit = this.state.value;
+      console.log(finalSubmit);
       axios.post('/api/new_user', finalSubmit)
 		  .then(function(response) {
-			  console.log(response);
+        console.log(response);
+        this.props.history.push('/user-profile');
 		  })
 		  .catch(function(error) {
 			  console.log(error);
 		  });
     }
   
+    // getUserDataFromDB = () => {
+    //   axios.get('/api/get_user')
+    //     .then(function (response) {
+    //       console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    // }
     render() {
+      const UserRealNameField = (this.state.renderUserRealName)?
+        (<UserRealName
+          CreateUserName={this.updateUserRealName}
+          nextStep={()=>{return null}}
+        />) :
+        (<div>
+          <p>First and Last Name: {this.props.surveyAnswers.username}</p>
+          <button onClick={() => { this.setState({ renderUserRealName: true }) }}>Edit First and Last Name</button>
+        </div>)
+
       const userNameField = (this.state.renderUserField)?
           (<UserName 
-            CreateUserScreenName={this.updateUserName} 
+            CreateUserScreenName={this.updateUserName}
             nextStep={()=>{return null}}
           />) :
           (<div>
@@ -129,9 +151,8 @@ class SurveyComplete extends React.Component {
         
       const UserImageField = (this.state.renderUserImageField)?
           (<ImageUrl 
-            updateUserURL={this.updateUserURL} 
-            nextStep={()=>{return null}}
-            previousStep={()=>{return null}}
+            CreateUserUrl={this.updateUserURL} 
+            nextStep={()=>{return null}}  
           />) :
           (<div>
             <p>Your User Image: {this.props.surveyAnswers.imageURL}</p>
@@ -140,9 +161,8 @@ class SurveyComplete extends React.Component {
 
       const UserAgeField = (this.state.renderUserAgeField)?
         (<HowOld
-          updateAge={this.updateAge} 
+          AddYourAge={this.updateAge} 
           nextStep={()=>{return null}}
-          previousStep={()=>{return null}}
         />) :
         (<div>
           <p>Age: {this.props.surveyAnswers.age}</p>
@@ -151,9 +171,8 @@ class SurveyComplete extends React.Component {
 
       const UserGenderField = (this.state.renderUserGenderForm)?
         (<GenderForm 
-          updateGender={this.updateGender} 
+          AddGender={this.updateGender} 
           nextStep={()=>{return null}}
-          previousStep={()=>{return null}}
         />) :
         (<div>
           <p>Gender: {this.props.surveyAnswers.gender}</p>
@@ -162,9 +181,8 @@ class SurveyComplete extends React.Component {
 
         const UserAboutDescriptionField = (this.state.renderUserAboutDescription)?
           (<AboutDescription
-            updateAboutDescription={this.updateAboutDescription} 
+            AddAboutDescription={this.updateUserAboutDescription}
             nextStep={()=>{return null}}
-            previousStep={()=>{return null}}
           />) :
           (<div>
             <p>Your Festie Description: {this.props.surveyAnswers.about_description}</p>
@@ -173,9 +191,8 @@ class SurveyComplete extends React.Component {
 
         const UserFavFestivalField = (this.state.renderFavFestivalExp)?
           (<FavFestivalExp 
-            updateUserFavFestivalExp={this.updateUserFavFestivalExp}
+            AddFavFestivalExp={this.updateUserFavFestivalExp}
             nextStep={()=>{return null}}
-            previousStep={()=>{return null}}
           />) :
           (<div>
             <p>Favorite Festival Experience: {this.props.surveyAnswers.favorite_festival_experience}</p>
@@ -187,6 +204,7 @@ class SurveyComplete extends React.Component {
           <h3>
            Your Festie Profile: 
           </h3>
+          {UserRealNameField}
           {userNameField}
           {UserImageField}
           {UserAgeField}
