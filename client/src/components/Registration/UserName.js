@@ -20,18 +20,26 @@ class UserName extends React.Component {
       this.props.CreateUserScreenName(this.state.value);
       this.props.nextStep();
     }
+
+    handlePrevious = () => {
+      this.props.previousStep();
+    }
   
     render() {
       return (
         <div className="UserNameForm">
           <form onSubmit={this.handleSubmit}>
             <label className="labelForm">
-              Name:
+              User Screen Name:
               <br></br>
               <input type="text" value={this.state.value} onChange={this.handleChange} className="inputBox" />
             </label>
             <br></br>
             <input type="submit" value="Submit" className="submitButton" />
+            {(this.props.previousStep) ?
+              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              :
+              null}
           </form>
         </div>
       );

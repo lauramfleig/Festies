@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import UserRealName from "./UserRealName";
 import UserName from "./UserName";
 import ImageUrl from "./ImageUrl";
 import HowOld from "./HowOld";
@@ -13,6 +14,7 @@ class SurveyComplete extends React.Component {
       // let formObject = {}
       this.state = {
         value: this.props.surveyAnswers,
+        renderUserRealName: false,
         renderUserField: false,
         renderUserImageField: false,
         renderUserAgeField: false,
@@ -31,6 +33,15 @@ class SurveyComplete extends React.Component {
 
     handleSubmit (event) {
       event.preventDefault(); 
+    }
+
+    updateUserRealName = (newRealName) => {
+      let tempValue = this.state.value;
+      tempValue.username = newRealName;
+      this.setState({
+        value: tempValue,
+        renderUserRealName: false
+      });
     }
 
     updateUserName = (newName) => {
@@ -95,27 +106,39 @@ class SurveyComplete extends React.Component {
       this.postToTheDB();
     }
 
-    getUserDataFromDB = () => {
-      axios.get('/api/get_user')
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-    }
-
-    postToTheDB = (finalSubmit) => {
+    postToTheDB = () => {
+      let finalSubmit = this.state.value;
+      console.log(finalSubmit);
       axios.post('/api/new_user', finalSubmit)
 		  .then(function(response) {
-			  console.log(response);
+        console.log(response);
+        this.props.history.push('/user-profile');
 		  })
 		  .catch(function(error) {
 			  console.log(error);
 		  });
     }
   
+    // getUserDataFromDB = () => {
+    //   axios.get('/api/get_user')
+    //     .then(function (response) {
+    //       console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    // }
     render() {
+      const UserRealNameField = (this.state.renderUserRealName)?
+        (<UserRealName
+          CreateUserName={this.updateUserRealName}
+          nextStep={()=>{return null}}
+        />) :
+        (<div>
+          <p>First and Last Name: {this.props.surveyAnswers.username}</p>
+          <button onClick={() => { this.setState({ renderUserRealName: true }) }}>Edit First and Last Name</button>
+        </div>)
+
       const userNameField = (this.state.renderUserField)?
           (<UserName 
             CreateUserScreenName={this.updateUserName}
@@ -181,6 +204,7 @@ class SurveyComplete extends React.Component {
           <h3>
            Your Festie Profile: 
           </h3>
+          {UserRealNameField}
           {userNameField}
           {UserImageField}
           {UserAgeField}
