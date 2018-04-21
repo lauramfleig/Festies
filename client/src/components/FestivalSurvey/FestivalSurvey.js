@@ -7,7 +7,7 @@ import SurveyComplete from "./SurveyComplete";
 import axios from "axios";
 import { userInfo } from "os";
 // import Results from "./Results";
-import axios from "axios";
+
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {
