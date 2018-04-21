@@ -26,7 +26,7 @@ class App extends Component {
 
             {/* <Route path="/Festival" component={Festival}/> */}
             <Route path="/api-dev" component={ApiDevelopment} />
-            {/* <Route path="/City" component={City}/> */}
+            <Route path="/City" component={City}/>
 
             {/* <Route path="/UserView" component={Festivals}/> */}
 
