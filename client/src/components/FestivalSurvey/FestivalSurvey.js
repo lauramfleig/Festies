@@ -4,8 +4,10 @@ import Festival from "./Festival";
 import LineUp from "./LineUp";
 // import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
-// import Results from "./Results";
 import axios from "axios";
+import { userInfo } from "os";
+// import Results from "./Results";
+
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {
@@ -13,17 +15,20 @@ class FestivalSurvey extends React.Component {
 
 	  this.state = {
 		step: 1,
+
 		search: '',
 		songkickObject: [],
+
 		Answers: {
     city: '',
     festival:'',
     lineUp:'',
-		},
+		}
 	  };
   
 	}
 
+<<<<<<< HEAD
 	// festivalSearch = (e) => {
 	// 	e.preventDefault();
 	// 	console.log(this.state.search);
@@ -41,6 +46,26 @@ class FestivalSurvey extends React.Component {
 	// 		});
 
 	// }    
+=======
+
+	festivalSearch = (e) => {
+		e.preventDefault();
+		console.log(this.state.search);
+
+		axios.get(`/api/city/${this.state.search}`)
+			.then((response) => {
+				console.log(response);
+				this.setState({
+					songkickObject: response
+				})
+				console.log(this.state.songkickObject);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
+	}    
+>>>>>>> master
 	
 	componentDidUpdate = () => {
 		console.log(this.state);
@@ -58,13 +83,29 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
+<<<<<<< HEAD
 	CitySearch = (string) => {
 		let tempCity = this.state.search;
 		tempCity = string;
 		this.setState ({
 			search: tempCity
+=======
+
+	ChooseFestivalCity = (user_city) => {
+		console.log(user_city);
+		axios.get(`/api/city/${user_city}`)
+		.then((response) => {
+			console.log(response);
+					this.setState({
+						songKickData: response
+					});
+>>>>>>> master
 		})
-		console.log(tempCity);
+		.catch(function(error){
+			console.log(error);
+		});
+		console.log('What city is your festival located? ' + user_city);
+
 	}
 
 	// ChooseFestivalCity = (user_city) => {
@@ -112,8 +153,7 @@ class FestivalSurvey extends React.Component {
 		switch (this.state.step) {
 			case 1:
 				return <City
-					// ChooseFestivalCity={this.ChooseFestivalCity}
-					CitySearch={this.CitySearch}
+					ChooseFestivalCity={this.ChooseFestivalCity}
 					nextStep={this.nextStep}
 					festivalSearch={this.festivalSearch}/>
 			case 2:
