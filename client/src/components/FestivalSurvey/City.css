@@ -1,0 +1,28 @@
+body {
+    background-image: url("./pages/About/Pictures/section-2.jpg");
+}
+
+
+
+form {
+    display: inline-block;
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 250px;
+    font-size: 30px;
+    font-family: 'Merienda', cursive;
+    color: black;
+}
+
+button {
+   
+    height: 65px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-family: 'Merienda', cursive;
+    color: white;
+    background-color: #ffa07c;
+    border: 3px double white;
+    font-weight: bold;
+}
+
