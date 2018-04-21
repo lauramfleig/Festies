@@ -1,13 +1,16 @@
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './pages/About/About.js';
 import ApiDevelopment from './pages/ApiDevelopment';
-/* import Festival from './components/FestivalSurvey/Festival'; */
+import Festival from './components/FestivalSurvey/Festival';
 // import FestivalSurvey from './components/FestivalSurvey/FestivalSurvey';
+
 import Survey from './components/FestivalSurvey/FestivalSurvey';
 import Registration from './components/Registration/Registration';
 // import LineUp  from './components/FestivalSurvey/LineUp';
 import UserView from "./pages/UserView/UserView";
+
 
 
 
@@ -19,6 +22,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+
               <Switch>
                 <Route exact path="/" component={About} />
                 <Route path="/user-profile" component={UserView} />
@@ -31,7 +35,8 @@ class App extends Component {
                 {/* <Route path="/UserView" component={Festivals}/> */}
 
 
-              </Switch>
+
+          </Switch>
 
             
         </div>

@@ -2,11 +2,12 @@ import React from "react";
 import City from "./City";
 import Festival from "./Festival";
 import LineUp from "./LineUp";
-import  "./Survey.css";
+// import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
 import axios from "axios";
 import { userInfo } from "os";
 // import Results from "./Results";
+import axios from "axios";
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {
@@ -14,7 +15,10 @@ class FestivalSurvey extends React.Component {
 
 	  this.state = {
 		step: 1,
-		songKickData:[],
+
+		search: '',
+		songkickObject: [],
+
 		Answers: {
     city: '',
     festival:'',
@@ -24,7 +28,28 @@ class FestivalSurvey extends React.Component {
   
 	}
 
+	citySearch = (city) => {
+		th
+	}
 
+	festivalSearch = (e) => {
+		e.preventDefault();
+		console.log(this.state.search);
+
+		axios.get(`/api/city/${this.state.search}`)
+			.then((response) => {
+				console.log(response);
+				this.setState({
+					songkickObject: response
+				})
+				console.log(this.state.songkickObject);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
+	}    
+	
 	componentDidUpdate = () => {
 		console.log(this.state);
 	}
@@ -41,6 +66,7 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
+
 	ChooseFestivalCity = (user_city) => {
 		console.log(user_city);
 		axios.get(`/api/city/${user_city}`)
@@ -54,7 +80,17 @@ class FestivalSurvey extends React.Component {
 			console.log(error);
 		});
 		console.log('What city is your festival located? ' + user_city);
+
 	}
+
+	// ChooseFestivalCity = (user_city) => {
+	// 	let tempSurveyAnswers = this.state.Answers;
+	// 	tempSurveyAnswers.city = user_city;
+	// 	this.setState({
+	// 		Answers: tempSurveyAnswers
+	// 	});
+	// 	console.log('What city is your festival located? ' + City);
+	// }
 
 	ChooseFestival = (URL) => {
 		let tempSurveyAnswers = this.state.Answers;
@@ -92,18 +128,22 @@ class FestivalSurvey extends React.Component {
 		switch (this.state.step) {
 			case 1:
 				return <City
-					ChooseFestivalCity={this.ChooseFestivalCity}
-					nextStep={this.nextStep}/>
+					// ChooseFestivalCity={this.ChooseFestivalCity}
+					CitySearch={this.CitySearch}
+					nextStep={this.nextStep}
+					festivalSearch={this.festivalSearch}/>
 			case 2:
 				return <Festival 
 					ChooseFestival={this.ChooseFestival}
 					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
+					nextStep={this.nextStep}
+					songkickData={this.songkickObject}/>
 			case 3:
 				return <LineUp
 					ChooseALineUp={this.ChooseALineUp}
 					previousStep={this.previousStep}
-					nextStep={this.nextStep}/>
+					nextStep={this.nextStep}
+					songkickData={this.songkickObject}/>
 
 			case 4: 
 				return <SurveyComplete

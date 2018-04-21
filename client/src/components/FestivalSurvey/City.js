@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./Survey.css";
+// import "./Survey.css";
 
 
 class City extends React.Component {
@@ -16,6 +16,7 @@ class City extends React.Component {
       this.setState({value: event.target.value});
       console.log(this.state.value);
     }
+
   
     handleSubmit(event) {
       event.preventDefault();
@@ -25,16 +26,20 @@ class City extends React.Component {
         /* .then(() => this.props.nextStep()); */
       
     }
+
   
     render() {
+      console.log(this.state.value);
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
             What city is your festival located in?
             <input type="text" id="call" name="search" value={this.state.value} onChange={this.handleChange} />
           </label>
+
           
           <button type="submit">Show me festivals near this city</button>
+
         </form>
         );
       }
