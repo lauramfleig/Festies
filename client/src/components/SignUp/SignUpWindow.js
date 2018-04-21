@@ -58,8 +58,9 @@ class SignUpWindow extends Component {
                             value={this.state.email}
                             name="email"
                             onChange={this.handleInputChange}
-                            type="text"
+                            type="email"
                             placeholder="Email"
+                            required
                         />
 
                         <br />
@@ -69,8 +70,9 @@ class SignUpWindow extends Component {
                             value={this.state.password}
                             name="password"
                             onChange={this.handleInputChange}
-                            type="text"
+                            type="password"
                             placeholder="Password"
+                            required
                         />
 
                         <br />

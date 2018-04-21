@@ -34,7 +34,7 @@ class GenderForm extends React.Component {
             <label>
               What is your gender?
               <br></br>
-              <select value={this.state.value} onChange={this.handleChange}>
+              <select value={this.state.value} onChange={this.handleChange} required>
                 <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -42,7 +42,7 @@ class GenderForm extends React.Component {
               </select>
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit"/>
             {(this.props.previousStep)?
               <button onClick={this.handlePrevious} value="Previous">Previous</button>
               :
