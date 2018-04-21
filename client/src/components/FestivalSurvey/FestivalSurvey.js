@@ -23,18 +23,27 @@ class FestivalSurvey extends React.Component {
 	  };
   
 	}
-    festivalSearch = (e) => {
+
+	citySearch = (city) => {
+		th
+	}
+
+	festivalSearch = (e) => {
 		e.preventDefault();
-	 
-	   axios.get(`/api/city/${this.state.search}`)
-		.then((response) => {
-			console.log(response);
-			
-		})
-		.catch(function(error){
-			console.log(error);
-		}); 
-	
+		console.log(this.state.search);
+
+		axios.get(`/api/city/${this.state.search}`)
+			.then((response) => {
+				console.log(response);
+				this.setState({
+					songkickObject: response
+				})
+				console.log(this.state.songkickObject);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
 	}    
 	
 	componentDidUpdate = () => {
@@ -53,10 +62,13 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
-	updateSearch = (string) => {
+	CitySearch = (string) => {
+		let tempCity = this.state.search;
+		tempCity.search = string;
 		this.setState ({
-			search: string
+			search: tempCity
 		})
+		console.log(tempCity);
 	}
 
 	// ChooseFestivalCity = (user_city) => {
@@ -104,9 +116,10 @@ class FestivalSurvey extends React.Component {
 		switch (this.state.step) {
 			case 1:
 				return <City
-					ChooseFestivalCity={this.ChooseFestivalCity}
+					// ChooseFestivalCity={this.ChooseFestivalCity}
+					CitySearch={this.CitySearch}
 					nextStep={this.nextStep}
-					search={this.festivalSearch}/>
+					festivalSearch={this.festivalSearch}/>
 			case 2:
 				return <Festival 
 					ChooseFestival={this.ChooseFestival}
