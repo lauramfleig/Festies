@@ -4,6 +4,8 @@ import Festival from "./Festival";
 import LineUp from "./LineUp";
 // import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
+import axios from "axios";
+import { userInfo } from "os";
 // import Results from "./Results";
 import axios from "axios";
 
@@ -13,28 +15,39 @@ class FestivalSurvey extends React.Component {
 
 	  this.state = {
 		step: 1,
+
 		search: '',
 		songkickObject: [],
+
 		Answers: {
     city: '',
     festival:'',
     lineUp:'',
-		},
+		}
 	  };
   
 	}
-    festivalSearch = (e) => {
+
+	citySearch = (city) => {
+		th
+	}
+
+	festivalSearch = (e) => {
 		e.preventDefault();
-	 
-	   axios.get(`/api/city/${this.state.search}`)
-		.then((response) => {
-			console.log(response);
-			
-		})
-		.catch(function(error){
-			console.log(error);
-		}); 
-	
+		console.log(this.state.search);
+
+		axios.get(`/api/city/${this.state.search}`)
+			.then((response) => {
+				console.log(response);
+				this.setState({
+					songkickObject: response
+				})
+				console.log(this.state.songkickObject);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
 	}    
 	
 	componentDidUpdate = () => {
@@ -53,10 +66,21 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
-	updateSearch = (string) => {
-		this.setState ({
-			search: string
+
+	ChooseFestivalCity = (user_city) => {
+		console.log(user_city);
+		axios.get(`/api/city/${user_city}`)
+		.then(function(response){
+			console.log(response);
+					this.setState({
+						songKickData: response
+					});
 		})
+		.catch(function(error){
+			console.log(error);
+		});
+		console.log('What city is your festival located? ' + user_city);
+
 	}
 
 	// ChooseFestivalCity = (user_city) => {
@@ -104,9 +128,10 @@ class FestivalSurvey extends React.Component {
 		switch (this.state.step) {
 			case 1:
 				return <City
-					ChooseFestivalCity={this.ChooseFestivalCity}
+					// ChooseFestivalCity={this.ChooseFestivalCity}
+					CitySearch={this.CitySearch}
 					nextStep={this.nextStep}
-					search={this.festivalSearch}/>
+					festivalSearch={this.festivalSearch}/>
 			case 2:
 				return <Festival 
 					ChooseFestival={this.ChooseFestival}
