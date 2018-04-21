@@ -47,7 +47,7 @@ exports.getUserData = function (req, res) {
 
         res.send(response);
     });
-
+}
 // ----------------- POST CONTROLLERS
 
 exports.newUser = function(req, res) {
