@@ -34,12 +34,10 @@ class About extends Component {
 // turnary
 // var eval = (condition) ? ifTrue : ifFalse
     render() {
-        const LoginModal = this.state.showLogin ? (
-                    <LoginWindow renderSignUp={this.renderSignUp}/>
-
-                ) : (
-                 null
-                )
+        const LoginModal = this.state.showLogin
+            ? <LoginWindow renderSignUp={this.renderSignUp}/>
+            : null
+                
         const SignUpModal = this.state.showSignUp 
             ? <SignUpWindow />
             : null

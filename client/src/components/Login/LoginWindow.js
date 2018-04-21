@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
 import './LoginWindow.css';
 // import Register from '../Register/Register.js'
-
-
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';

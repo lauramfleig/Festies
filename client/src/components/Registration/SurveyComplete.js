@@ -108,7 +108,8 @@ class SurveyComplete extends React.Component {
 
     postToTheDB = () => {
       let finalSubmit = this.state.value;
-      console.log(finalSubmit);
+      console.log(JSON.stringify(finalSubmit));
+      console.log(finalSubmit + 'heeeeeey');
       axios.post('/api/new_user', finalSubmit)
 		  .then(function(response) {
         console.log(response);

@@ -41,8 +41,13 @@ exports.searchCity = function(req, res) {
 
 // ----------------- GET CONTROLLERS
 
+exports.getUserData = function (req, res) {
+    const userEmail = req.body;
+    userModel.schema.statics.userData(userEmail, function (response) {
 
-
+        res.send(response);
+    });
+}
 // ----------------- POST CONTROLLERS
 
 exports.newUser = function(req, res) {

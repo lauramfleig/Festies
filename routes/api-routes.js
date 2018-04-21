@@ -15,7 +15,7 @@ router.get('/api/city/:citySearch', userController.searchCity);
 
 
 // -------------------- GET ROUTES
-
+router.get('/api/user_data',  /* passport.authenticate('jwt', { session: false }), */ userController.getUserData); 
 
 
 // ------------------- POST ROUTES
