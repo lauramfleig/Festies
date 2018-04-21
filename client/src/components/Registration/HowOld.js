@@ -33,7 +33,7 @@ class HowOld extends React.Component {
             <label>
               How old are you?
               <br></br>
-              <input type="number" value={this.state.value} onChange={this.handleChange} />
+              <input type="number" value={this.state.value} onChange={this.handleChange} required min="3" max="99" />
             </label>
             <br></br>
             <input type="submit" value="Submit" />

@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorModal from "./ErrorModal";
 import './Registration.css';
 
 class AboutDescription extends React.Component {
@@ -12,6 +13,20 @@ class AboutDescription extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handlePrevious = this.handlePrevious.bind(this);
     }
+
+    showModal = () => {
+      this.setState({
+        showModal: true
+      })
+      console.log('show modal working');
+    }
+
+    hideModal = () => {
+      this.setState({
+        showModal: false
+      })
+      console.log('hide modal working');
+    }
   
     handleChange(event) {
       this.setState({value: event.target.value});
@@ -19,24 +34,39 @@ class AboutDescription extends React.Component {
   
     handleSubmit(event) {
       event.preventDefault();
-    
-      this.props.AddAboutDescription(this.state.value);
-      this.props.nextStep();
 
+      if (this.validateForm()) {
+        this.props.AddAboutDescription(this.state.value);
+        this.props.nextStep();
+      } else {
+        this.showModal();
+      }
     }
 
     handlePrevious = () => {
         this.props.previousStep();
-      }
+    }
+
+    validateForm = () => {
+      const UserNameRegex = /^.{30,}$/;
+      return (UserNameRegex.test(this.state.value));
+    } 
   
     render() {
+      const Modal = (this.state.showModal) ?
+        <ErrorModal
+          hideModal={this.hideModal}
+          message={'Please Enter at Least 30 Characters'}
+        />
+        : null
+
       return (
         <div className="formDiv">
           <form onSubmit={this.handleSubmit}>
             <label>
               Tell other festies about yourself:
               <br></br>
-              <textarea value={this.state.value} onChange={this.handleChange} />
+              <textarea placeholder="At Least 30 Characters" value={this.state.value} onChange={this.handleChange} />
             </label>
             <br></br>
             <input type="submit" value="Submit" />
@@ -45,6 +75,7 @@ class AboutDescription extends React.Component {
               :
               null}
           </form>
+          {Modal}
         </div>
       );
     }
