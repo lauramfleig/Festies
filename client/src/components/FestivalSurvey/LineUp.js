@@ -27,12 +27,14 @@ import React from "react";
              <label>
                Choose which performances you plan on attending
 
+
                {/* { festivals.map(performanceInfo => (<input type="text" value={...performanceInfo} />)) } */}
                
              </label>
              <input type="submit" value="Submit" />
            </form>
            </div>
+
         
         );
       }

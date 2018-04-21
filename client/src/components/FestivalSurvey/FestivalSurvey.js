@@ -4,6 +4,8 @@ import Festival from "./Festival";
 import LineUp from "./LineUp";
 // import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
+import axios from "axios";
+import { userInfo } from "os";
 // import Results from "./Results";
 import axios from "axios";
 
@@ -13,13 +15,15 @@ class FestivalSurvey extends React.Component {
 
 	  this.state = {
 		step: 1,
+
 		search: '',
 		songkickObject: [],
+
 		Answers: {
     city: '',
     festival:'',
     lineUp:'',
-		},
+		}
 	  };
   
 	}
@@ -62,13 +66,21 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
-	CitySearch = (string) => {
-		let tempCity = this.state.search;
-		tempCity.search = string;
-		this.setState ({
-			search: tempCity
+
+	ChooseFestivalCity = (user_city) => {
+		console.log(user_city);
+		axios.get(`/api/city/${user_city}`)
+		.then(function(response){
+			console.log(response);
+					this.setState({
+						songKickData: response
+					});
 		})
-		console.log(tempCity);
+		.catch(function(error){
+			console.log(error);
+		});
+		console.log('What city is your festival located? ' + user_city);
+
 	}
 
 	// ChooseFestivalCity = (user_city) => {
