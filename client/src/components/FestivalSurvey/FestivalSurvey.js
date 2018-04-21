@@ -28,25 +28,7 @@ class FestivalSurvey extends React.Component {
   
 	}
 
-<<<<<<< HEAD
-	// festivalSearch = (e) => {
-	// 	e.preventDefault();
-	// 	console.log(this.state.search);
 
-	// 	axios.get(`/api/city/${this.state.search}`)
-	// 		.then((response) => {
-	// 			console.log(response);
-	// 			this.setState({
-	// 				songkickObject: response
-	// 			})
-	// 			console.log(this.state.songkickObject);
-	// 		})
-	// 		.catch(function (error) {
-	// 			console.log(error);
-	// 		});
-
-	// }    
-=======
 
 	festivalSearch = (e) => {
 		e.preventDefault();
@@ -65,7 +47,7 @@ class FestivalSurvey extends React.Component {
 			});
 
 	}    
->>>>>>> master
+
 	
 	componentDidUpdate = () => {
 		console.log(this.state);
@@ -83,13 +65,7 @@ class FestivalSurvey extends React.Component {
 		});
 	}
 
-<<<<<<< HEAD
-	CitySearch = (string) => {
-		let tempCity = this.state.search;
-		tempCity = string;
-		this.setState ({
-			search: tempCity
-=======
+
 
 	ChooseFestivalCity = (user_city) => {
 		console.log(user_city);
@@ -99,7 +75,7 @@ class FestivalSurvey extends React.Component {
 					this.setState({
 						songKickData: response
 					});
->>>>>>> master
+
 		})
 		.catch(function(error){
 			console.log(error);
