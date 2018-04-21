@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./Survey.css";
+// import "./Survey.css";
 
 
 class City extends React.Component {
@@ -17,10 +17,12 @@ class City extends React.Component {
     }
   
     handleSubmit(event) {
+      
       event.preventDefault();
-
-      this.props.ChooseFestivalCity(this.state.search);
-      this.props.nextStep();
+      // this.props.updateSearch(this.state.value);
+       () => this.props.search(this.state.value);
+      // this.props.festivalSearch(this.state.search);
+      // this.props.nextStep();
     }
   
     render() {
@@ -31,7 +33,7 @@ class City extends React.Component {
             <input type="text" id="call" name="search" value={this.state.search} onChange={this.handleChange} />
           </label>
           
-          <button onClick={this.apiCall}>Show me festivals near this city</button>
+          <button onClick={this.handleSubmit}>Show me festivals near this city</button>
         </form>
         );
       }
