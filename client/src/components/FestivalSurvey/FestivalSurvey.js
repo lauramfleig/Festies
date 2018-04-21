@@ -67,7 +67,7 @@ class FestivalSurvey extends React.Component {
 	ChooseFestivalCity = (user_city) => {
 		console.log(user_city);
 		axios.get(`/api/city/${user_city}`)
-		.then(function(response){
+		.then((response) => {
 			console.log(response);
 					this.setState({
 						songKickData: response
@@ -125,8 +125,7 @@ class FestivalSurvey extends React.Component {
 		switch (this.state.step) {
 			case 1:
 				return <City
-					// ChooseFestivalCity={this.ChooseFestivalCity}
-					CitySearch={this.CitySearch}
+					ChooseFestivalCity={this.ChooseFestivalCity}
 					nextStep={this.nextStep}
 					festivalSearch={this.festivalSearch}/>
 			case 2:
