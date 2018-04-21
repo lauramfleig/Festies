@@ -22,20 +22,20 @@ import React from "react";
   
       render() {
         return (
+           <div>
            <form onSubmit={this.handleSubmit}>
              <label>
                Choose which performances you plan on attending
 
-               { festivals.map(festivalInfo => (<Card {...friend} />)) }
-               <input type="text" value={...friend} onChange={this.handleChange} >
-             <label>
-             <input type="submit" value="Submit" >
-           <form>
+               {/* { festivals.map(performanceInfo => (<input type="text" value={...performanceInfo} />)) } */}
+               
+             </label>
+             <input type="submit" value="Submit" />
+           </form>
+           </div>
         
         );
       }
     }
 
-
-
-export default LineUp.js
+export default LineUp;
