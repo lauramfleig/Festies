@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import UserRealName from "./UserRealName";
 import UserName from "./UserName";
@@ -111,7 +112,7 @@ class SurveyComplete extends React.Component {
       console.log(JSON.stringify(finalSubmit));
       console.log(finalSubmit + 'heeeeeey');
       axios.post('/api/new_user', finalSubmit)
-		  .then(function(response) {
+		  .then((response) => {
         console.log(response);
         this.props.history.push('/user-profile');
 		  })
@@ -219,4 +220,4 @@ class SurveyComplete extends React.Component {
     }
   }
 
-export default SurveyComplete;
+export default withRouter(SurveyComplete);

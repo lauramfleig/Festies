@@ -26,11 +26,11 @@ import React from "react";
              <label>
                Choose which performances you plan on attending
 
-               { festivals.map(festivalInfo => (<Card {...friend} />)) }
-               <input type="text" value={...friend} onChange={this.handleChange} >
-             <label>
-             <input type="submit" value="Submit" >
-           <form>
+               {/* { festivals.map(festivalInfo => (<Card {...friend} />)) }
+               <input type="text" value={...friend} onChange={this.handleChange} > */}
+             </label>
+             <input type="submit" value="Submit" />
+           </form>
         
         );
       }

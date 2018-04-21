@@ -14,13 +14,16 @@ class City extends React.Component {
   
     handleChange(event) {
       this.setState({value: event.target.value});
+      console.log(this.state.value);
     }
   
     handleSubmit(event) {
       event.preventDefault();
-
-      this.props.ChooseFestivalCity(this.state.search);
-      this.props.nextStep();
+      console.log(this.state.value);
+      console.log(this.props);
+      this.props.ChooseFestivalCity(this.state.value);
+        /* .then(() => this.props.nextStep()); */
+      
     }
   
     render() {
@@ -28,10 +31,10 @@ class City extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             What city is your festival located in?
-            <input type="text" id="call" name="search" value={this.state.search} onChange={this.handleChange} />
+            <input type="text" id="call" name="search" value={this.state.value} onChange={this.handleChange} />
           </label>
           
-          <button onClick={this.apiCall}>Show me festivals near this city</button>
+          <button type="submit">Show me festivals near this city</button>
         </form>
         );
       }

@@ -4,6 +4,8 @@ import Festival from "./Festival";
 import LineUp from "./LineUp";
 import  "./Survey.css";
 import SurveyComplete from "./SurveyComplete";
+import axios from "axios";
+import { userInfo } from "os";
 // import Results from "./Results";
 
 class FestivalSurvey extends React.Component {
@@ -12,11 +14,12 @@ class FestivalSurvey extends React.Component {
 
 	  this.state = {
 		step: 1,
+		songKickData:[],
 		Answers: {
     city: '',
     festival:'',
     lineUp:'',
-		},
+		}
 	  };
   
 	}
@@ -39,12 +42,18 @@ class FestivalSurvey extends React.Component {
 	}
 
 	ChooseFestivalCity = (user_city) => {
-		let tempSurveyAnswers = this.state.Answers;
-		tempSurveyAnswers.city = user_city;
-		this.setState({
-			Answers: tempSurveyAnswers
+		console.log(user_city);
+		axios.get(`/api/city/${user_city}`)
+		.then(function(response){
+			console.log(response);
+					this.setState({
+						songKickData: response
+					});
+		})
+		.catch(function(error){
+			console.log(error);
 		});
-		console.log('What city is your festival located? ' + City);
+		console.log('What city is your festival located? ' + user_city);
 	}
 
 	ChooseFestival = (URL) => {
