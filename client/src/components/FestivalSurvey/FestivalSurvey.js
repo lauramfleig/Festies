@@ -28,9 +28,6 @@ class FestivalSurvey extends React.Component {
   
 	}
 
-	citySearch = (city) => {
-		th
-	}
 
 	festivalSearch = (e) => {
 		e.preventDefault();
