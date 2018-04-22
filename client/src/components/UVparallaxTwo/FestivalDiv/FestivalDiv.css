@@ -1,0 +1,14 @@
+.festival-div {
+    margin-top: 0
+
+}
+
+.festival-name {
+    margin: 0
+}
+
+.festival-list {
+    margin: 0;
+    display: inline-flex;
+    justify-content: space-between
+}
