@@ -8,7 +8,10 @@
     background-color: #ffa07c;
     border: 3px double white;
     font-weight: bold;
-
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 465px;
 }
 
 .festival-btn:hover {
