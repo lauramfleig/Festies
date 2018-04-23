@@ -17,7 +17,6 @@ import React from "react";
       handleSubmit(event) {
         event.preventDefault();
         const choices = this.choosenLineup();
-        console.log(choices);
         this.props.ChooseALineUp(choices);
         this.props.nextStep();
       }
@@ -50,7 +49,6 @@ import React from "react";
         for (let a = 0; a < inputMatches.length; a++) {
           matches.push(inputMatches[a].value);
         }
-        console.log(inputMatches[0].value);
         
         return matches;
       }

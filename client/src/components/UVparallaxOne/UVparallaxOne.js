@@ -9,20 +9,21 @@ class UVparallaxOne extends Component {
 
         this.state = {
             userData: [],
-            userEmail: sessionStorage.getItem('user_email')
+            userEmail: sessionStorage.getItem('email')
         };
     }
 
-componentWillMount() {
-    const email = this.state.userEmail;
-    axios.get('/api/userData', {
-        params: email
-    })
+componentWillMount = () => {
+    const email = {
+        email: this.state.userEmail
+    };
+    
+    axios.post('/api/user_data', email)
     .then((response) => {
-        console.log(response);
         this.setState({
             userData: response
         });
+        console.log(this.state.userData);
     })
     .catch((error) => {
         console.log(error);
@@ -31,6 +32,7 @@ componentWillMount() {
 }
     
     render() {
+        
         return (
             <div className="uv-parallax-one">
                 <UserInfo screenName="melissa" />
