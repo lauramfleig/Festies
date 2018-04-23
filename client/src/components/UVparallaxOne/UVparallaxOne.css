@@ -6,10 +6,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    min-height: 500px;
+    min-height: 560px;
     height: 100%;
     width: 100%;
     z-index: 10;
-    border: 5px solid black
+    border: 5px solid rgb(33, 129, 255);
 
 }

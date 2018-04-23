@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import TicketButton from './TicketButton.js';
-import MatchesButton from './MatchesButton.js'
 import './FestivalDiv.css'
+import FestivalList from './FestivalList.js'
 
 class FestivalDiv extends Component {
 
@@ -16,13 +15,11 @@ class FestivalDiv extends Component {
 
     render() {
         return (
-            <div className="fesitval-div">
-                <ul className="festival-list">
-                    <li className="festival-name">Festival:</li>
-                    {/* this.props.festivalname */}
-                    <TicketButton />
-                    <MatchesButton />
-                </ul>
+            <div>
+            <div className="festival-div-header">Festivals You're Attending</div>
+            <div className="festival-div">
+               <FestivalList />
+            </div>
             </div>
         );
     }

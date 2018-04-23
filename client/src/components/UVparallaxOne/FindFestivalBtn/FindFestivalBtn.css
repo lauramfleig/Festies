@@ -2,7 +2,7 @@
     width: 140px;
     height: 65px;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Merienda', cursive;
     color: white;
     background-color: #ffa07c;
@@ -11,7 +11,7 @@
     margin-left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    top: 465px;
+    top: 520px;
 }
 
 .festival-btn:hover {
