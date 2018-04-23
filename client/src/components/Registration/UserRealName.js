@@ -56,13 +56,14 @@ class UserRealName extends React.Component {
         return (
             <div className="UserRealNameForm">
                 <form onSubmit={this.handleSubmit}>
-                    <label className="labelForm">
+                    <label className="RegFormLabel">
                         First Name:
               <br></br>
-                    <input type="text" placeholder="At Least 3 Characters" value={this.state.value} onChange={this.handleChange} className="inputBox" required/>
+                    <input type="text" placeholder="At Least 3 Characters" value={this.state.value} 
+                        onChange={this.handleChange} className="inputBox" required/>
                     </label>
                     <br></br>
-                    <input type="submit" value="Submit" className="submitButton" />
+                    <input type="submit" value="Submit" className="regSubmitButton"/>
                 </form>
                 {Modal}
             </div>

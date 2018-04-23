@@ -63,15 +63,15 @@ class AboutDescription extends React.Component {
       return (
         <div className="formDiv">
           <form onSubmit={this.handleSubmit}>
-            <label>
+            <label className="RegFormLabel">
               Tell other festies about yourself:
               <br></br>
-              <textarea placeholder="At Least 30 Characters" value={this.state.value} onChange={this.handleChange} />
+              <textarea placeholder="At Least 30 Characters" value={this.state.value} onChange={this.handleChange} className="RegistrationTextArea"/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="regSubmitButton"/>
             {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
               :
               null}
           </form>

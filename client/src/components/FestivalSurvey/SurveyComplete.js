@@ -42,7 +42,7 @@ class SurveyComplete extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
             <h3>City:</h3>
-            {renderCityInput}
+            {/* {renderCityInput} */}
 
             </form>
 

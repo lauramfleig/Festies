@@ -31,10 +31,10 @@ class GenderForm extends React.Component {
       return (
         <div className="formDiv">
           <form onSubmit={this.handleSubmit}>
-            <label>
+            <label className="RegFormLabel">
               What is your gender?
               <br></br>
-              <select value={this.state.value} onChange={this.handleChange} required>
+              <select value={this.state.value} onChange={this.handleChange} required className="AgeAndGenderInput">
                 <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -42,9 +42,9 @@ class GenderForm extends React.Component {
               </select>
             </label>
             <br></br>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Submit" className="regSubmitButton"/>
             {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
               :
               null}
           </form>
