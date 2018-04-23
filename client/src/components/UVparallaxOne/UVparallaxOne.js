@@ -33,7 +33,7 @@ componentWillMount() {
     render() {
         return (
             <div className="uv-parallax-one">
-                <UserInfo />
+                <UserInfo screenName="melissa" />
                 {/* screenName={this.state.userData.}/> */}
                 
             </div>
