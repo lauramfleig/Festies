@@ -4,6 +4,11 @@ import FindFestivalBtn from '../FindFestivalBtn/FindFestivalBtn.js'
 
 
 class UserInfo extends Component {
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
         return (
             <div>
@@ -12,14 +17,20 @@ class UserInfo extends Component {
                 </div>
 
                 <div className="first-p-content">
-                    <div className="user-info-div"></div>
-                    <div className="user-info-div"></div>
+                    <div className="user-info-div">
+                        <div className="user-info-content">
+                        <h3>Screen Name: {this.props.screenName}</h3>
+                        </div>
+                    </div>
+                    <div className="user-info-div">
+                    
+                    </div>
                 </div>
 
                 <div className="second-p-content">
                     <div className="find-festivals-div">
-                        <FindFestivalBtn />
                     </div>
+                    <FindFestivalBtn />
                 </div>
 
 

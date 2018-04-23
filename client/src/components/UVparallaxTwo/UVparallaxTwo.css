@@ -1,15 +1,12 @@
-.uv-parallax-one {
-    margin-top: 0;
-    background-image: url('./userview-parallax-one.jpg');
+.uv-parallax-two {
+    background-image: url('./section-2.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    min-height: 560px;
+    min-height: 500px;
     height: 100%;
     width: 100%;
-    z-index: 10;
-    border: 5px solid rgb(33, 129, 255);
-
+    z-index: 8;
 }
