@@ -60,5 +60,11 @@ exports.newUser = function(req, res) {
 
 // ----------------- PUT CONTROLLERS
 
+exports.newFest = function(req, res) {
+    const newFestivalObject = req.body;
+    userModel.schema.statics.updateUserFestival(newFestivalObject, function(response){
+        res.send(response);
+    });
+}
 
 // ----------------- DELETE CONTROLLERS

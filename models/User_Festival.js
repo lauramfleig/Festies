@@ -4,17 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const festivalSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    date: {
-        type:String,
-        required: true,
-        unique: true
-    },
-    lineup_selection: {
+    festivalData: {
         type: Array,
+        required: true
     },
     attending_friends: {
         type: Array,

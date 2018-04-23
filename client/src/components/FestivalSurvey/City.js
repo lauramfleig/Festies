@@ -22,8 +22,8 @@ class City extends React.Component {
       event.preventDefault();
       console.log(this.state.value);
       console.log(this.props);
-      this.props.ChooseFestivalCity(this.state.value);
-        /* .then(() => this.props.nextStep()); */
+      this.props.festivalSearch(this.state.value);
+      
       
     }
 
