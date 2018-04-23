@@ -59,15 +59,16 @@ class UserName extends React.Component {
       return (
         <div className="UserNameForm">
           <form onSubmit={this.handleSubmit}>
-            <label className="labelForm">
+            <label className="RegFormLabel">
               User Screen Name:
               <br></br>
-              <input type="text" placeholder="At Least 6 Characters" value={this.state.value} onChange={this.handleChange} className="inputBox" required/>
+              <input type="text" placeholder="At Least 6 Characters" value={this.state.value} 
+                onChange={this.handleChange} className="inputBox" required/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" className="submitButton" />
+            <input type="submit" value="Submit" className="regSubmitButton"/>
             {(this.props.previousStep) ?
-              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
               :
               null}
           </form>

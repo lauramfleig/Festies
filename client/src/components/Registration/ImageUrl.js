@@ -66,15 +66,15 @@ class ImageUrl extends React.Component {
       return (
         <div className="formDiv">
           <form onSubmit={this.handleSubmit} name="ImageUrlForm">
-            <label>
+            <label className="RegFormLabel">
               Add your pic url here:
               <br></br>
               <input placeholder="https://www.example.com/" type="text" value={this.state.value} onChange={this.handleChange} required/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" onClick={this.handleSubmit} />
+            <input type="submit" value="Submit" onClick={this.handleSubmit} className="regSubmitButton"/>
             {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
               :
               null}
           </form>
