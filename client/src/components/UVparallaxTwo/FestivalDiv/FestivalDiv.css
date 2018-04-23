@@ -1,14 +1,22 @@
 .festival-div {
-    margin-top: 0
-
+    position: absolute;
+    top: 120px
 }
 
-.festival-name {
-    margin: 0
-}
 
-.festival-list {
-    margin: 0;
-    display: inline-flex;
-    justify-content: space-between
+.festival-div-header {
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px double white;
+    background-color: rgba(255, 160, 124, 0.8);
+    color: white;
+    font-family: 'Merienda',
+    cursive;
+    text-shadow: 4px 4px 2px black;
+    font-size: 40px;
+    position: absolute;
+    top: 50px;
+    margin-left: 30px;
+
+
 }
