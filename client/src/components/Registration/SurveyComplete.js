@@ -12,7 +12,7 @@ import FavFestivalExp from "./FavFestivalExp";
 class SurveyComplete extends React.Component {
     constructor(props) {
       super(props);
-      // let formObject = {}
+      // set the state of whether the users information can be edited 
       this.state = {
         value: this.props.surveyAnswers,
         renderUserRealName: false,
@@ -99,7 +99,6 @@ class SurveyComplete extends React.Component {
       });
     }
 
-    
     handleFinalSubmit = (event) => {
       let tempValue = this.state.value;
       tempValue.surveyAnswers = event.target.value;
@@ -120,16 +119,8 @@ class SurveyComplete extends React.Component {
 			  console.log(error);
 		  });
     }
-  
-    // getUserDataFromDB = () => {
-    //   axios.get('/api/get_user')
-    //     .then(function (response) {
-    //       console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     })
-    // }
+
+    // ============================== Render the users information on the page
     render() {
       const UserRealNameField = (this.state.renderUserRealName)?
         (<UserRealName
@@ -138,7 +129,9 @@ class SurveyComplete extends React.Component {
         />) :
         (<div>
           <p>First and Last Name: {this.props.surveyAnswers.username}</p>
-          <button onClick={() => { this.setState({ renderUserRealName: true }) }}>Edit First and Last Name</button>
+          <button className="SurveyEditButton"
+            onClick={() => { this.setState({ renderUserRealName: true }) }}>Edit Name
+          </button>
         </div>)
 
       const userNameField = (this.state.renderUserField)?
@@ -147,8 +140,10 @@ class SurveyComplete extends React.Component {
             nextStep={()=>{return null}}
           />) :
           (<div>
-              <p>User Screen Name: {this.props.surveyAnswers.user_screen_name}</p>
-              <button onClick={()=>{this.setState({renderUserField: true})}}>Edit Screen Name</button>
+            <p>User Screen Name: {this.props.surveyAnswers.user_screen_name}</p>
+            <button className="SurveyEditButton"
+              onClick={()=>{this.setState({renderUserField: true})}}>Edit User Name
+            </button>
           </div>)
         
       const UserImageField = (this.state.renderUserImageField)?
@@ -158,7 +153,9 @@ class SurveyComplete extends React.Component {
           />) :
           (<div>
             <p>Your User Image: {this.props.surveyAnswers.imageURL}</p>
-            <button onClick={()=>{this.setState({renderUserImageField: true})}}>Edit Url Image</button>
+            <button className="SurveyEditButton"
+              onClick={()=>{this.setState({renderUserImageField: true})}}>Edit Url Image
+            </button>
           </div>)
 
       const UserAgeField = (this.state.renderUserAgeField)?
@@ -168,7 +165,9 @@ class SurveyComplete extends React.Component {
         />) :
         (<div>
           <p>Age: {this.props.surveyAnswers.age}</p>
-          <button onClick={()=>{this.setState({renderUserAgeField: true})}}>Edit Age</button>
+          <button className="SurveyEditButton"
+            onClick={()=>{this.setState({renderUserAgeField: true})}}>Edit Age
+          </button>
         </div>)
 
       const UserGenderField = (this.state.renderUserGenderForm)?
@@ -178,7 +177,9 @@ class SurveyComplete extends React.Component {
         />) :
         (<div>
           <p>Gender: {this.props.surveyAnswers.gender}</p>
-          <button onClick={()=>{this.setState({renderUserGenderForm: true})}}>Edit Gender</button>
+          <button className="SurveyEditButton"
+            onClick={()=>{this.setState({renderUserGenderForm: true})}}>Edit Gender
+          </button>
         </div>)
 
         const UserAboutDescriptionField = (this.state.renderUserAboutDescription)?
@@ -188,7 +189,9 @@ class SurveyComplete extends React.Component {
           />) :
           (<div>
             <p>Your Festie Description: {this.props.surveyAnswers.about_description}</p>
-            <button onClick={()=>{this.setState({renderUserAboutDescription: true})}}>Edit Festie Description</button>
+            <button className="SurveyEditButton"
+              onClick={()=>{this.setState({renderUserAboutDescription: true})}}>Edit Festie Description
+            </button>
           </div>)
 
         const UserFavFestivalField = (this.state.renderFavFestivalExp)?
@@ -198,23 +201,27 @@ class SurveyComplete extends React.Component {
           />) :
           (<div>
             <p>Favorite Festival Experience: {this.props.surveyAnswers.favorite_festival_experience}</p>
-            <button onClick={()=>{this.setState({renderFavFestivalExp: true})}}>Edit Fav Festival Experience</button>
+            <button className="SurveyEditButton" 
+              onClick={()=>{this.setState({renderFavFestivalExp: true})}}>Edit Fav Festival Experience
+            </button>
           </div>)
 
       return (
-        <form onSubmit={this.handleFinalSubmit}>
-          <h3>
+        <form className="RegistrationSurveyComplete">
+          <h3 className="RegFormLabel">
            Your Festie Profile: 
           </h3>
-          {UserRealNameField}
-          {userNameField}
-          {UserImageField}
-          {UserAgeField}
-          {UserGenderField}
-          {UserAboutDescriptionField}
-          {UserFavFestivalField}
+          <div className="SurveyCompleteForm">
+            {UserRealNameField}
+            {userNameField}
+            {UserImageField}
+            {UserAgeField}
+            {UserGenderField}
+            {UserAboutDescriptionField}
+            {UserFavFestivalField}
+          </div>
           <br></br>
-          <input type="submit" value="Complete your Profile" />
+          <input type="submit" onClick={this.handleFinalSubmit} value="Complete your Profile" className="finalSubmitButton"/>
         </form>
       );
     }

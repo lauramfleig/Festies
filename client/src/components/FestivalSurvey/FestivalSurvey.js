@@ -8,8 +8,6 @@ import axios from "axios";
 
 import Loader from 'react-loader-spinner'
 
-// import Results from "./Results";
-
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {
@@ -29,28 +27,6 @@ class FestivalSurvey extends React.Component {
 	}
 
 
-	/* festivalSearch = (e) => {
-		e.preventDefault();
-		console.log(this.state.search);
-
-		axios.get(`/api/city/${this.state.search}`)
-			.then((response) => {
-				console.log(response);
-				this.setState({
-					songKickObject: response
-				})
-				console.log(this.state.songKickObject);
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-
-	} */    
-	
-	/* componentDidUpdate = () => {
-		console.log(this.state);
-	} */
-
 	nextStep = () => {
 		this.setState({
 			step: this.state.step + 1,
@@ -64,7 +40,9 @@ class FestivalSurvey extends React.Component {
 	}
 
 
+
 	festivalSearch = (user_city) => {
+
 		console.log(user_city);
 		this.setState({
 			loading: true,
@@ -79,7 +57,9 @@ class FestivalSurvey extends React.Component {
 						step: 2,
 						songKickObject: response.data
 					});
+
 					this.nextStep();
+
 		})
 		.catch(function(error){
 			console.log(error);
@@ -124,21 +104,6 @@ class FestivalSurvey extends React.Component {
 
 
 	}
-
-/*
-
-	SurveyComplete = (allData) => {
-		let tempSurveyAnswers = this.state.Answers;
-		tempSurveyAnswers = allData;
-		this.setState ({ 
-			Answers: tempSurveyAnswers
-		});
-		console.log('data' + allData);
-		//here you can send this.state.surveyAnserws to your DB because the last thing was submitted
-	} */
-
-	// Once we have all of the information how to handle the data:::????
-
   
 	render() {
 		switch (this.state.step) {

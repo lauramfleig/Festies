@@ -30,15 +30,15 @@ class HowOld extends React.Component {
       return (
         <div className="formDiv">
           <form onSubmit={this.handleSubmit}>
-            <label>
+            <label className="RegFormLabel">
               How old are you?
               <br></br>
-              <input type="number" value={this.state.value} onChange={this.handleChange} />
+              <input type="number" value={this.state.value} onChange={this.handleChange} required min="3" max="99" className="AgeAndGenderInput"/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="regSubmitButton"/>
             {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous">Previous</button>
+              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
               :
               null}
           </form>

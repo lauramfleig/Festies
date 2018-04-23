@@ -23,16 +23,16 @@ class SurveyComplete extends React.Component {
 
      displayCity = (newCity) => {
         let tempValue = this.state.value;
-        tempValue.city = newCity;
+        tempValue.search = newCity;
         this.setState ({ 
-            value:tempValue,
+            search:tempValue,
             renderCityInput:true
         });
     }
     render () {
         const cityFestivalField = (this.state.renderCityInput)?
         (<City
-        displayCity={this.displayCity}
+        CitySearch={this.displayCity}
 
         />):
         (<div>
@@ -42,7 +42,7 @@ class SurveyComplete extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
             <h3>City:</h3>
-            
+            {/* {renderCityInput} */}
 
             </form>
 
