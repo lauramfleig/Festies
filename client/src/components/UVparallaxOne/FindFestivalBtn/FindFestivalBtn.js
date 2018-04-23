@@ -1,10 +1,12 @@
 import React from 'react';
-import './FindFestivalBtn.css'
+import './FindFestivalBtn.css';
+
+
 
 const FindFestivalBtn = (props) => {
     return (
         <div className="festival-btn-container">
-            <button className="festival-btn" onClick={props.handleClick}>Find Festivals</button>
+            <a href="/survey"><button className="festival-btn">Find Festivals</button></a>
         </div>
     );
 };

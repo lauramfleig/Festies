@@ -18,6 +18,7 @@ class UserView extends Component {
             renderMatches: false
         }
     }
+    
 
     ///WRITE FUNCTIONS HERE-------------------------------------------------
 

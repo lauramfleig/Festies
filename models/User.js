@@ -54,12 +54,20 @@ const UserSchema = new Schema({
     favorite_festival_experience: {
         type: String
     },
+
+    festival_data: {
+        type: Array
+    },
+
+    friends: {
+        type: Array
+    }
     
-    festivals_attending: [{
+    /* festivals_attending: [{
         type: Schema.Types.ObjectId,
         ref: "User_Festival",
         
-    }]
+    }] */
     
 });
 
@@ -145,7 +153,7 @@ UserSchema.statics.userData = function(userEmail, callback) {
 
 UserSchema.statics.newUserEntry = function (newUserObject, callback) {
 
-    const userEmail = newUserObject.sesionEmail;
+    const userEmail = newUserObject.sessionEmail;
     const newUserData = {
         user_screen_name: newUserObject.user_screen_name,
         username: newUserObject.username,
@@ -162,8 +170,21 @@ UserSchema.statics.newUserEntry = function (newUserObject, callback) {
     }).catch(err => console.log(err));
 }
 
+
+
 // ------------- PUT
 
+UserSchema.statics.updateUserFestival = function (newFestivalObject, callback) {
+    const userEmail = newFestivalObject.sessionEmail;
+    const festData = {
+        festivalDetails: newFestivalObject.festivalDetails,
+        lineupAnswers: newFestivalObject.lineupAnswers
+    };
+    User.where({email: userEmail}).update({ $push: { festival_data: festData } })
+        .then(function (response) {
+            callback(response);
+        }).catch(err => console.log(err));
+}
 
 // ------------- DELETE
 

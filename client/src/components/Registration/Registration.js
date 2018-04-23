@@ -24,7 +24,7 @@ class Registration extends React.Component {
 			gender: '',
 			about_description: '',
 			favorite_festival_experience: '',
-			sesionEmail: sessionStorage.getItem('user_email')
+			sessionEmail: sessionStorage.getItem('user_email')
 		},
 	  };
   

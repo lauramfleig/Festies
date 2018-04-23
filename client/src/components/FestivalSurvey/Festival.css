@@ -1,0 +1,7 @@
+.center {
+    transform: translate(-50%, -50%);
+}
+.fullScreen {
+    width: 100%;
+    Height: 100%;
+}
