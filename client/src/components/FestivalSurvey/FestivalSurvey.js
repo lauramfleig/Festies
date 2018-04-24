@@ -6,7 +6,7 @@ import './Festival.css';
 import SurveyComplete from "./SurveyComplete";
 import axios from "axios";
 
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 
 
 class FestivalSurvey extends React.Component {

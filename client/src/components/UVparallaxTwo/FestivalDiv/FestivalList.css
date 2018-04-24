@@ -1,5 +1,6 @@
 .festival-name {
-    margin-right: 150px
+    
+    display: inline-block;
 }
 
 .festival-list {
@@ -9,7 +10,8 @@
     list-style-type: none;
     margin-top: 50px;
     margin-left: 30px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     background-color:rgba(255, 160, 124, 0.8);
     color: white;
