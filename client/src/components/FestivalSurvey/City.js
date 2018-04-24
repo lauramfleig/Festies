@@ -32,14 +32,11 @@ class City extends React.Component {
       console.log(this.state.value);
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label className="RegFormLabel">
             What city is your festival located in?
-            <input type="text" id="call" name="search" value={this.state.value} onChange={this.handleChange} />
-          </label>
-
-          
-          <button type="submit">Show me festivals near this city</button>
-
+            <input type="text" id="call" name="search" className="inputBox" value={this.state.value} onChange={this.handleChange} />
+          </label> 
+          <button className="regSubmitButton" type="submit">Show me festivals near this city</button>
         </form>
         );
       }

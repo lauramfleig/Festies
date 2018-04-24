@@ -1,13 +1,13 @@
 import React from "react";
+import axios from "axios";
+import Loader from 'react-loader-spinner';
 import City from "./City";
 import Festival from "./Festival";
 import LineUp from "./LineUp";
-import './Festival.css';
 import SurveyComplete from "./SurveyComplete";
-import axios from "axios";
-
-import Loader from 'react-loader-spinner'
-
+import FestivalSurveyHeader from "./FestivalSurveyHeader";
+import Footer from '../Footer';
+import './Festival.css';
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {
@@ -101,33 +101,31 @@ class FestivalSurvey extends React.Component {
 
 		});
 		console.log('What artists do you plan to see? ' + lineUp);
-
-
 	}
-  
-	render() {
-		switch (this.state.step) {
+
+	// Function to render the each component on the page in a switch statement
+	renderForm = () => { switch (this.state.step) {
 			case 1:
 				return <City
-					
+
 					nextStep={this.nextStep}
-					festivalSearch={this.festivalSearch}/>
-				
+					festivalSearch={this.festivalSearch} />
+
 			case 2:
-				return<Loader
+				return <Loader
 					color={'#123abc'}
 					loading={this.state.loading}
 					type='Bars'
 					className='center'
 
-				/>		
+				/>
 			case 3:
-				return <Festival 
+				return <Festival
 					ChooseFestival={this.ChooseFestival}
 					previousStep={this.previousStep}
 					nextStep={this.nextStep}
 					songKickData={this.state.songKickObject}
-					/>
+				/>
 			case 4:
 				return <LineUp
 					ChooseALineUp={this.ChooseALineUp}
@@ -135,16 +133,23 @@ class FestivalSurvey extends React.Component {
 					nextStep={this.nextStep}
 					festivalData={this.state.festival}
 					songKickData={this.state.songKickObject}
-					/>
+				/>
 			default:
 				return <div><p>success</p></div>
 
-		}
-
-		
-			
-		
+		}	
 	}
+  
+	render() {
+		return(
+		<div className="festivalSurveyContainer">
+			<FestivalSurveyHeader />
+			<div className="FestSurveyFormDiv">
+				{this.renderForm()}
+			</div>
+			<Footer />
+		</div>	
+	)}
 }
 
 export default FestivalSurvey;

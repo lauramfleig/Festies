@@ -4,7 +4,8 @@ import LoginWindow from '../../components/Login/LoginWindow';
 import './About.css'
 import Logo from '../../components/Logo/Logo.js';
 import StepButtons from '../../components/Step-Buttons/Step-Buttons.js';
-import SignUpWindow from '../../components/SignUp/SignUpWindow.js'
+import SignUpWindow from '../../components/SignUp/SignUpWindow.js';
+import Footer from '../../components/Footer';
 
 
 class About extends Component {
@@ -84,9 +85,9 @@ class About extends Component {
                             {LoginModal}
                             {SignUpModal}
                         </div>
-                    </div>
-                </div>
-        
+                        <Footer />
+                    </div> 
+                </div>    
             </div>
         );
     }
