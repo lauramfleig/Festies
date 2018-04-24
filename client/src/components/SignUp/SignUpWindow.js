@@ -30,7 +30,7 @@ class SignUpWindow extends Component {
         let password = this.state.password
 
         console.log('Email: ' + email + 'Password: ' + password);
-        sessionStorage.setItem("user_email", email);
+        sessionStorage.setItem("email", email);
         axios.post('/register', { email, password })
             .then((result) => {
                 console.log(result);

@@ -19,7 +19,7 @@ class FestivalSurvey extends React.Component {
 		songKickObject: [],
 		festival:{},
 		lineupAnswers: [],
-		sessionEmail: sessionStorage.getItem('user_email'),
+		sessionEmail: sessionStorage.getItem('email'),
 		loading: false
 		
 	  };
@@ -87,7 +87,7 @@ class FestivalSurvey extends React.Component {
 			const usersFullSelection = {
 				festivalDetails: this.state.festival,
 				lineupAnswers: this.state.lineupAnswers,
-				sessionEmail: this.state.sessionEmail
+				email: this.state.sessionEmail
 			};
 			console.log(usersFullSelection);
 			axios.put('/api/new_user_festival', usersFullSelection)

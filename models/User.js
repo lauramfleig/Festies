@@ -123,9 +123,7 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
         .then(function(response){
 
             const festivalResults = response.data.resultsPage.results.event;
-            console.log(festivalResults);
-            console.log(festivalResults[0].performance);
-
+            
             let filteredFestiesArray = festivalResults.filter(festival => festival.performance.length > 5);
 
             callback(filteredFestiesArray);
@@ -143,8 +141,8 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
 // ------------- GET
 
 UserSchema.statics.userData = function(userEmail, callback) {
-
-    User.find({ email: userEmail.email })
+    
+    User.find(userEmail)
     .then(function (response) {
         callback(response);
     }).catch(err => console.log(err));
@@ -175,7 +173,8 @@ UserSchema.statics.newUserEntry = function (newUserObject, callback) {
 // ------------- PUT
 
 UserSchema.statics.updateUserFestival = function (newFestivalObject, callback) {
-    const userEmail = newFestivalObject.sessionEmail;
+    const userEmail = newFestivalObject.email;
+    console.log(userEmail + '+++++++++++++++++++=');
     const festData = {
         festivalDetails: newFestivalObject.festivalDetails,
         lineupAnswers: newFestivalObject.lineupAnswers
