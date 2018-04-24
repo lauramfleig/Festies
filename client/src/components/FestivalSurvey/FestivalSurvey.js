@@ -5,9 +5,11 @@ import City from "./City";
 import Festival from "./Festival";
 import LineUp from "./LineUp";
 import SurveyComplete from "./SurveyComplete";
+import Loader from 'react-loader-spinner';
 import FestivalSurveyHeader from "./FestivalSurveyHeader";
 import Footer from '../Footer';
 import './Festival.css';
+
 
 class FestivalSurvey extends React.Component {
 	constructor(props) {

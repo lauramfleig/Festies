@@ -29,6 +29,7 @@ class UserInfo extends Component {
 
                 <div className="second-p-content">
                     <div className="find-festivals-div">
+                        
                     </div>
                     <FindFestivalBtn />
                 </div>

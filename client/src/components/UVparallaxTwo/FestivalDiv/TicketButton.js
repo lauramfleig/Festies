@@ -4,7 +4,7 @@ import './TicketButton.css'
 const TicketButton = (props) => {
     return (
         <div className="ticket-btn-container">
-            <button className="ticket-btn" onClick={props.handleClick}>Buy Tickets</button>
+            <a href={props.uri} target="_blank"><button className="ticket-btn">Buy Tickets</button></a>
         </div>
     );
 };
