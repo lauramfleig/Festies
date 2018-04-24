@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Loader from 'react-loader-spinner';
 import City from "./City";
 import Festival from "./Festival";
 import LineUp from "./LineUp";

@@ -159,7 +159,7 @@ UserSchema.statics.newUserEntry = function (newUserObject, callback) {
         age: newUserObject.age,
         gender: newUserObject.gender,
         about_description: newUserObject.about_description,
-        favorite_festival_description: newUserObject.favorite_festival_description,
+        favorite_festival_experience: newUserObject.favorite_festival_experience,
     };
 
     User.where({email: userEmail}).update({ ...newUserData })
