@@ -1,0 +1,26 @@
+.fest-header-holder {
+    height: 10%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between
+}
+
+.logo-for-header-fest {
+    width: 250px;
+    height: 250px;
+    margin-left: 20px
+}
+
+.FestivalSurveyh3 {
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    margin-right: 1%;
+    margin-top: 5%;
+    background-color: #cc8063;
+    border: 3px double white;
+    border-radius: 30px;
+    padding: 1%;
+    opacity: 0.8;
+    align-self: center;
+}

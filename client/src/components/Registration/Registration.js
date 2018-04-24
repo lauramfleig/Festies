@@ -1,5 +1,6 @@
 import React from "react";
 import RegistrationHeader from "./RegistrationHeader";
+import Footer from '../Footer';
 import UserRealName from "./UserRealName";
 import UserName from "./UserName";
 import ImageUrl from "./ImageUrl";
@@ -177,7 +178,9 @@ class Registration extends React.Component {
 					<div className="RegistrationFormDiv">
 						{this.renderForm()}
 					</div>
+				<Footer/>
 			</div>
+			
 	)}	
 }
 

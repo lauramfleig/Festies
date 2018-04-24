@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './UVparallaxTwo.css';
 import FestivalDiv from './FestivalDiv/FestivalDiv.js';
 
+import Footer from '../Footer';
+
+
 class UVparallaxTwo extends Component {
 
    
@@ -9,6 +12,7 @@ class UVparallaxTwo extends Component {
         return (
             <div className="uv-parallax-two">
                 <FestivalDiv />
+                <Footer />
             </div>
         );
     }

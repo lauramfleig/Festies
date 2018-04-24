@@ -1,0 +1,20 @@
+.footer-holder {
+    position: fixed;
+    left: 0;
+    text-align: right;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 2%;
+    width: 100%;
+}
+
+.logo-for-footer {
+    width: 100px;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+}

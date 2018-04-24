@@ -34,9 +34,6 @@ console.log(festInfo);
 
   }
   
-  
-  
-
   render() {
     console.log(this.props.songKickData);
     const skData = this.props.songKickData;
