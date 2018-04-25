@@ -1,5 +1,6 @@
 .user-info-div {
     width: 100%;
+    height: 100%;
     background-color: rgba(255, 160, 124, 0.6);
     margin: 15px;
     border: 3px double rgb(232, 107, 72);
@@ -28,11 +29,10 @@ h3 {
 
 .first-p-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     position: absolute;
     top: 130px;
-    height: 50%;
+    height: 100%;
     width: 100%;
     margin-left: 50%;
     transform: translateX(-50%);
