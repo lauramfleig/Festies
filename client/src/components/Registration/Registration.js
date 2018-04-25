@@ -171,11 +171,18 @@ class Registration extends React.Component {
 	}
 
 	render() {
+
+		let classController
+		if (this.state.step === 8) {
+			classController = "custom"
+		} else {
+			classController = "RegistrationFormDiv"
+		}
 		// Render each component in order on the screen
 		return(
 			<div className="registrationContainer">
 				<RegistrationHeader/>
-					<div className="RegistrationFormDiv">
+					<div className={classController}>
 						{this.renderForm()}
 					</div>
 				<Footer/>

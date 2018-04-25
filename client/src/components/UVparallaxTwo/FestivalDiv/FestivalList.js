@@ -11,6 +11,7 @@ class FestivalList extends Component {
         super(props);
         this.state = {
             userEmail: sessionStorage.getItem('email'),
+            userData: ''
         };
     }
     
