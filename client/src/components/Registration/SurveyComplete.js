@@ -113,7 +113,7 @@ class SurveyComplete extends React.Component {
       axios.post('/api/new_user', finalSubmit)
 		  .then((response) => {
         console.log(response);
-        this.props.history.push('/user-profile');
+        this.props.history.push('/');
 		  })
 		  .catch(function(error) {
 			  console.log(error);

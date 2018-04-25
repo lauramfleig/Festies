@@ -21,7 +21,7 @@ class FestivalList extends Component {
         const email = {
             email: this.state.userEmail
         };
-
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.post('/api/user_data', email)
             .then((response) => {
                 this.setState({
