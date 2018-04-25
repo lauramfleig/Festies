@@ -147,6 +147,16 @@ UserSchema.statics.userData = function(userEmail, callback) {
         callback(response);
     }).catch(err => console.log(err));
 }
+
+UserSchema.statics.userMatches = function (festival, callback) {
+    console.log(festival);
+    const fest = festival.displayName;
+    console.log(fest);
+    User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
+        .then(function (response) {
+            callback(response);
+        }).catch(err => console.log(err));
+}
 // ------------- POST
 
 UserSchema.statics.newUserEntry = function (newUserObject, callback) {
