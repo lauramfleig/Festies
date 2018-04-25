@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+
+import { Redirect } from 'react-router-dom'
+
 import './LoginWindow.css';
 // import Register from '../Register/Register.js'
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
 class LoginWindow extends Component {
     // Setting the component's initial state
-    state = {
-        email: "",
-        password: "",
-        message: ""
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            email: "",
+            password: "",
+            message: "",
+            loggedIn: false
+        };
+    }
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -36,26 +42,26 @@ class LoginWindow extends Component {
 
         // Call to Festies API to Login via passort
 
-        /* axios.post('/api/auth/login', { email, password })
+        axios.post('/login', { 'email': email, 'password': password })
             .then((result) => {
                 localStorage.setItem('jwtToken', result.data.token);
-                this.setState({ message: '' });
-                this.props.history.push('/');
+                this.setState({ message: '', loggedIn: true });
+                ('/user_profile');
             })
             .catch((error) => {
-                if (error.response.status === 401) {
+                
                     this.setState({ message: 'Login failed. Username or password not match' });
-                }
-            }); */
-        
+                
+            });
 
-        this.setState({
-           email: "",
-           password: ""
-        });
     };
 
     render() {
+
+        if (this.state.loggedIn) {
+            return (<Redirect to="/user-profile" />)
+        }
+
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
             <div className="form-div">

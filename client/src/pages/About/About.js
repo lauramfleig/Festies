@@ -6,6 +6,7 @@ import Logo from '../../components/Logo/Logo.js';
 import StepButtons from '../../components/Step-Buttons/Step-Buttons.js';
 import SignUpWindow from '../../components/SignUp/SignUpWindow.js';
 import Footer from '../../components/Footer';
+import {withRouter} from 'react-router-dom';
 
 
 class About extends Component {
@@ -97,4 +98,4 @@ class About extends Component {
 
 }; */
 
-export default About;
+export default withRouter(About);

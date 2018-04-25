@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router';
 import './UVparallaxOne.css';
 import UserInfo from './UserInfo/UserInfo.js';
 import axios from 'axios';
@@ -23,6 +24,7 @@ componentWillMount = () => {
     const email = {
         email: this.state.userEmail
     };
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
     
     axios.post('/api/user_data', email)
     .then((response) => {
@@ -46,7 +48,7 @@ componentWillMount = () => {
 }
     
     render() {
-        
+        if (localStorage.getItem('jwtToken')) {
         return (
             <div className="uv-parallax-one">
                 <UserInfo 
@@ -59,6 +61,9 @@ componentWillMount = () => {
                 
             </div>
         );
+    } else {
+            return (<Redirect to={"/"} />);
+    }
     }
 }
 
