@@ -5,8 +5,8 @@
 
 .match-card {
     width: 30%;
-    height: 100%;
-    background-color: rgba(232, 107, 72, 0.9);
+    height: 545px;
+    background: linear-gradient(white, rgb(232, 107, 72));
     text-align: center;
     margin: 20px;
     color: white;
@@ -22,7 +22,7 @@
     position: relative;
     top: -70px;
     border-radius: 50%;
-    border: solid 5px white;
+    border: solid 3px white;
 }
 
 img {
@@ -35,7 +35,8 @@ img {
     background-image: url('./festival-crowd3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    border: solid 2px #2181ff;
+    border: solid 2px white 
+    
 }
 
 .match-info {
@@ -45,27 +46,74 @@ img {
 .match-name {
     color: black;
     text-shadow: 2px 2px 2px white;
-    padding: 10px;
-    border-bottom: solid white 2px;
+    margin-bottom: 0
 }
 
 .gender-holder {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: solid 1px white
 }
 
 .fa-mars {
     margin: 10px;
-    font-size: 50px;
+    font-size: 30px;
+
 }
 
 .fa-venus {
     margin: 10px;
-    font-size: 50px
+    font-size: 30px;
+   
 }
 
 .fa-intersex {
     margin: 10px;
-    font-size: 50px
+    font-size: 30px;
+
+}
+
+.score-div {
+    border-radius: 5px;
+    margin: 10px;
+    width: 70px;
+    height: 60px;
+    background-color:#ffa07c;
+    border: solid 2px white;
+}
+
+.score-header {
+    font-size: 75%;
+    color: black;
+    margin-top: 5px;
+    border-bottom: solid 1px;
+}
+
+.line-up-selection {
+    font-size: 20px;
+    float: left;
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.festival-lineup {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 120px;
+    font-size: 18px;
+}
+
+.festival-header {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 0;
+    text-decoration: underline
+}
+
+.lineup-holder {
+    margin-bottom: 30px;
 }
