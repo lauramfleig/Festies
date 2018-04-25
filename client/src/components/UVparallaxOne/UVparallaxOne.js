@@ -35,7 +35,8 @@ componentWillMount = () => {
             name: returnedData.username,
             age: returnedData.age,
             gender: returnedData.gender,
-            about: returnedData.about_description
+            about: returnedData.about_description,
+            favFestival: returnedData.favorite_festival_experience
         });
         // console.log(returnedData)
     })
@@ -54,7 +55,8 @@ componentWillMount = () => {
                 userName={(this.state.screen_name)}
                 age={(this.state.age)}
                 gender={(this.state.gender)}
-                about={(this.state.about)}/>
+                about={(this.state.about)}
+                favFestival={(this.state.favFestival)}/>
             </div>
         );
     } else {

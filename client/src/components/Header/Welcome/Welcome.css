@@ -12,7 +12,8 @@
     border-radius: 50px;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    border: 2px solid white
 }
 
 .welcome {
