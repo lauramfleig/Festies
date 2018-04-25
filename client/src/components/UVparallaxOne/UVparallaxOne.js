@@ -26,7 +26,6 @@ componentWillMount = () => {
     
     axios.post('/api/user_data', email)
     .then((response) => {
-        let responseData = response
         let returnedData = response.data[0]
         this.setState({
             userData: returnedData,
@@ -36,8 +35,7 @@ componentWillMount = () => {
             gender: returnedData.gender,
             about: returnedData.about_description
         });
-        // console.log(this.state.userData.data[0].user_screen_name);
-        console.log(response)
+        // console.log(returnedData)
     })
     .catch((error) => {
         console.log(error);
@@ -55,8 +53,6 @@ componentWillMount = () => {
                 age={(this.state.age)}
                 gender={(this.state.gender)}
                 about={(this.state.about)}/>
-                {/* screenName={this.state.userData.}/> */}
-                
             </div>
         );
     }
