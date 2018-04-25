@@ -13,8 +13,6 @@ class Header extends Component {
         this.state = {
             userData: [],
             userEmail: sessionStorage.getItem('email'),
-            image: '',
-            name: '',
            
         };
     }
@@ -24,8 +22,11 @@ class Header extends Component {
             email: this.state.userEmail
         };
 
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
         axios.post('/api/user_data', email)
             .then((response) => {
+                console.log(response)
                 let returnedData = response.data[0]
                 this.setState({
                     userData: returnedData,

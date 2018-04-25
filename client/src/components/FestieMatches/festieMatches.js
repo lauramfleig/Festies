@@ -23,6 +23,9 @@ class festieMatches extends Component {
         const matchesQuery = {
             displayName: sessionStorage.getItem('currentFestival')
         };
+
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
         axios.post('/api/find_matches', matchesQuery)
         .then((response) => {
             this.setState({
@@ -55,8 +58,8 @@ class festieMatches extends Component {
             return <i className="fa fa-mars"></i>
                 } else if ('female' === gender) {
                     return <i className="fa fa-venus"></i>
-                } else if ('other' === gender) {
-                    return <i className="fa fa-interesex"></i>
+                } else { ('other' === gender) 
+                    return <i className="fa fa-intersex"></i>
                 }
     }
 
