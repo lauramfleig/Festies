@@ -1,6 +1,6 @@
 .festival-name {
-    
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 .festival-list {
@@ -8,14 +8,15 @@
     border: 3px double rgb(232, 107, 72);
     padding: 20px;
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 12%;
     margin-left: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color:rgba(255, 160, 124, 0.8);
     color: white;
     font-family: 'Merienda', cursive;
     text-shadow: 4px 4px 2px black;
+    text-align: center;
     font-size: 30px
 }

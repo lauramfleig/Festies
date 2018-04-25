@@ -6,7 +6,7 @@ const ErrorModal = (props) => {
     return (
         <div className="error-modal">
             <h1 className="modal-text">Error! {props.message}</h1>
-            <button onClick={props.hideModal}>Ok</button>
+            <button className="ErrorButton" onClick={props.hideModal}>Ok</button>
         </div>
         );
 }

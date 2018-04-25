@@ -113,7 +113,7 @@ class SurveyComplete extends React.Component {
       axios.post('/api/new_user', finalSubmit)
 		  .then((response) => {
         console.log(response);
-        this.props.history.push('/user-profile');
+        this.props.history.push('/');
 		  })
 		  .catch(function(error) {
 			  console.log(error);
@@ -128,7 +128,7 @@ class SurveyComplete extends React.Component {
           nextStep={()=>{return null}}
         />) :
         (<div>
-          <p>First and Last Name: {this.props.surveyAnswers.username}</p>
+          <p className="EditP">First Name: {this.props.surveyAnswers.username}</p>
           <button className="SurveyEditButton"
             onClick={() => { this.setState({ renderUserRealName: true }) }}>Edit Name
           </button>
@@ -140,7 +140,7 @@ class SurveyComplete extends React.Component {
             nextStep={()=>{return null}}
           />) :
           (<div>
-            <p>User Screen Name: {this.props.surveyAnswers.user_screen_name}</p>
+            <p className="EditP">User Screen Name: {this.props.surveyAnswers.user_screen_name}</p>
             <button className="SurveyEditButton"
               onClick={()=>{this.setState({renderUserField: true})}}>Edit User Name
             </button>
@@ -152,7 +152,7 @@ class SurveyComplete extends React.Component {
             nextStep={()=>{return null}}  
           />) :
           (<div>
-            <p>Your User Image: {this.props.surveyAnswers.imageURL}</p>
+          <p className="EditP">Your User Image: {this.props.surveyAnswers.imageURL}</p>
             <button className="SurveyEditButton"
               onClick={()=>{this.setState({renderUserImageField: true})}}>Edit Url Image
             </button>
@@ -164,7 +164,7 @@ class SurveyComplete extends React.Component {
           nextStep={()=>{return null}}
         />) :
         (<div>
-          <p>Age: {this.props.surveyAnswers.age}</p>
+          <p className="EditP">Age: {this.props.surveyAnswers.age}</p>
           <button className="SurveyEditButton"
             onClick={()=>{this.setState({renderUserAgeField: true})}}>Edit Age
           </button>
@@ -176,7 +176,7 @@ class SurveyComplete extends React.Component {
           nextStep={()=>{return null}}
         />) :
         (<div>
-          <p>Gender: {this.props.surveyAnswers.gender}</p>
+          <p className="EditP">Gender: {this.props.surveyAnswers.gender}</p>
           <button className="SurveyEditButton"
             onClick={()=>{this.setState({renderUserGenderForm: true})}}>Edit Gender
           </button>
@@ -188,7 +188,7 @@ class SurveyComplete extends React.Component {
             nextStep={()=>{return null}}
           />) :
           (<div>
-            <p>Your Festie Description: {this.props.surveyAnswers.about_description}</p>
+            <p className="EditP">Your Festie Description: {this.props.surveyAnswers.about_description}</p>
             <button className="SurveyEditButton"
               onClick={()=>{this.setState({renderUserAboutDescription: true})}}>Edit Festie Description
             </button>
@@ -200,7 +200,7 @@ class SurveyComplete extends React.Component {
             nextStep={()=>{return null}}
           />) :
           (<div>
-            <p>Favorite Festival Experience: {this.props.surveyAnswers.favorite_festival_experience}</p>
+            <p className="EditP">Favorite Festival Experience: {this.props.surveyAnswers.favorite_festival_experience}</p>
             <button className="SurveyEditButton" 
               onClick={()=>{this.setState({renderFavFestivalExp: true})}}>Edit Fav Festival Experience
             </button>

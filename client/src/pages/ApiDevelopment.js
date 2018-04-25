@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, Redirect } from 'react-router'
 
 
 
@@ -116,7 +117,7 @@ dbEntry = e => {
 
     render() {
         const { email, password } = this.state;
-        /* if (localStorage.getItem('jwtToken')){ */
+        if (localStorage.getItem('jwtToken')){ 
             return (
                 <div>
                     {/* // ---------------------- user registration form vvv */}
@@ -170,10 +171,10 @@ dbEntry = e => {
                     </form>
                 </div>
             );
-        } /* else {
+        } else {
             return (<Redirect to={"/"} />);
-        } */
-    /* } */
+        } 
+     } 
 }
 
 export default ApiDevelopment;
