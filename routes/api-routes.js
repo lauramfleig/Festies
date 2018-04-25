@@ -17,7 +17,9 @@ router.get('/api/city/:citySearch', userController.searchCity);
 // -------------------- GET ROUTES
 
 //passing session email to db
-router.post('/api/user_data',  /* passport.authenticate('jwt', { session: false }), */ userController.getUserData); 
+router.post('/api/user_data',  /* passport.authenticate('jwt', { session: false }), */ userController.getUserData);
+
+router.post('/api/find_matches',  /* passport.authenticate('jwt', { session: false }), */ userController.getUserMatches); 
 
 
 // ------------------- POST ROUTES

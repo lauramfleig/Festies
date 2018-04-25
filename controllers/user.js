@@ -48,6 +48,14 @@ exports.getUserData = function (req, res) {
         res.send(response);
     });
 }
+
+exports.getUserMatches = function (req, res) {
+    const festival = req.body;
+    userModel.schema.statics.userMatches(festival, function (response) {
+
+        res.send(response);
+    });
+}
 // ----------------- POST CONTROLLERS
 
 exports.newUser = function(req, res) {

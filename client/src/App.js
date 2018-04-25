@@ -7,6 +7,7 @@ import Festival from './components/FestivalSurvey/Festival';
 import Survey from './components/FestivalSurvey/FestivalSurvey';
 import Registration from './components/Registration/Registration';
 import UserView from "./pages/UserView/UserView";
+import Matches from "./pages/Matches/matches"
 
 
 
@@ -26,6 +27,7 @@ class App extends Component {
                 <Route path="/user-registration" component={Registration} />
                 <Route path="/Festival" component={Festival}/>
                 <Route path="/survey" component={Survey}/>
+                <Route path="/matches" component={Matches}/>
 
                 
                 <Route path="/api-dev" component={ApiDevelopment} />

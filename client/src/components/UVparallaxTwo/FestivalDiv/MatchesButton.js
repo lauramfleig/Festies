@@ -1,12 +1,29 @@
-import React from 'react';
-import './MatchesButton.css'
 
-const MatchesButton = (props) => {
-    return (
-        <div className="matches-btn-container">
-            <button className="matches-btn" onClick={props.handleClick}>Find Matches!</button>
-        </div>
-    );
-};
+
+
+import React, { Component } from 'react';
+import './MatchesButton.css';
+
+class MatchesButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    storeFest(event) {
+        sessionStorage.setItem('currentFestival', event.target.getAttribute('data-festival'));
+    }
+
+    render() {
+        return (
+            <div className="matches-btn-container">
+                <a href="/matches"><button className="matches-btn" data-festival={this.props.displayName} onClick={this.storeFest}>Find Matches!</button></a>
+            </div>
+        );
+    }
+}
 
 export default MatchesButton;
+
+
+
