@@ -1,0 +1,71 @@
+.match-item {
+    list-style-type: none;
+    display: flex
+}
+
+.match-card {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(232, 107, 72, 0.9);
+    text-align: center;
+    margin: 20px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 20px;
+    border: double white
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    /* margin-left: 50%; */
+    position: relative;
+    top: -70px;
+    border-radius: 50%;
+    border: solid 5px white;
+}
+
+img {
+    object-fit: cover
+}
+
+.card-header {
+    width: 100%;
+    height: 100px;
+    background-image: url('./festival-crowd3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid 2px #2181ff;
+}
+
+.match-info {
+    margin-top: -70px
+}
+
+.match-name {
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    padding: 10px;
+    border-bottom: solid white 2px;
+}
+
+.gender-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-mars {
+    margin: 10px;
+    font-size: 50px;
+}
+
+.fa-venus {
+    margin: 10px;
+    font-size: 50px
+}
+
+.fa-intersex {
+    margin: 10px;
+    font-size: 50px
+}
