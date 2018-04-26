@@ -5,16 +5,13 @@
 }
 
 .festival-list {
-    border-radius: 10px;
-    border: 3px double white;
+    border: 1px solid;
     padding: 20px;
     list-style-type: none;
     margin-top: 15%;
     margin-bottom: 10%;
-    margin-left: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     background-color: rgba(255, 160, 124, 0.8);
     color: white;
     font-family: 'Amatic SC',
