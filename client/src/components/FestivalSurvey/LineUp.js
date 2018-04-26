@@ -60,7 +60,7 @@ import React from "react";
            <div>
            <form onSubmit={this.handleSubmit}>
              
-              <h2>Choose which performances you plan on attending</h2>
+              <h2>Choose Your Favorite 5 Performers for This Festival</h2>
                 <ul>
                 
                 {lineUp.map((artist, i) => {return <li key={i}><input className={"lineupInput"} type="checkbox" value={artist} />{artist}</li>})}

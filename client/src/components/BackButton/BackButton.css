@@ -1,0 +1,11 @@
+.back-btn-container {
+    flex: 1
+}
+
+.back-btn {
+    color: #2181ff;
+    border: solid 2px #ffa07c;
+    font-size: 40px;
+    margin-left: 20px;
+    border-radius: 100px;
+}

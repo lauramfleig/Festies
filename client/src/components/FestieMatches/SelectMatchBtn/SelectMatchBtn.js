@@ -20,7 +20,7 @@ class SelectMatchBtn extends Component {
     render() {
         return (
             <div className="match-btn-container">
-                <button className="select-matches-btn" onClick={this.deleteAndStore}>Add Match!</button>
+                <button className="btn" onClick={this.deleteAndStore}><i className="fa fa-check-square-o"></i></button>
                 {/* data-festival={this.props.displayName} onClick={this.storeFest}>Find Matches!</button> */}
             </div>
         );
