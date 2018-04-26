@@ -34,16 +34,16 @@ class LoginWindow extends Component {
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-       
         let email = this.state.email
         let password = this.state.password
-
+        sessionStorage.setItem('email', email);
+        
         console.log('Email: ' + email + 'Password: ' + password);
-
+        
         // Call to Festies API to Login via passort
-
+        
         axios.post('/login', { 'email': email, 'password': password })
-            .then((result) => {
+        .then((result) => {
                 localStorage.setItem('jwtToken', result.data.token);
                 this.setState({ message: '', loggedIn: true });
                 ('/user_profile');

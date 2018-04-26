@@ -28,6 +28,7 @@ class festieMatches extends Component {
 
         axios.post('/api/find_matches', matchesQuery)
         .then((response) => {
+            console.log(response);
             this.setState({
                 userData: response.data,
                 matchesDisplayed: true,

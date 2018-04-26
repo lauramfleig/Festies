@@ -63,13 +63,9 @@ const UserSchema = new Schema({
         type: Array
     }
     
-    /* festivals_attending: [{
-        type: Schema.Types.ObjectId,
-        ref: "User_Festival",
-        
-    }] */
     
 });
+
 
 // ---------------------------- METHODS ON THE SCHEMA
 
@@ -155,6 +151,7 @@ UserSchema.statics.userMatches = function (festival, callback) {
     console.log(fest);
     User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
         .then(function (response) {
+
             callback(response);
         }).catch(err => console.log(err));
 }
@@ -191,6 +188,14 @@ UserSchema.statics.updateUserFestival = function (newFestivalObject, callback) {
         lineupAnswers: newFestivalObject.lineupAnswers
     };
     User.where({email: userEmail}).update({ $push: { festival_data: festData } })
+        .then(function (response) {
+            callback(response);
+        }).catch(err => console.log(err));
+}
+
+UserSchema.statics.updateUserFriend = function (newFriendObject, callback) {
+   
+    User.where({ email: userEmail }).update({ $push: { friends: newFriendObject } })
         .then(function (response) {
             callback(response);
         }).catch(err => console.log(err));

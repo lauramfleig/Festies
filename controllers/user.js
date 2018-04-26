@@ -74,5 +74,11 @@ exports.newFest = function(req, res) {
         res.send(response);
     });
 }
+exports.newFriend = function (req, res) {
+    const newFriendObject = req.body;
+    userModel.schema.statics.updateUserFriend(newFriendObject, function (response) {
+        res.send(response);
+    });
+}
 
 // ----------------- DELETE CONTROLLERS
