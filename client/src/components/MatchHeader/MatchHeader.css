@@ -1,0 +1,14 @@
+.logo {
+    width: 300px
+}
+
+.match-header {
+    background-image: url('./header-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}

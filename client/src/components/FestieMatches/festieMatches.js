@@ -103,22 +103,16 @@ class festieMatches extends Component {
                                         </div>
                                 </div>
 
-
                                 <SelectMatchBtn
                                     id={match._id}
                                     onMatchAdded={this.handleMatch}
                                 />
-                                
                             </li>)
-
                         })}
-
-
                     </ul>
                     :
                     null
-                }
-               
+                }  
             </div>
         );
     }
