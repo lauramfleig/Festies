@@ -21,7 +21,8 @@ class festieMatches extends Component {
     
     componentWillMount() {
         const matchesQuery = {
-            displayName: sessionStorage.getItem('currentFestival')
+            displayName: sessionStorage.getItem('currentFestival'),
+            email: sessionStorage.getItem('email')
         };
 
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
@@ -46,8 +47,19 @@ class festieMatches extends Component {
 
     
     handleMatch = (id) => {
+        let newFriend;
         // map through the current state of matches, find the one
         const newUserData = this.state.userData.filter(user => {
+            if(user._id === id) {
+                newFriend = {
+                    festival: user.festival_data[0].festivalDetails.displayName,
+                    name: user.username,
+                    age: user.age,
+                    gender: user.gender,
+                    image: user.imageURL,
+                    email: sessionStorage.getItem('email')
+                };
+            }
             return user._id !== id
         })
 
@@ -55,6 +67,15 @@ class festieMatches extends Component {
      
         // with the id that was just matched and filter him out
         // then set the state to the new filtered array
+        
+
+        axios.put('/api/new_friend', newFriend)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
 
     determineGender = (gender) => {

@@ -8,6 +8,7 @@ const ObjectId = require('mongodb');
 const apiKey = require('../keys').songkick_api_key;
 const axios = require('axios');
 const bcrypt = require('bcrypt-nodejs');
+const utils = require('../utils');
 
 // ------------------------- DB MONGOOSE SCHEMA
 
@@ -148,11 +149,13 @@ UserSchema.statics.userData = function(userEmail, callback) {
 UserSchema.statics.userMatches = function (festival, callback) {
     console.log(festival);
     const fest = festival.displayName;
+    const currentUserEmail = festival.email;
     console.log(fest);
     User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
         .then(function (response) {
-
-            callback(response);
+            console.log(response);
+            const spliceResults = utils.spliceCurrentUser(response, currentUserEmail);
+            callback(spliceResults);
         }).catch(err => console.log(err));
 }
 // ------------- POST
@@ -194,7 +197,7 @@ UserSchema.statics.updateUserFestival = function (newFestivalObject, callback) {
 }
 
 UserSchema.statics.updateUserFriend = function (newFriendObject, callback) {
-   
+   const userEmail = newFriendObject.email;
     User.where({ email: userEmail }).update({ $push: { friends: newFriendObject } })
         .then(function (response) {
             callback(response);
