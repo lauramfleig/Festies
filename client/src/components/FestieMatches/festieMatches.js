@@ -64,6 +64,7 @@ class festieMatches extends Component {
         })
 
         this.setState({ userData: newUserData })
+     
         // with the id that was just matched and filter him out
         // then set the state to the new filtered array
         
