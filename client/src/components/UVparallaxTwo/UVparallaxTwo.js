@@ -4,6 +4,7 @@ import './UVparallaxTwo.css';
 import FestivalDiv from './FestivalDiv/FestivalDiv.js';
 
 import Footer from '../Footer';
+import UserViewMatches from './UserViewMatches/UserViewMatches.js';
 
 
 class UVparallaxTwo extends Component {
@@ -14,6 +15,7 @@ class UVparallaxTwo extends Component {
         return (
             <div className="uv-parallax-two">
                 <FestivalDiv />
+                <UserViewMatches />
                 <Footer />
             </div>
         );

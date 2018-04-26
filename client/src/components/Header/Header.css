@@ -1,5 +1,5 @@
 .header-holder {
-    border: 3px double rgb(232, 107, 72);
+    border: 1px solid white;
     background-image: url('./userview-header.jpg');
     background-position: center;
     background-size: cover;

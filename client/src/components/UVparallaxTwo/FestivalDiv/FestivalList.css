@@ -9,16 +9,28 @@
     border: 3px double white;
     padding: 20px;
     list-style-type: none;
-    margin-top: 12%;
+    margin-top: 15%;
     margin-bottom: 10%;
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color:rgba(255, 160, 124, 0.8);
+    background-color: rgba(255, 160, 124, 0.8);
     color: white;
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC',
+    cursive;
     text-shadow: 4px 4px 2px black;
     text-align: center;
-    font-size: 30px
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
+
+.festival-bestival {
+    width: 100%;
+    padding: 20px;
+    border: solid white 2px;
+    background-color: rgba(192, 192, 192, 0.6);
+    margin:10px
 }

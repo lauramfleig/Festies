@@ -46,12 +46,15 @@ class FestivalList extends Component {
                 <ul className="festival-list">
                         {this.state.userData.data[0].festival_data.map((fest, i) => {
 
-                                return (<li key={i} className="festival-name">
-                                            <h2>{fest.festivalDetails.displayName}</h2>
-                                            <h3>{fest.festivalDetails.date}</h3>
-                                                <TicketButton uri={fest.festivalDetails.uri}/>
-                                                <MatchesButton displayName={fest.festivalDetails.displayName}/>
-                                        </li>)
+                                return ( 
+                                        <div className="festival-bestival">
+                                            <li key={i} className="festival-name">
+                                                <h2>{fest.festivalDetails.displayName}</h2>
+                                                <h3>{fest.festivalDetails.date}</h3>
+                                                    <TicketButton uri={fest.festivalDetails.uri}/>
+                                                    <MatchesButton displayName={fest.festivalDetails.displayName}/>
+                                            </li>
+                                        </div>)
                             
                           })}
                     
