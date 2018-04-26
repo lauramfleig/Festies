@@ -3,7 +3,7 @@ import './FestivalList.css';
 import TicketButton from './TicketButton.js';
 import MatchesButton from './MatchesButton.js';
 import axios from 'axios';
-
+import TiFeather from 'react-icons/lib/ti'
 
 class FestivalList extends Component {
 
@@ -45,7 +45,7 @@ class FestivalList extends Component {
             {this.state.userData ?
                 <ul className="festival-list">
                         {this.state.userData.data[0].festival_data.map((fest, i) => {
-                            
+
                                 return (<li key={i} className="festival-name">
                                             <h2>{fest.festivalDetails.displayName}</h2>
                                             <h3>{fest.festivalDetails.date}</h3>

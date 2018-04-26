@@ -1,5 +1,5 @@
 .uv-parallax-two {
-    background-image: url('./section-2.jpg');
+    background-image: url('./section-2.png');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,4 +9,12 @@
     height: 100%;
     width: 100%;
     z-index: 8;
+}
+
+html {
+    background-image: url('./section-2.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
