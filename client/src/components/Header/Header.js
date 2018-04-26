@@ -17,6 +17,11 @@ class Header extends Component {
         };
     }
 
+    logout = () => {
+        localStorage.removeItem('jwtToken');
+        sessionStorage.removeItem('email');
+        window.location.reload();
+    }
     componentWillMount = () => {
         const email = {
             email: this.state.userEmail
@@ -52,7 +57,7 @@ class Header extends Component {
                 image={(this.state.image)}
                 />
 
-                <LogoutBtn />  
+                <LogoutBtn handleClick={this.logout}/>  
             </div>
         );
     }
