@@ -24,7 +24,8 @@
     width: 200px;
     margin-left: 50%;
     transform: translateX(-50%);
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC',
+    cursive;
     color: white;
     text-shadow: 4px 4px 2px black;
     text-align: center
@@ -46,7 +47,7 @@ input {
     height: 65px;
     border-radius: 30px;
     font-size: 30px;
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC', cursive;
     color: white;
     background-color: #e86b48;
     border: 3px double white;
@@ -62,6 +63,7 @@ input {
     box-sizing: border-box;
     outline: 1px solid rgb(33, 129, 255);
     margin-bottom: 20px;
+    margin-top: 20px;
     margin-left: 50%;
     transform: translateX(-50%);
     width: 225%;

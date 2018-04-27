@@ -37,13 +37,14 @@
     background-color: white;
     border: 3px double black;
     border-radius: 25px;
-    margin-top: 40%;
+    margin-top: 37%;
     margin-bottom: 5%;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
+    text-align: center;
     font-family: 'Josefin Sans', sans-serif;
 }
 

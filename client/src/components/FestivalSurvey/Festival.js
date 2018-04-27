@@ -13,8 +13,6 @@ class Festival extends Component {
     
     
   }
- 
-
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -62,6 +60,7 @@ console.log(festInfo);
           >Select</button></li>))}
           </ul>
       </div>
+     
     );
   }
 }
