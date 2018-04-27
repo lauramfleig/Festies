@@ -1,0 +1,16 @@
+.choose-artist-header {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold
+}
+
+.artists {
+    list-style-type: none;
+    padding: 0;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.lineupInput {
+    width: 20px;
+    background-color : #cc8063;
+}

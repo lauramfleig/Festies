@@ -1,6 +1,7 @@
 .center {
     transform: translate(-50%, -50%);
 }
+
 .fullScreen {
     width: 100%;
     Height: 100%;
@@ -21,40 +22,41 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     -ms-flex-line-pack: center;
     align-content: center;
-    padding: 5%;
+    padding: 2%;
     opacity: 0.7;
     background-color: whitesmoke;
     border: 3px double black;
     border-radius: 25px;
 }
+
 .custom {
-    position: absolute; 
-    margin-left: 25%;   
-    
+    position: absolute;
+    margin-left: 25%;
     align-content: center;
     padding: 5%;
     opacity: 0.7;
     background-color: whitesmoke;
     border: 3px double black;
     border-radius: 25px;
-
 }
- .performers{
+
+.performers {
     position: absolute;
-    margin-left: 25%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding: 5%;
+    padding: 2%;
     opacity: 0.7;
     background-color: whitesmoke;
     border: 3px double black;
     border-radius: 25px;
-}  
+}
+
 .regSubmitButton,
 .regPreviousButton {
     width: 100%;
@@ -121,4 +123,8 @@
     font-family: 'Merienda', cursive;
     color: black;
     text-shadow: 4px 4px 2px white;
+}
+
+.lineup-list-holder {
+    width: 500px
 }

@@ -49,17 +49,17 @@ console.log(festInfo);
     console.log(this.props.songKickData);
     const skData = this.props.songKickData;
     return (
-      <div>
-          <ul>
+      <div className="lineup-list-holder">
+          <ul className="festival-ul">
           {skData.map((data, i) => (<li key={i} style={liStyle}>
-          <span style={spanStyle}>{data.displayName}</span>
-          <button 
+          <span className="span-lineup" style={spanStyle}>{data.displayName}</span>
+          <button className="lineup-buttons"
           style={buttonStyle}
           onClick={this.handleSubmit} 
           data-displayname={data.displayName} 
           data-date={data.start.date}
           data-uri={data.uri} 
-          >Select</button></li>))};
+          >Select</button></li>))}
           </ul>
       </div>
     );

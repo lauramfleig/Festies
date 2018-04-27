@@ -60,7 +60,7 @@ class UserViewMatches extends Component {
 
 
         return (
-            <div className="test">
+            <div className="UV-matches-section">Your Matches
             </div>
             // <div className="user-view-matches">
             //     {this.state.renderUserMatches ?

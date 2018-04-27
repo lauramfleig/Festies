@@ -1,0 +1,13 @@
+.UV-matches-section {
+    position: absolute;
+    top: 850px;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(255, 160, 124, 0.8);
+    color: white;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 4px 4px 2px black;
+    font-size: 50px
+}

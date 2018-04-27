@@ -1,4 +1,5 @@
 import React from "react";
+import './LineUp.css'
 
   class LineUp  extends React.Component {
       constructor(props) {
@@ -63,7 +64,7 @@ import React from "react";
 
               
 
-              <h2>Choose Your Favorite 5 Performers for This Festival</h2>
+              <h2 className="choose-artist-header">Choose Your Favorite 5 Performers for This Festival</h2>
               <ul className="artists">
 
                 
