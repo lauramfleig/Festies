@@ -11,3 +11,39 @@
     text-shadow: 4px 4px 2px black;
     font-size: 50px
 }
+
+.UV-artist-title {
+    font-size: 20px;
+    margin: 18px;
+}
+
+.UV-match-card {
+    width: 20%;
+    height: 400px;
+    background: linear-gradient(white, rgb(232, 107, 72));
+    text-align: center;
+    margin-top: 75%;
+    margin-left: 2%;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 20px;
+    border: double rgb(232, 107, 72)
+}
+
+.bottom-selectors {
+    margin: 10%
+}
+
+.message-btn, 
+.delete-btn {
+    border-radius: 50px;
+    font-size: 30px;
+    margin: 3%;
+    border: 2px solid #e86b48;
+    color: rgb(33, 129, 255)
+
+}
+
+.delete-btn.x {
+    color: red
+}

@@ -28,7 +28,7 @@ class UserViewMatches extends Component {
                     friendsArray: response.data[0].friends
 
                 });
-                console.log(this.state.friendsArray);
+        
 
             })
             .catch((error) => {
@@ -63,11 +63,8 @@ class UserViewMatches extends Component {
                     <ul className="match-item">
                         {this.state.friendsArray.map((friend, i) => {
 
-                            return (<li key={i} className="match-card">
+                            return (<li key={i} className="UV-match-card">
                                 <div className="card-header">
-                                    <div className="score-div">
-                                        <h1 className="score-header">Match Score:</h1>
-                                    </div>
                                 </div>
                                 <img className="profile-pic" alt="prof-pic" src={friend.image} />
                                 <div className="match-info">
@@ -76,8 +73,12 @@ class UserViewMatches extends Component {
                                         {this.determineGender(friend.gender)}
                                     </div>
                                 </div>
-                                <div className="UV-artist-title">{friend.festival}
+                                <div className="bottom-selectors">
+                                    <button className="message-btn"><i className="fa fa-comments"></i></button>
+                                    <button className="delete-btn x"><i className="fa fa-user-times"></i></button>
                                 </div>
+                                {/* <div className="UV-artist-title">{friend.festival}
+                                </div> */}
                             </li>)
                         })}
                     </ul>

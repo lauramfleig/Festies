@@ -25,7 +25,7 @@
     border-radius: 25px;
 }
 
-.custom {
+.custom2 {
     position: absolute;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -37,7 +37,7 @@
     background-color: white;
     border: 3px double black;
     border-radius: 25px;
-    margin-top: 25%;
+    margin-top: 40%;
     margin-bottom: 5%;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -106,9 +106,16 @@
 }
 
 .RegFormLabel {
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: bold;
     font-family: 'Amatic SC',
     cursive;
     color: black;
     text-shadow: 4px 4px 2px white;
+}
+
+.EditP {
+    font-size: 25px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold
 }

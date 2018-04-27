@@ -174,7 +174,7 @@ class Registration extends React.Component {
 
 		let classController
 		if (this.state.step === 8) {
-			classController = "custom"
+			classController = "custom2"
 		} else {
 			classController = "RegistrationFormDiv"
 		}
