@@ -35,14 +35,26 @@ console.log(festInfo);
   }
   
   render() {
+    const liStyle = {
+      display: "flex"
+    }
+
+    const spanStyle = {
+      flex: "4"
+    }
+
+    const buttonStyle = {
+      flex: "1"
+    }
     console.log(this.props.songKickData);
     const skData = this.props.songKickData;
     return (
       <div>
           <ul>
-          {skData.map((data, i) => (<li key={i} >
-          {data.displayName}
+          {skData.map((data, i) => (<li key={i} style={liStyle}>
+          <span style={spanStyle}>{data.displayName}</span>
           <button 
+          style={buttonStyle}
           onClick={this.handleSubmit} 
           data-displayname={data.displayName} 
           data-date={data.start.date}
