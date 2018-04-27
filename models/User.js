@@ -153,9 +153,7 @@ UserSchema.statics.userMatches = function (festival, callback) {
     console.log(fest);
     User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
         .then(function (response) {
-            console.log(response);
-            const spliceResults = utils.spliceCurrentUser(response, currentUserEmail);
-            callback(spliceResults);
+            callback(utils.matchAndSort(currentUserEmail, fest, response));
         }).catch(err => console.log(err));
 }
 // ------------- POST

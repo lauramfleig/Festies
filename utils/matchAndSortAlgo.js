@@ -1,60 +1,75 @@
-// In Development
+const spliceCurrentUser = require('./spliceCurrentUser');
 
-module.exports = function(object) {
-    let initialQuery = object;
-    let currentUser = initialQuery.pop();
-    let currentUserChoices = currentUser.festival_data[0].lineupAnswers;
+module.exports = function (currentUserEmail, festivalName, usersAtTheFestival) {
+    
+    // we know the currentUser and we know the name of the festival so we need to 
+    // filter out the other festivals from the currentUser festival_data array
+    // then grab the lineupAnswers from the only remaining item in that filtered 
+    // array
+    const { currentUser, otherUsers } = spliceCurrentUser(usersAtTheFestival, currentUserEmail);
+    let currentUserChoices = currentUser
+        .festival_data
+        .filter(festival => festival.festivalDetails.displayName === festivalName)[0]
+        .lineupAnswers
 
-    let dbUsers = initialQuery;
+    // initialize an object where we are going to store the matched users    
+    const matchedUsers = [];
 
-    console.log(dbUsers);
-    console.log(currentUserChoices);
+    const mapMatch = otherUsers.map(dbUser => {
+        
+        // object for frienduser that matches
+        let matchObject = {
+            user: dbUser,
+            matchedArtists: []
+        };
 
-    let userMatches = {
-        matches: 0,
-        userLineup: currentUserChoices,
-        filteredResults: [],
-    };
+        // here we need to single out the festival that we both have in common
+        // so that we can compare the artists we chose in the survey
+        dbUser.festival_data.forEach(festival => {
+            // if the festival name is the same as one of my festivals, then we will check to 
+            // see if we have any artist matches at that festival
+            if (festival.festivalDetails.displayName === festivalName) {
 
-    const mapMatch = dbUsers.map(dbUser => {
-        for (var z = 0; z < dbUsers.length; z++) {
-            let matchScore = {
-                user: '',
-                score: 0,
-                musicMatch: [],
-            };
+                // if the festival names are the same, we are going to loop through
+                // the artists we both chose, to see if we have any matches
+                
+                // loop through my choices
+                for (let i = 0; i < currentUserChoices.length; i++) {
 
-            let matchCheck = false;
+                    // loop through the potential match's choices
+                    for (let x = 0; x < festival.lineupAnswers.length; x++) {
+                        
+                        if (currentUserChoices[i] === festival.lineupAnswers[x]) {
 
-            for (let i = 0; i < currentUserChoices.length; i++) {
-                /* if (dbUser.festival_data[0].linpupAnswers.length === 0){continue;} */
-                for (let x = 0; x < dbUser.festival_data[0].lineupAnswers.length; x++) {
-                    if (currentUserChoices[i] === dbUser.festival_data[0].lineupAnswers[x]) {
-                        matchCheck = true;
-                        matchScore.score++;
-                        matchScore.user = dbUser.username;
-                        console.log(dbUser.festival_data[0].lineupAnswers[x] + '+++++++++++++++++');
-                        matchScore.musicMatch.push(dbUser.festival_data[0].lineupAnswers[x]);
+                            matchObject.matchedArtists.push(festival.lineupAnswers[x]);
+
+                        }
                     }
                 }
-            }
-            console.log(matchScore);
-            if (matchCheck) {
-                userMatches.matches++;
-                console.log(matchScore);
-                return matchScore;
-            }
-        }
-    });
-    userMatches.matches = userMatches.matches - userMatches.filteredResults.length;
-    userMatches.filteredResults = mapMatch;
-    console.log('HERE>>>>>' + mapMatch + '++++++++++');
-    console.log(userMatches);
-    let sortedMatches = bubbleSort(userMatches.filteredResults);
-    userMatches.filteredResults = sortedMatches;
-    return userMatches;
 
+            }
+        })
+            
+        if (matchObject.matchedArtists.length) {
+            matchedUsers.push(matchObject);
+        }
+       
+    });
+    
+    return matchedUsers.sort((userA, userB) => (userA.matchedArtists.length - userB.matchedArtists.length));
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function bubbleSort(arrayOfUsers) {
     let ary = arrayOfUsers;
