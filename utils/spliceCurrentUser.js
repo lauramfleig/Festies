@@ -1,11 +1,15 @@
 
-module.exports = function (arrayOfObjects, currentUser) {
+module.exports = function (allUsers, currentUserEmail) {
     let indexOfCurrentUser;
-    arrayOfObjects.forEach(object => {
-        if(object.email === currentUser) {
-            indexOfCurrentUser = arrayOfObjects.indexOf(object);
+    allUsers.forEach((user, index) => {
+        if (user.email === currentUserEmail) {
+            indexOfCurrentUser = index;
         }
     });
-    const splicedObject = arrayOfObjects.splice(indexOfCurrentUser, 1);
-    return splicedObject;
+    const currentUser = allUsers[indexOfCurrentUser];
+    allUsers.splice(indexOfCurrentUser, 1);
+    return {
+        currentUser,
+        otherUsers: allUsers
+    };
 };

@@ -67,7 +67,7 @@ class LoginWindow extends Component {
             <div className="form-div">
                 <form className="login-form">
                 <div className="login-form-holder">
-                    <h1 className="email-text">Email</h1>
+                    <h1 id="email-text">Email</h1>
                         <input
                             value={this.state.email}
                             name="email"
@@ -79,7 +79,7 @@ class LoginWindow extends Component {
 
                     <br />
 
-                        <h1 className="email-text">Password</h1>
+                        <h1 id="email-text">Password</h1>
                         <input
                             value={this.state.password}
                             name="password"
@@ -93,11 +93,11 @@ class LoginWindow extends Component {
                     <br />
 
                         <div className="submit-btn-div">
-                            <button className="submit-btn" onClick={this.handleFormSubmit}>Submit</button>
+                            <button id="submit-btn" onClick={this.handleFormSubmit}>Submit</button>
                         </div>
 
                         <div className="register-btn-div">
-                            <button className="register-btn" onClick={this.props.renderSignUp}>SignUp</button>
+                            <button id="register-btn" onClick={this.props.renderSignUp}>SignUp</button>
                         </div>
 
 

@@ -18,7 +18,8 @@ body {
     z-index: 10;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    
 }
 
 .parallax.two {
@@ -54,7 +55,8 @@ body {
 }
 
 .slogan {
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC',
+    cursive;
     color: white;
     text-shadow: 4px 4px 2px black;
     font-size: 60px;
@@ -64,7 +66,8 @@ body {
 }
 
 .slogan-2 {
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC',
+    cursive;
     color: white;
     text-shadow: 4px 4px 2px black;
     font-size: 60px;
@@ -164,12 +167,19 @@ body {
 }
 
 .parallax-two-content.header {
-    top: 15%;
+    top: 24%;
+    left:7%;
+    font-family: 'Amatic SC',
+    cursive;
+    font-size: 40px;
 }
 
 .parallax-two-content.footer {
-    top: 67%;
-    left: 55%
+    bottom: 18%;
+    right: 8%;
+    font-family: 'Amatic SC',
+    cursive;
+    font-size: 40px;
 }
 
 .build-btn {
@@ -196,7 +206,9 @@ body {
     font-size: 80px;
     text-align: center;
     padding-top: 50px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    font-family: 'Amatic SC',
+    cursive;
 }
 
 .login-container {
