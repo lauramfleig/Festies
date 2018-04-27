@@ -12,7 +12,8 @@
 }
 
 .Registrationh3 {
-    font-family: 'Merienda', cursive;
+    font-family: 'Amatic SC',
+    cursive;
     color: white;
     text-shadow: 4px 4px 2px black;
     margin-right: 1%;
@@ -22,5 +23,6 @@
     border-radius: 25px;
     padding: 1%;
     opacity: 0.8;
+    font-size: 50px;
     align-self: center;
 }

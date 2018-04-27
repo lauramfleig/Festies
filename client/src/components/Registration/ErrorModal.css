@@ -1,7 +1,8 @@
 .error-modal {
    background-color: #ffa07c;
    color: white;
-   font-family: 'Merienda', cursive;
+   font-family: 'Amatic SC',
+   cursive;
    border: 3px double white;
    border-radius: 25px;
    display: flex;
@@ -18,7 +19,8 @@
    height: 45px;
    border-radius: 25px;
    font-size: 15px;
-   font-family: 'Merienda', cursive;
+   font-family: 'Amatic SC',
+   cursive;
    color: white;
    background-color: #ffa07c;
    border: 3px double white;
