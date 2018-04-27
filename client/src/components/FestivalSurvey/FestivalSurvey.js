@@ -146,10 +146,23 @@ class FestivalSurvey extends React.Component {
 	}
   
 	render() {
+
+		let classController
+		if (this.state.step === 3 ) {
+			classController = "custom"
+		} else {
+			classController = "FestSurveyFormDiv"
+		}
+		if (this.state.step === 4) {
+			classController = "performers"
+		} else {
+			classController = "FestSurveyFormDiv"
+		}
+		
 		return(
 		<div className="festivalSurveyContainer">
 			<FestivalSurveyHeader />
-			<div className="FestSurveyFormDiv">
+			<div className={classController}>
 				{this.renderForm()}
 			</div>
 			<Footer />
