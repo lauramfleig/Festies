@@ -59,21 +59,21 @@ class About extends Component {
 
                     <div className="parallax two">
                             <div className="parallax-two-content header">
-                            <h1 className="header-text">Don't Go Alone!</h1>
                             </div>
                             <div className="info-grid-container">
                                 <div className="info-div one">
-                                    <h1 className="three-dots">...</h1>
+                                    <h1 className="footer-text">Upcoming Festival?</h1>
+                                    {/* <h1 className="three-dots">...</h1> */}
                                 </div>
                                 <div className="info-div two">
                                 <StepButtons />
                             </div>
                                 <div className="info-div three">
-                                    <h1 className="three-dots">...</h1>
+                                    <h1 className="header-text">Don't Go Alone!</h1>
+                                    {/* <h1 className="three-dots">...</h1> */}
                                 </div>
                             </div>
                             <div className="parallax-two-content footer">
-                            <h1 className="footer-text">Upcoming Festival?</h1>
                             </div>
                     </div>
 
