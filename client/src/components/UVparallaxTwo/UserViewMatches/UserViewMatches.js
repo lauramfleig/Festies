@@ -8,39 +8,33 @@ class UserViewMatches extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            loading: true,
-            renderUserMatches: false,
-            userData: [],
-            matchGender: ''
+            userEmail: sessionStorage.getItem('email')
         };
-
     }
 
+    componentDidMount = () => {
 
-    componentWillMount() {
-        const matchesQuery = {
-            displayName: sessionStorage.getItem('currentFestival')
+
+        const email = {
+            email: this.state.userEmail
         };
-
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-
-        axios.post('/api/find_matches', matchesQuery)
+        axios.post('/api/user_data', email)
             .then((response) => {
-                console.log(response);
                 this.setState({
-                    userData: response.data,
+                    userData: response,
                     renderUserMatches: true,
-                    matchGender: response.data[0].gender
-                })
+                    friendsArray: response.data[0].friends
 
-                console.log(this.state.userData)
+                });
+                console.log(this.state.friendsArray);
 
             })
             .catch((error) => {
                 console.log(error);
             });
+
     }
 
 
@@ -60,52 +54,41 @@ class UserViewMatches extends Component {
 
 
         return (
+            
+            <div>
             <div className="UV-matches-section">Your Matches
             </div>
-            // <div className="user-view-matches">
-            //     {this.state.renderUserMatches ?
-            //         <ul className="UV-match-list">
-            //             {this.state.userData.map((match, i) => {
+            <div className="match-holder-div">
+                {this.state.renderUserMatches ?
+                    <ul className="match-item">
+                        {this.state.friendsArray.map((friend, i) => {
 
-            //                 return (<li key={i} className="match-card">
-            //                     <div className="card-header">
-            //                         <div className="score-div">
-            //                             <h1 className="score-header">Match Score:</h1>
-            //                         </div>
-            //                     </div>
-            //                     <img className="profile-pic" alt="prof-pic" src={match.imageURL} />
-            //                     <div className="match-info">
-            //                         <h2 className="match-name">{match.username}, {match.age}</h2>
-            //                         <div className="gender-holder">
-            //                             {this.determineGender(match.gender)}
-            //                         </div>
-            //                     </div>
-            //                     <div className="second-half-card">
-            //                         <h1 className="festival-header">Top Artists Selected</h1>
-            //                         <div className="lineup-holder">
-            //                             <ul className="festival-lineup">
-            //                                 {match.festival_data[0].lineupAnswers.map((match, i) => {
-            //                                     return (
-            //                                         <div>
-            //                                             <li key={i} className="festival-item">{match}
-            //                                             </li>
-            //                                         </div>)
-            //                                 })}
-            //                             </ul>
-            //                         </div>
-            //                     </div>
-
-            //                     <SelectMatchBtn
-            //                         id={match._id}
-            //                         onMatchAdded={this.handleMatch}
-            //                     />
-            //                 </li>)
-            //             })}
-            //         </ul>
-            //         :
-            //         null
-            //     }
-            // </div>
+                            return (<li key={i} className="match-card">
+                                <div className="card-header">
+                                    <div className="score-div">
+                                        <h1 className="score-header">Match Score:</h1>
+                                    </div>
+                                </div>
+                                <img className="profile-pic" alt="prof-pic" src={friend.image} />
+                                <div className="match-info">
+                                    <h2 className="match-name">{friend.name}, {friend.age}</h2>
+                                    <div className="gender-holder">
+                                        {this.determineGender(friend.gender)}
+                                    </div>
+                                </div>
+                                <div className="UV-artist-title">{friend.festival}
+                                </div>
+                            </li>)
+                        })}
+                    </ul>
+                    :
+                    null
+                }
+            </div>
+            </div>
+    
+            
+           
         );
     }
 }

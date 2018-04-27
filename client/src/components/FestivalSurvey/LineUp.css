@@ -1,6 +1,7 @@
 .choose-artist-header {
     font-family: 'Amatic SC', cursive;
-    font-weight: bold
+    font-weight: bold;
+    font-size: 50px
 }
 
 .artists {
@@ -11,6 +12,11 @@
 }
 
 .lineupInput {
+    text-align: left;
     width: 20px;
-    background-color : #cc8063;
+    color : #cc8063;
+}
+
+.submit-lineup {
+    margin: 0
 }
