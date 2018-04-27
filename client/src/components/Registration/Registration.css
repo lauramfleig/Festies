@@ -37,7 +37,7 @@
     background-color: white;
     border: 3px double black;
     border-radius: 25px;
-    margin-top: 37%;
+    margin-top: 40%;
     margin-bottom: 5%;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -117,6 +117,8 @@
 
 .EditP {
     font-size: 25px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold
+    font-family: 'Amatic SC',
+    cursive;
+    font-weight: bold;
+
 }
