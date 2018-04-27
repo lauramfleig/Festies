@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router';
 import './UVparallaxTwo.css';
 import FestivalDiv from './FestivalDiv/FestivalDiv.js';
 

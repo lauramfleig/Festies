@@ -101,7 +101,8 @@ class festieMatches extends Component {
                             return (<li key={i} className="match-card">
                                 <div className="card-header">
                                 <div className="score-div">
-                                    <h1 className="score-header">Match Score:</h1>
+                                    <h1 className="score-header">Match Score:</h1> 
+                                    <p className="score">{matchedArtists.length}</p>
                                 </div>
                                 </div>
                                 <img className="profile-pic" alt="prof-pic" src={user.imageURL} />
@@ -115,10 +116,10 @@ class festieMatches extends Component {
                                     <h1 className="festival-header">Top Artists Selected</h1>
                                         <div className="lineup-holder">
                                             <ul className="festival-lineup">
-                                                {user.festival_data[0].lineupAnswers.map((match, i) => {
+                                                {matchedArtists.map((artist, i) => {
                                                     return (
                                                         <div>
-                                                            <li key={i} className="festival-item">{match}
+                                                            <li key={i} className="festival-item">{artist}
                                                             </li>
                                                         </div>)
                                                 })}

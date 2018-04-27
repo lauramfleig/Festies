@@ -21,7 +21,7 @@
 .FestSurveyFormDiv {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -52,6 +52,7 @@
     text-align: center;
     padding: 2%;
     opacity: 0.7;
+    width: 50%;
     background-color: whitesmoke;
     border: 3px double black;
     border-radius: 25px;

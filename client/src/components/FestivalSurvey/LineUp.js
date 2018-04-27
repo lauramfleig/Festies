@@ -71,7 +71,7 @@ import './LineUp.css'
                 {lineUp.map((artist, i) => {return <li key={i}><input className={"lineupInput"} type="checkbox" value={artist} />{artist}</li>})}
                 </ul>
              
-             <input type="submit" value="Submit" />
+             <input className="submit-lineup" type="submit" value="Submit" />
            </form>
            </div>
 

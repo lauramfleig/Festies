@@ -1,3 +1,8 @@
+.score {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .matches-body {
     background-image: url('./section-2.jpg');
     background-attachment: fixed;
