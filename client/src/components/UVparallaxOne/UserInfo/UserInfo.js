@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './UserInfo.css';
-import FindFestivalBtn from '../FindFestivalBtn/FindFestivalBtn.js'
+import FindFestivalBtn from '../FindFestivalBtn/FindFestivalBtn.js';
+import fillerPic from './info-pic.jpg'
 
 
 class UserInfo extends Component {
@@ -18,15 +19,17 @@ class UserInfo extends Component {
 
                 <div className="first-p-content">
                     <div className="user-info-div">
-                        <div className="user-info-content">
-                        <h3 className="UserInfoH3">Name:</h3>
-                            <p className="UserInfoP"> {this.props.name}</p>
-                        <h3 className="UserInfoH3">Username:</h3>
-                            <p className="UserInfoP"> {this.props.userName}</p>
-                        <h3 className="UserInfoH3">Age:</h3>
-                            <p className="UserInfoP"> {this.props.age}</p>
-                        <h3 className="UserInfoH3">Gender:</h3>
-                            <p className="UserInfoP"> {this.props.gender}</p>
+                        <div className="content-left">
+                            <div className="user-info-content">
+                            <h3 className="UserInfoH3">Name:</h3>
+                                <p className="UserInfoP"> {this.props.name}</p>
+                            <h3 className="UserInfoH3">Username:</h3>
+                                <p className="UserInfoP"> {this.props.userName}</p>
+                            <h3 className="UserInfoH3">Age:</h3>
+                                <p className="UserInfoP"> {this.props.age}</p>
+                            <h3 className="UserInfoH3">Gender:</h3>
+                                <p className="UserInfoP"> {this.props.gender}</p>
+                        </div>
                         </div>
                     </div>
                     <div className="user-info-div two">
