@@ -8,6 +8,7 @@ const ObjectId = require('mongodb');
 const apiKey = require('../keys').songkick_api_key;
 const axios = require('axios');
 const bcrypt = require('bcrypt-nodejs');
+const utils = require('../utils');
 
 // ------------------------- DB MONGOOSE SCHEMA
 
@@ -63,13 +64,9 @@ const UserSchema = new Schema({
         type: Array
     }
     
-    /* festivals_attending: [{
-        type: Schema.Types.ObjectId,
-        ref: "User_Festival",
-        
-    }] */
     
 });
+
 
 // ---------------------------- METHODS ON THE SCHEMA
 
@@ -95,7 +92,8 @@ UserSchema.pre('save', function (next) {
     }
 });
 
-UserSchema.methods.comparePassword = function (passw, cb) {
+UserSchema.statics.comparePassword = function (passw, cb) {
+    
     bcrypt.compare(passw, this.password, function (err, isMatch) {
         if (err) {
             return cb(err);
@@ -151,10 +149,11 @@ UserSchema.statics.userData = function(userEmail, callback) {
 UserSchema.statics.userMatches = function (festival, callback) {
     console.log(festival);
     const fest = festival.displayName;
+    const currentUserEmail = festival.email;
     console.log(fest);
     User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
         .then(function (response) {
-            callback(response);
+            callback(utils.matchAndSort(currentUserEmail, fest, response));
         }).catch(err => console.log(err));
 }
 // ------------- POST
@@ -190,6 +189,14 @@ UserSchema.statics.updateUserFestival = function (newFestivalObject, callback) {
         lineupAnswers: newFestivalObject.lineupAnswers
     };
     User.where({email: userEmail}).update({ $push: { festival_data: festData } })
+        .then(function (response) {
+            callback(response);
+        }).catch(err => console.log(err));
+}
+
+UserSchema.statics.updateUserFriend = function (newFriendObject, callback) {
+   const userEmail = newFriendObject.email;
+    User.where({ email: userEmail }).update({ $push: { friends: newFriendObject } })
         .then(function (response) {
             callback(response);
         }).catch(err => console.log(err));

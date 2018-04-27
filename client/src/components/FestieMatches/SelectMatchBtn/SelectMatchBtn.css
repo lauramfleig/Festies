@@ -1,0 +1,11 @@
+.match-btn-container {
+    position: relative;
+}
+
+.btn {
+    border: solid 2px white;
+    background-color: #ffa07c;
+    color: white;
+    font-size: 30px;
+    height: 50px;
+}

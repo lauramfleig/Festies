@@ -1,24 +1,20 @@
 .festival-div {
     position: absolute;
-    top: 120px;
-    max-width: 71.4%;
+    top: 20%;
+    margin: 5%;
+    max-width: 100%
 }
-
 
 .festival-div-header {
     padding: 20px;
-    border-radius: 10px;
-    border: 3px double white;
+    width: 100%;
     background-color: rgba(255, 160, 124, 0.8);
     color: white;
-    font-family: 'Merienda',
-    cursive;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    font-family: 'Amatic SC', cursive;
     text-shadow: 4px 4px 2px black;
-    font-size: 40px;
+    font-size: 50px;
     position: absolute;
-    top: 50px;
-    margin-left: 30px;
-    
-
-
+    top: 125px;
 }

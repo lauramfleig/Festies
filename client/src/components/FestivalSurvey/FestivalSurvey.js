@@ -49,6 +49,7 @@ class FestivalSurvey extends React.Component {
 			loading: true,
 			step: 2
 		});
+		axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
 		axios.get(`/api/city/${user_city}`)
 		.then((response) => {
 			console.log(response);
@@ -91,6 +92,9 @@ class FestivalSurvey extends React.Component {
 				email: this.state.sessionEmail
 			};
 			console.log(usersFullSelection);
+
+			axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+			
 			axios.put('/api/new_user_festival', usersFullSelection)
 			.then((response) =>{
 				console.log(response);

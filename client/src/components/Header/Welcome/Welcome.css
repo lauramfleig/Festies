@@ -1,6 +1,23 @@
 .user-name {
     color: white;
-    font-family: 'Merienda', cursive;
+   font-family: 'Amatic SC',
+   cursive;
     text-shadow: 4px 4px 2px black;
-    font-size: 50px
+    font-size: 65px;
+    text-align: center;
+    font-weight: bold
+}
+
+.user-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 15px;
+    border: 2px solid white
+}
+
+.welcome {
+    flex: 1
 }

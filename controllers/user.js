@@ -2,7 +2,7 @@
 const userModel = require('../models').User;
 
 
-/* const getToken = function (headers) {
+const getToken = function (headers) {
     if (headers && headers.authorization) {
         var parted = headers.authorization.split(' ');
         if (parted.length === 2) {
@@ -13,7 +13,7 @@ const userModel = require('../models').User;
     } else {
         return null;
     }
-}; */
+}; 
 
 
 
@@ -21,9 +21,9 @@ const userModel = require('../models').User;
 
 exports.searchCity = function(req, res) {
 
-    /* const token = getToken(req.headers); */
+    const token = getToken(req.headers);
 
-    /* if(token){ */
+     if(token){ 
         userModel.schema.statics.festiesSearchByCity(req.params.citySearch, function(response){
     
             console.log(response);
@@ -31,9 +31,9 @@ exports.searchCity = function(req, res) {
             
         });
 
-    /* }else {
+    }else {
         return res.status(403).send({ success: false, msg: 'Unauthorized.' });
-    } */
+    }
 
     
 }
@@ -71,6 +71,12 @@ exports.newUser = function(req, res) {
 exports.newFest = function(req, res) {
     const newFestivalObject = req.body;
     userModel.schema.statics.updateUserFestival(newFestivalObject, function(response){
+        res.send(response);
+    });
+}
+exports.newFriend = function (req, res) {
+    const newFriendObject = req.body;
+    userModel.schema.statics.updateUserFriend(newFriendObject, function (response) {
         res.send(response);
     });
 }

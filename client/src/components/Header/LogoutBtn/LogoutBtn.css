@@ -1,9 +1,11 @@
 .logout-btn {
-    width: 100%;
+    float: right;
+    width: 150px;
     height: 45px;
     border-radius: 30px;
-    font-size: 20px;
-    font-family: 'Merienda', cursive;
+    font-size: 30px;
+     font-family: 'Amatic SC',
+     cursive;
     color: white;
     background-color: #ffa07c;
     border: 3px double white;
@@ -17,6 +19,6 @@
 }
 
 .logout-btn-container {
-    margin-right: 30px
+    flex: 1
 }
 

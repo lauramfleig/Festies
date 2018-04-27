@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router';
 import './UVparallaxOne.css';
 import UserInfo from './UserInfo/UserInfo.js';
 import axios from 'axios';
@@ -23,10 +24,10 @@ componentWillMount = () => {
     const email = {
         email: this.state.userEmail
     };
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
     
     axios.post('/api/user_data', email)
     .then((response) => {
-        let responseData = response
         let returnedData = response.data[0]
         this.setState({
             userData: returnedData,
@@ -34,10 +35,10 @@ componentWillMount = () => {
             name: returnedData.username,
             age: returnedData.age,
             gender: returnedData.gender,
-            about: returnedData.about_description
+            about: returnedData.about_description,
+            favFestival: returnedData.favorite_festival_experience
         });
-        // console.log(this.state.userData.data[0].user_screen_name);
-        console.log(response)
+        // console.log(returnedData)
     })
     .catch((error) => {
         console.log(error);
@@ -46,7 +47,7 @@ componentWillMount = () => {
 }
     
     render() {
-        
+        if (localStorage.getItem('jwtToken')) {
         return (
             <div className="uv-parallax-one">
                 <UserInfo 
@@ -54,11 +55,13 @@ componentWillMount = () => {
                 userName={(this.state.screen_name)}
                 age={(this.state.age)}
                 gender={(this.state.gender)}
-                about={(this.state.about)}/>
-                {/* screenName={this.state.userData.}/> */}
-                
+                about={(this.state.about)}
+                favFestival={(this.state.favFestival)}/>
             </div>
         );
+    } else {
+            return (<Redirect to={"/"} />);
+    }
     }
 }
 
