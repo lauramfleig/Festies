@@ -6,6 +6,7 @@
    border: 3px double white;
    border-radius: 25px;
    display: flex;
+   font-weight: bold;
    -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
    -webkit-align-content: center;

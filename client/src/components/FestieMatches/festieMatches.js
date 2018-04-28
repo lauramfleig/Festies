@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Footer from '../Footer';
 import './festieMatches.css';
 import SelectMatchBtn from './SelectMatchBtn/SelectMatchBtn.js'
 
@@ -137,6 +138,7 @@ class festieMatches extends Component {
                     :
                     null
                 }  
+                <Footer />
             </div>
         );
     }

@@ -115,13 +115,7 @@ body {
     transform: translateX(-50%) */
 }
 
-.info-div.one:hover {
-    background-image: url('./Pictures/half-pic-blue.jpg')
-}
 
-.info-div.three:hover {
-    background-image: url('./Pictures/half-pic.jpg')
-}
 
 .info-div.two {
     /* z-index: 7;
@@ -138,7 +132,7 @@ body {
     /* z-index: 7;
     position: fixed; */
     opacity: 0.8;
-    background-image: url('./Pictures/half-pic-2.jpg');
+    background-image: url('./Pictures/half-pic.jpg');
     background-size: cover;
     background-position: center;
     grid-column: 5;
@@ -222,3 +216,13 @@ body {
     align-items: center;
     flex-flow: column wrap;
 }
+
+.footer-text, .header-text {
+    color: black;
+    font-family: 'Amatic SC',
+    cursive;
+    font-weight: bold;
+    text-shadow: 4px 4px 2px white;
+    font-size: 40px
+}
+
