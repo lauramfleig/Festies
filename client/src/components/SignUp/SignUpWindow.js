@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import SignUpErrorModal from './SignUpErrorModal';
 import './SignUpWindow.css';
 import axios from 'axios';
 
@@ -10,6 +11,20 @@ class SignUpWindow extends Component {
         email: "",
         password: ""
     };
+
+    showModal = () => {
+        this.setState({
+            showModal: true
+        })
+        console.log('show modal working');
+    }
+
+    hideModal = () => {
+        this.setState({
+            showModal: false
+        })
+        console.log('hide modal working');
+    }
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -25,10 +40,10 @@ class SignUpWindow extends Component {
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-
+        if (this.validateForm()) {
         let email = this.state.email
         let password = this.state.password
-
+        console.log(this.validateForm());
         console.log('Email: ' + email + 'Password: ' + password);
         sessionStorage.setItem("email", email);
         axios.post('/register', { email, password })
@@ -40,14 +55,29 @@ class SignUpWindow extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+        } else {
+            this.showModal();
+            this.setState({
+                email: "",
+                password: ""
+            });
+        }
 
-        this.setState({
-            email: "",
-            password: ""
-        });
     };
+   
+
+    validateForm = () => {
+        const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return (EmailRegex.test(this.state.email));
+    } 
 
     render() {
+        const Modal = (this.state.showModal) ?
+            <SignUpErrorModal
+                hideModal={this.hideModal}
+                message={'Please Enter a Valid Email: Example@Example.com'}
+            />
+            : null 
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
             <div className="register-form-div">
@@ -84,6 +114,7 @@ class SignUpWindow extends Component {
 
                     </div>
                 </form>
+                {Modal}
             </div>
         );
     }

@@ -1,0 +1,32 @@
+.error-modal {
+    position: absolute;
+    background-color: #e86a47;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    border: 3px double white;
+    border-radius: 25px;
+    display: flex;
+    font-weight: bold;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 1%;
+}
+
+.ErrorButton {
+    width: 40%;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    background-color: #e86a47;
+    border: 3px double white;
+    font-weight: bold;
+    margin-left: 50%;
+    margin-top: 5%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
