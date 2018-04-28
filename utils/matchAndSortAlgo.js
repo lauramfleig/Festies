@@ -20,7 +20,8 @@ module.exports = function (currentUserEmail, festivalName, usersAtTheFestival) {
         // object for frienduser that matches
         let matchObject = {
             user: dbUser,
-            matchedArtists: []
+            matchedArtists: [],
+            
         };
 
         // here we need to single out the festival that we both have in common
@@ -29,7 +30,7 @@ module.exports = function (currentUserEmail, festivalName, usersAtTheFestival) {
             // if the festival name is the same as one of my festivals, then we will check to 
             // see if we have any artist matches at that festival
             if (festival.festivalDetails.displayName === festivalName) {
-
+                matchObject.matchedFestival = festival.festivalDetails.displayName;
                 // if the festival names are the same, we are going to loop through
                 // the artists we both chose, to see if we have any matches
                 

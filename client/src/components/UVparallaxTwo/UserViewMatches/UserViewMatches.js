@@ -28,7 +28,7 @@ class UserViewMatches extends Component {
                     friendsArray: response.data[0].friends
 
                 });
-        
+                console.log(response);
 
             })
             .catch((error) => {
@@ -74,11 +74,11 @@ class UserViewMatches extends Component {
                                     </div>
                                 </div>
                                 <div className="bottom-selectors">
+                                <div className="UV-artist-title">{friend.festival}
+                                </div>
                                     <button className="message-btn"><i className="fa fa-comments"></i></button>
                                     <button className="delete-btn x"><i className="fa fa-user-times"></i></button>
                                 </div>
-                                {/* <div className="UV-artist-title">{friend.festival}
-                                </div> */}
                             </li>)
                         })}
                     </ul>

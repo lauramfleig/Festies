@@ -28,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(apiRoutes);
 app.use(authRoutes);
 
+app.use(function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
 
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/festies"; // connect to our database
