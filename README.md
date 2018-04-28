@@ -15,6 +15,7 @@ Festies is a Web-Based Application that allows festival-goers to find other atte
 - MongoDB
 - Passport
 - BCrypt
+- Express
 
 ## Getting Started
 
