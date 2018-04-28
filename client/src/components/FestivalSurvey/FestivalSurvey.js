@@ -149,11 +149,8 @@ class FestivalSurvey extends React.Component {
 
 		let classController
 		if (this.state.step === 3 ) {
-			classController = "custom"
-		} else {
-			classController = "FestSurveyFormDiv"
-		}
-		if (this.state.step === 4) {
+			classController = "upcomingFestivals"
+		} else if (this.state.step === 4) {
 			classController = "performers"
 		} else {
 			classController = "FestSurveyFormDiv"
