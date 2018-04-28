@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
 import { Redirect } from 'react-router-dom'
-
+import LoginErrorModal from './LoginErrorModal';
 import './LoginWindow.css';
 // import Register from '../Register/Register.js'
 import ReactDOM from 'react-dom';
@@ -18,6 +17,20 @@ class LoginWindow extends Component {
             message: "",
             loggedIn: false
         };
+    }
+
+    showModal = () => {
+        this.setState({
+            showModal: true
+        })
+        console.log('show modal working');
+    }
+
+    hideModal = () => {
+        this.setState({
+            showModal: false
+        })
+        console.log('hide modal working');
     }
 
     handleInputChange = event => {
@@ -49,7 +62,7 @@ class LoginWindow extends Component {
                 ('/user_profile');
             })
             .catch((error) => {
-                
+                    this.showModal();
                     this.setState({ message: 'Login failed. Username or password not match' });
                 
             });
@@ -57,6 +70,12 @@ class LoginWindow extends Component {
     };
 
     render() {
+        const Modal = (this.state.showModal) ?
+            <LoginErrorModal
+                hideModal={this.hideModal}
+                message={'Login Failed. Username and Password Do Not Match'}
+            />
+            : null 
 
         if (this.state.loggedIn) {
             return (<Redirect to="/user-profile" />)
@@ -104,6 +123,7 @@ class LoginWindow extends Component {
 
                     </div>
                 </form>
+                {Modal}
             </div>
         );
     }
