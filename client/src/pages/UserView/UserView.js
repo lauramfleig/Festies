@@ -11,14 +11,7 @@ class UserView extends Component {
         super(props);
 
         this.state = {
-            //function that will bring user back to homepage after logout button is clicked
-            renderHomePage: false,
-            //function that will open window to buy ticket from songkick
-            openSongkick: false,
-            //function that will open festival selection survey
-            renderFestivalSurvey: false,
-            //function that will link to match page 
-            renderMatches: false
+            
         }
     }
     

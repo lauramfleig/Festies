@@ -1,8 +1,8 @@
 import React from "react";
-import axios from "axios";
-import FestivalSurvey from "./FestivalSurvey";
+/* import axios from "axios";
+import FestivalSurvey from "./FestivalSurvey"; */
 import City from "./City";
-import Festival from "./Festival";
+/* import Festival from "./Festival"; */
 
 class SurveyComplete extends React.Component {
     constructor(props) {

@@ -17,9 +17,9 @@ router.get('/api/city/:citySearch', userController.searchCity);
 // -------------------- GET ROUTES
 
 //passing session email to db - need to rewrite code on frontend to make these get requests
-router.post('/api/user_data', passport.authenticate('jwt', { session: false }),  userController.getUserData);
+router.get('/api/user_data/:email', passport.authenticate('jwt', { session: false }),  userController.getUserData);
 
-router.post('/api/find_matches', passport.authenticate('jwt', { session: false }), userController.getUserMatches); 
+router.get('/api/find_matches/:email/:festival', passport.authenticate('jwt', { session: false }), userController.getUserMatches); 
 
 
 // ------------------- POST ROUTES

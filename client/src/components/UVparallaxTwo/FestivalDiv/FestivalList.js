@@ -17,11 +17,8 @@ class FestivalList extends Component {
     componentDidMount = () => {
 
 
-        const email = {
-            email: this.state.userEmail
-        };
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-        axios.post('/api/user_data', email)
+        axios.get(`/api/user_data/${this.state.userEmail}`)
             .then((response) => {
                 this.setState({
                     userData: response
