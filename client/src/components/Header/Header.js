@@ -23,13 +23,11 @@ class Header extends Component {
         window.location.reload();
     }
     componentWillMount = () => {
-        const email = {
-            email: this.state.userEmail
-        };
+        
 
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
 
-        axios.post('/api/user_data', email)
+        axios.get(`/api/user_data/${this.state.userEmail}`)
             .then((response) => {
                 console.log(response)
                 let returnedData = response.data[0]

@@ -42,7 +42,8 @@ exports.searchCity = function(req, res) {
 // ----------------- GET CONTROLLERS
 
 exports.getUserData = function (req, res) {
-    const userEmail = req.body;
+    const userEmail = req.params.email;
+    console.log(JSON.stringify(userEmail));
     userModel.schema.statics.userData(userEmail, function (response) {
 
         res.send(response);
@@ -50,8 +51,12 @@ exports.getUserData = function (req, res) {
 }
 
 exports.getUserMatches = function (req, res) {
-    const festival = req.body;
-    userModel.schema.statics.userMatches(festival, function (response) {
+    
+    const currentUserEmail = req.params.email;
+    const festival = req.params.festival;
+   
+
+    userModel.schema.statics.userMatches(currentUserEmail, festival, function (response) {
 
         res.send(response);
     });
