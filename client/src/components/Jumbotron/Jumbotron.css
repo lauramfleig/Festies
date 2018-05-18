@@ -1,0 +1,32 @@
+.jumbotron {
+    grid-area: jumbotron;
+    background-image: url('./girls-shoulders.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 900px
+  
+}
+
+
+.new-logo-holder {
+    margin: 2%;
+    text-align: center
+}
+
+.new-logo {
+    width: 40%;
+    height: auto
+}
+/* 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .title {
+        font-size: 350%;
+    }
+    .text-line.one {
+        font-size: 200%;
+    }
+    .text-line.two {
+        font-size: 225%;
+    }
+} */

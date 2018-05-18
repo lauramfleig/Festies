@@ -8,6 +8,7 @@ import Survey from './components/FestivalSurvey/FestivalSurvey';
 import Registration from './components/Registration/Registration';
 import UserView from "./pages/UserView/UserView";
 import Matches from "./pages/Matches/matches"
+import NewAbout from './pages/NewAbout/NewAbout.js'
 
 
 

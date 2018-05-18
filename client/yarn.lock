@@ -137,6 +137,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+animate.css@latest:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.6.1.tgz#4ea8a48556378bc8d7535224296c4c0dac9229de"
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -5757,6 +5761,12 @@ react-loader-spinner@^2.0.0:
   dependencies:
     babel-runtime "^6.6.1"
 
+react-reveal@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.1.tgz#b82b04603a095b020720016fa5cc25392fd61d81"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
@@ -7383,6 +7393,12 @@ worker-farm@^1.3.1:
   resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.6.0.tgz#aecc405976fab5a95526180846f0dba288f3a4a0"
   dependencies:
     errno "~0.1.7"
+
+wowjs@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/wowjs/-/wowjs-1.1.3.tgz#440fc1bb4c7e896840ee47972296a2b59075acbd"
+  dependencies:
+    animate.css latest
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
