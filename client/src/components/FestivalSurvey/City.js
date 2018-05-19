@@ -1,6 +1,6 @@
 import React from "react";
+import './City.css'
 
-// import "./Survey.css";
 
 
 class City extends React.Component {
@@ -31,12 +31,12 @@ class City extends React.Component {
     render() {
       console.log(this.state.value);
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label className="RegFormLabel">
-            What city is your festival located in?
-            <input type="text" id="call" name="search" className="inputBox" value={this.state.value} onChange={this.handleChange} />
+        <form id="find-festival-form" onSubmit={this.handleSubmit}>
+          <label id="find-festival-label" className="RegFormLabel">
+            <h1 className="find-festival-text">Find Festivals Near:</h1>
+            <input type="text" id="call" name="search" placeholder="Enter a City Name" value={this.state.value} onChange={this.handleChange} />
           </label> 
-          <button className="regSubmitButton" type="submit">Show me festivals near this city</button>
+          <button id="submitCity" type="submit">GO</button>
         </form>
         );
       }

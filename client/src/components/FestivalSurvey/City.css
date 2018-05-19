@@ -4,25 +4,72 @@
 
 
 
-form {
+
+/* form {
     display: inline-block;
     text-align: center;
     margin-left: 150px;
     margin-top: 250px;
     font-size: 30px;
-    font-family: 'Merienda', cursive;
-    color: black;
-}
+    /* font-family: 'Merienda', cursive; */
+    /* color: black; */
+/* } */
 
-button {
+/* button {
    
     height: 65px;
     border-radius: 30px;
     font-size: 30px;
-    font-family: 'Merienda', cursive;
-    color: white;
+    /* font-family: 'Merienda', cursive; */
+    /* color: white;
     background-color: #ffa07c;
     border: 3px double white;
     font-weight: bold;
+} */
+
+.find-festival-text {
+   
+     font-family:'Pathway Gothic One',
+     sans-serif;
+    letter-spacing: 2px;
+     text-shadow: none;
+     font-size: 40px;
+     flex: 1
+    
 }
 
+#call {
+   width: auto;
+   height: 30px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: solid 1px black;
+   font-size: 18px;
+   background-color: rgba(255, 255, 255, 0.5);
+   padding-left: 20px;
+   padding-bottom: 0px
+}
+
+#call:focus {
+    outline: none
+}
+
+#find-festival-label {
+    display: inline-flex;
+    align-items: center
+
+}
+#submitCity {
+    margin-left: 20px;
+    font-size: 20px;
+    
+
+}
+
+#find-festival-form {
+
+
+    width: 100%;
+    align-content: center;
+}
