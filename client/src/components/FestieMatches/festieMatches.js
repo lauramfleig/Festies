@@ -28,9 +28,10 @@ class festieMatches extends Component {
 
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
 
-        axios.post('/api/find_matches', matchesQuery)
+        axios.get(`/api/find_matches/${sessionStorage.getItem('email')}/${sessionStorage.getItem('currentFestival')}`)
         .then((response) => {
             console.log(response);
+            console.log(matchesQuery);
             this.setState({
                 userData: response.data,
                 matchesDisplayed: true,

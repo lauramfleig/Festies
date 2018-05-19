@@ -1,5 +1,5 @@
 import React from "react";
-import ImageUrl from "./ImageUrl";
+/* import ImageUrl from "./ImageUrl"; */
 import "./ErrorModal.css";
 
 const ErrorModal = (props) => {        

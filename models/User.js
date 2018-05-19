@@ -139,21 +139,19 @@ UserSchema.statics.festiesSearchByCity = function(cityObject, callback) {
 // ------------- GET
 
 UserSchema.statics.userData = function(userEmail, callback) {
-    
-    User.find(userEmail)
+    console.log(userEmail + '************');
+    User.find({email:userEmail})
     .then(function (response) {
         callback(response);
     }).catch(err => console.log(err));
 }
 
-UserSchema.statics.userMatches = function (festival, callback) {
-    console.log(festival);
-    const fest = festival.displayName;
-    const currentUserEmail = festival.email;
-    console.log(fest);
-    User.find({'festival_data': { $elemMatch:{"festivalDetails.displayName":  fest}}})
+UserSchema.statics.userMatches = function (currentUserEmail, festival, callback) {
+    
+    
+    User.find({ 'festival_data': { $elemMatch: { "festivalDetails.displayName": festival}}})
         .then(function (response) {
-            callback(utils.matchAndSort(currentUserEmail, fest, response));
+            callback(utils.matchAndSort(currentUserEmail, festival, response));
         }).catch(err => console.log(err));
 }
 // ------------- POST
