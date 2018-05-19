@@ -8,10 +8,14 @@
   
 }
 
+.flex-holder {
+    display: inline-flex
+}
 
 .new-logo-holder {
     margin: 2%;
-    text-align: center
+    text-align: center;
+    
 }
 
 .new-logo {

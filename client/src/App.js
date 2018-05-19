@@ -23,7 +23,7 @@ class App extends Component {
         <div>
 
               <Switch>
-                <Route exact path="/" component={About} />
+                <Route exact path="/" component={NewAbout} />
                 <Route path="/user-profile" component={UserView} />
                 <Route path="/user-registration" component={Registration} />
                 <Route path="/Festival" component={Festival}/>

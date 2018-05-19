@@ -1,0 +1,39 @@
+.search-festival-box {
+    width: 100%;
+    padding: 1%;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center
+   
+}
+
+.search-fest-btn {
+    margin-left: 10px;
+    font-size: 20px;
+   
+
+}
+
+.search-fest-btn:hover {
+    background-color: #F1FCFF
+    
+}
+
+
+.search-fest-header {
+    font-size: 24px;
+    font-family: 'Ubuntu Condensed',
+    sans-serif;
+
+}
+
+.fa-search {
+    font-size: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important
+
+}
+
+.fa-search:hover {
+    background-color: #F1FCFF !important
+}

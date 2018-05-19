@@ -32,7 +32,7 @@ class Why extends Component {
                         <Fade right>
                         <div className="whybox share-div">
                             <div className="icon-holder">
-                                <i class="fa fa-users" />
+                                <i className="fa fa-users" />
                                 <h4 className="whybox-header">Share</h4>
                             </div>
                             <div className="whybox-text">Plans, Tips, Resources, Experinces</div>
