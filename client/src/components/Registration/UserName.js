@@ -1,6 +1,6 @@
 import React from 'react';
 import ErrorModal from './ErrorModal';
-import './Registration.css';
+import './Registration2.css';
 
 class UserName extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class UserName extends React.Component {
         this.showModal();
       }
     }
-
+    
     handlePrevious = () => {
       this.props.previousStep();
     }
@@ -66,11 +66,14 @@ class UserName extends React.Component {
                 onChange={this.handleChange} className="inputBox" required/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" className="regSubmitButton"/>
-            {(this.props.previousStep) ?
-              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
-              :
-              null}
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button> 
+            {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            :null} 
           </form>
           {Modal}
         </div>

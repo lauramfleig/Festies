@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorModal from "./ErrorModal.js";
-import './Registration.css';
+import './Registration2.css';
 
 class ImageUrl extends React.Component {
     constructor(props) {
@@ -69,14 +69,17 @@ class ImageUrl extends React.Component {
             <label className="RegFormLabel">
               Add your pic url here:
               <br></br>
-              <input placeholder="https://www.example.com/" type="text" value={this.state.value} onChange={this.handleChange} required/>
+              <input placeholder="https://www.example.com/" type="text" value={this.state.value} onChange={this.handleChange} className="inputBox" required/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" onClick={this.handleSubmit} className="regSubmitButton"/>
-            {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
-              :
-              null}
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button> 
+              {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            :null} 
           </form>
           {Modal}
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import './Registration.css';
+import './Registration2.css';
 
 class GenderForm extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class GenderForm extends React.Component {
             <label className="RegFormLabel">
               What is your gender?
               <br></br>
-              <select value={this.state.value} onChange={this.handleChange} required className="AgeAndGenderInput">
+              <select value={this.state.value} onChange={this.handleChange} required className="AgeAndGenderInput inputBox">
                 <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -42,11 +42,14 @@ class GenderForm extends React.Component {
               </select>
             </label>
             <br></br>
-            <input type="submit" value="Submit" className="regSubmitButton"/>
-            {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
-              :
-              null}
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button> 
+            {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            :null} 
           </form>
         </div>
       );

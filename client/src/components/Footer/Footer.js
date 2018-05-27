@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SongkickLogo from './powered-by-songkick-pink.png';
+import SongkickLogo from './powered-by-songkick-black.png';
 import './Footer.css';
 
 class Footer extends Component {

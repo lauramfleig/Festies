@@ -125,6 +125,7 @@ class SurveyComplete extends React.Component {
       const UserRealNameField = (this.state.renderUserRealName)?
         (<UserRealName
           CreateUserName={this.updateUserRealName}
+          previousStep={()=>{return null}}
           nextStep={()=>{return null}}
         />) :
         (<div>
@@ -137,6 +138,7 @@ class SurveyComplete extends React.Component {
       const userNameField = (this.state.renderUserField)?
           (<UserName 
             CreateUserScreenName={this.updateUserName}
+            previousStep={()=>{return null}}
             nextStep={()=>{return null}}
           />) :
           (<div>
@@ -148,7 +150,8 @@ class SurveyComplete extends React.Component {
         
       const UserImageField = (this.state.renderUserImageField)?
           (<ImageUrl 
-            CreateUserUrl={this.updateUserURL} 
+            CreateUserUrl={this.updateUserURL}
+            previousStep={()=>{return null}} 
             nextStep={()=>{return null}}  
           />) :
           (<div>
@@ -160,7 +163,8 @@ class SurveyComplete extends React.Component {
 
       const UserAgeField = (this.state.renderUserAgeField)?
         (<HowOld
-          AddYourAge={this.updateAge} 
+          AddYourAge={this.updateAge}
+          previousStep={()=>{return null}} 
           nextStep={()=>{return null}}
         />) :
         (<div>
@@ -172,7 +176,8 @@ class SurveyComplete extends React.Component {
 
       const UserGenderField = (this.state.renderUserGenderForm)?
         (<GenderForm 
-          AddGender={this.updateGender} 
+          AddGender={this.updateGender}
+          previousStep={()=>{return null}} 
           nextStep={()=>{return null}}
         />) :
         (<div>
@@ -185,6 +190,7 @@ class SurveyComplete extends React.Component {
         const UserAboutDescriptionField = (this.state.renderUserAboutDescription)?
           (<AboutDescription
             AddAboutDescription={this.updateUserAboutDescription}
+            previousStep={()=>{return null}}
             nextStep={()=>{return null}}
           />) :
           (<div>
@@ -197,6 +203,7 @@ class SurveyComplete extends React.Component {
         const UserFavFestivalField = (this.state.renderFavFestivalExp)?
           (<FavFestivalExp 
             AddFavFestivalExp={this.updateUserFavFestivalExp}
+            previousStep={()=>{return null}}
             nextStep={()=>{return null}}
           />) :
           (<div>
@@ -221,7 +228,7 @@ class SurveyComplete extends React.Component {
             {UserFavFestivalField}
           </div>
           <br></br>
-          <input type="submit" onClick={this.handleFinalSubmit} value="Complete your Profile" className="finalSubmitButton"/>
+          <input type="submit" onClick={this.handleFinalSubmit} value="Complete your Festie Profile" className="finalSubmitButton"/>
         </form>
       );
     }

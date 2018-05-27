@@ -1,17 +1,16 @@
 import React from "react";
-import RegistrationHeader from "./RegistrationHeader";
 import Footer from '../Footer';
-import UserRealName from "./UserRealName";
-import UserName from "./UserName";
-import ImageUrl from "./ImageUrl";
-import HowOld from "./HowOld.js";
-import GenderForm from "./GenderForm";
-import AboutDescription from "./AboutDescription";
-import FavFestivalExp from "./FavFestivalExp";
-import SurveyComplete from "./SurveyComplete";
-import './Registration.css';
-import './RegistrationHeader.css';
- 
+import RegistrationIntro from './RegistrationIntro';
+import UserRealName from './UserRealName';
+import UserName from './UserName';
+import ImageUrl from './ImageUrl';
+import HowOld from './HowOld.js';
+import GenderForm from './GenderForm';
+import AboutDescription from './AboutDescription';
+import FavFestivalExp from './FavFestivalExp';
+import SurveyComplete from './SurveyComplete';
+import './Registration2.css';
+
 // The parent component for the Registration Folder
 class Registration extends React.Component {
 	constructor(props) {
@@ -30,7 +29,6 @@ class Registration extends React.Component {
 			sessionEmail: sessionStorage.getItem('email')
 		},
 	  };
-  
 	}
 
 	componentDidUpdate = () => {
@@ -123,40 +121,47 @@ class Registration extends React.Component {
 	// Function to render the each component on the page in a switch statement
 	renderForm = () =>{ switch (this.state.step) {
 		case 1:
-			return <UserRealName
-				CreateUserName={this.CreateUserName}
-				nextStep={this.nextStep}/>
+			return <RegistrationIntro
+				nextStep={this.nextStep}
+				step={this.state.step}
+				/>
 		case 2:
+			return <UserRealName
+				step={this.state.step}
+				CreateUserName={this.CreateUserName}
+				previousStep={this.previousStep}
+				nextStep={this.nextStep}/>
+		case 3:
 			return <UserName
 				CreateUserScreenName={this.CreateUserScreenName}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 3:
+		case 4:
 			return <ImageUrl 
 				CreateUserUrl={this.CreateUserUrl}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 4:
+		case 5:
 			return <HowOld
 				AddYourAge={this.AddYourAge}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 5:
+		case 6:
 			return <GenderForm
 				AddGender={this.AddGender}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 6:
+		case 7:
 			return <AboutDescription
 				AddAboutDescription={this.AddAboutDescription}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 7:
+		case 8:
 			return <FavFestivalExp
 				AddFavFestivalExp={this.AddFavFestivalExp}
 				previousStep={this.previousStep}
 				nextStep={this.nextStep}/>
-		case 8:
+		case 9:
 			return <SurveyComplete 
 				surveyAnswers={this.state.surveyAnswers}
 				CreateUserScreenName={this.CreateUserScreenName}
@@ -173,21 +178,20 @@ class Registration extends React.Component {
 	render() {
 
 		let classController
-		if (this.state.step === 8) {
-			classController = "custom2"
+		if (this.state.step === 9) {
+			classController = 'custom2'
 		} else {
-			classController = "RegistrationFormDiv"
+			classController = 'RegistrationFormQuestion'
 		}
 		// Render each component in order on the screen
 		return(
-			<div className="registrationContainer">
-				<RegistrationHeader/>
-					<div className={classController}>
-						{this.renderForm()}
-					</div>
-				<Footer/>
-			</div>
-			
+			<div className='RegMasterDiv'>
+				<header className='RegFormHeader'></header>
+				<div className={classController}>
+					{this.renderForm()}
+					<Footer className='RegFormFooter'/>
+				</div>
+			</div>	
 	)}	
 }
 

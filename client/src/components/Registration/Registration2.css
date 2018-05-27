@@ -1,0 +1,44 @@
+.RegMasterDiv {
+    min-height: 800px;
+    min-width: 80%;
+    margin: 2%;
+    border: 3px solid black;
+}
+
+.RegFormHeader {
+    min-height: 70px;
+    min-width: 100%;
+    background-color: black;
+    margin-bottom: 1%;
+}
+
+.RegistrationFormQuestion, .RegistrationSurveyComplete {
+    background-color: white;
+    text-align: center;
+}
+
+.RegNextButton, .regSubmitButton, .regPreviousButton {
+    border: none;
+    font-size: 60px;
+    color: black;
+    background-color: white;
+}
+
+.RegFormFooter {
+    margin-top: 2% 2% 8% 2%;
+}
+
+.inputBox, .RegistrationTextArea, .finalSubmitButton {
+    border: 3px solid black;
+}
+
+.finalSubmitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.SurveyEditButton {
+    margin-bottom: 2%;
+}

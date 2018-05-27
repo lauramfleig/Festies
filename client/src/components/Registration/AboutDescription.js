@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorModal from "./ErrorModal";
-import './Registration.css';
+import './Registration2.css';
 
 class AboutDescription extends React.Component {
     constructor(props) {
@@ -69,11 +69,14 @@ class AboutDescription extends React.Component {
               <textarea placeholder="At Least 30 Characters" value={this.state.value} onChange={this.handleChange} className="RegistrationTextArea"/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" className="regSubmitButton"/>
-            {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
-              :
-              null}
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button> 
+            {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            :null} 
           </form>
           {Modal}
         </div>

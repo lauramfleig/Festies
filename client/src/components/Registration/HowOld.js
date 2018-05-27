@@ -1,5 +1,5 @@
 import React from "react";
-import './Registration.css';
+import './Registration2.css';
 
 class HowOld extends React.Component {
     constructor(props) {
@@ -33,14 +33,17 @@ class HowOld extends React.Component {
             <label className="RegFormLabel">
               How old are you?
               <br></br>
-              <input type="number" value={this.state.value} onChange={this.handleChange} required min="3" max="99" className="AgeAndGenderInput"/>
+              <input type="number" value={this.state.value} onChange={this.handleChange} required min="3" max="99" className="AgeAndGenderInput inputBox"/>
             </label>
             <br></br>
-            <input type="submit" value="Submit" className="regSubmitButton"/>
-            {(this.props.previousStep)?
-              <button onClick={this.handlePrevious} value="Previous" className="regPreviousButton">Previous</button>
-              :
-              null}
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button> 
+            {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            :null} 
           </form>
         </div>
       );
