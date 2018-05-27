@@ -34,7 +34,7 @@
     text-align: center
 }
 
-input {
+/* input {
     margin-left: 50%;
     transform: translateX(-50%);
     height: 40px;
@@ -43,7 +43,7 @@ input {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     color: rgb(33, 129, 255)
-}
+} */
 
 #submit-btn {
     width: 140px;

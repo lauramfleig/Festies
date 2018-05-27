@@ -1,0 +1,105 @@
+.why {
+    background-color: #F2FCFF;
+    grid-area: why;
+    padding: 2%;
+    text-align: center;
+}
+
+.why-title {
+    font-family: 'Unica One', cursive;
+    font-size: 80px;
+    position: relative;
+    margin: 0
+}
+
+.box-holder {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 85%;
+    flex-wrap: wrap
+}
+
+.whybox {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    width: 500px;
+    height: 400px;
+    margin: 2%;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-div {
+    background-image: url('./feather-left.png');
+}
+
+.chat-div {
+    background-image: url('./feather-middle.png')
+}
+
+.share-div {
+    background-image: url('./feather-right.png')
+}
+
+.fa {
+    margin-top: 10%;
+    font-size: 45px
+}
+
+.icon-holder {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding-bottom: 5%;
+    width: 100%;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.whybox-header {
+    color: black;
+    font-size: 50px;
+    margin: 0;
+    font-family: 'Unica One', cursive;
+}
+
+
+
+.tent-icon {
+    width: 40px;
+    margin-left: 5%;
+    padding: 0
+}
+
+.fa-car {
+    font-size: 20px;
+    margin-top: 0;
+    margin-left: 5%;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: right;
+    color: black
+}
+
+.fa-bomb {
+    color: black;
+    margin-top: 0;
+    margin-left: 5%;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 20px
+}
+
+.whybox-text {
+    font-weight: bold;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    font-family: 'Unica One',
+    cursive;
+
+}
+

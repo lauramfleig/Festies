@@ -1,0 +1,28 @@
+html,
+body {
+    margin: 0;
+    /* remove default margin */
+    padding: 0;
+    /* remove default padding */
+    width: 100%;
+    /* take full browser width */
+    height: 100%;
+    /* take full browser height*/
+    overflow-x: hidden;
+}
+
+.wrapper {
+    background-image: url('./what-the-hex.png');
+    display: grid;
+    padding: 1%;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "jumbotron jumbotron"  "why why"  "who who" 
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .wrapper {
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: "jumbotron jumbotron" "jumbotron jumbotron" "why why" "who who"
+    }
+}

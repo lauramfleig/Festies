@@ -8,6 +8,7 @@ import Survey from './components/FestivalSurvey/FestivalSurvey';
 import Registration from './components/Registration/Registration';
 import UserView from "./pages/UserView/UserView";
 import Matches from "./pages/Matches/matches"
+import NewAbout from './pages/NewAbout/NewAbout.js'
 
 
 
@@ -22,7 +23,7 @@ class App extends Component {
         <div>
 
               <Switch>
-                <Route exact path="/" component={About} />
+                <Route exact path="/" component={NewAbout} />
                 <Route path="/user-profile" component={UserView} />
                 <Route path="/user-registration" component={Registration} />
                 <Route path="/Festival" component={Festival}/>

@@ -69,10 +69,12 @@ class FavFestivalExp extends React.Component {
               <textarea placeholder="At Least 30 Characters" value={this.state.value} onChange={this.handleChange} className="RegistrationTextArea"/>
             </label>
             <br></br>
-            <button onClick={this.handlePrevious} className="regPreviousButton"><i class="fas fa-chevron-circle-left"></i>
+            <button onClick={this.handlePrevious} className="regPreviousButton">
+              <i class="fas fa-chevron-circle-left"></i>
             </button> 
-            {(this.props.previousStep) ?
-            <button type="submit" className="regSubmitButton" id="SurveySubmit"><i class="fas fa-chevron-circle-right"></i>
+            {(this.props.nextStep) ?
+            <button type="submit" className="regSubmitButton" id="SurveySubmit">
+              <i class="fas fa-chevron-circle-right"></i>
             </button>
             :null} 
           </form>
